@@ -1,59 +1,70 @@
-# GreenYard Design System Skill — v2
+# GreenYard Design System Skill — v3 (Premium Luxury Edition)
 
-When building or modifying any UI in the GreenYard project, follow these rules exactly.
+## Aesthetic Identity: "Minimalist Luxury + Industrial Precision"
 
-## Aesthetic Identity: "Precision meets Organic"
+Target: **European & American beauty/pharma packaging buyers** — high premium, high trust, high compliance.
 
-This is a **B2B industrial packaging manufacturer**, NOT a tech startup. The visual language must communicate:
-1. **Engineering precision** — tight tolerances, reliable dosing, quality manufacturing
-2. **Natural responsibility** — sustainable materials, circular thinking, "One Earth" philosophy
+**REFERENCE MOOD:** Aesop's minimalist restraint + Aptar's clinical authority + Hermès's quiet luxury. Think: white space is the luxury signal.
 
-**REFERENCE MOOD:** Aptar's clinical confidence + Quadpack's design-forward sensibility + Monocle magazine's editorial restraint. Think: premium industrial catalogue, not SaaS landing page.
+## Color System (Premium Core)
 
-### ANTI-PATTERNS (DO NOT USE)
-- ❌ Gradient text, gradient backgrounds, "modern tech" gradients
-- ❌ Glassmorphism / frosted glass on light backgrounds
-- ❌ Neon/bright color accents
-- ❌ Rounded-full pill buttons everywhere
-- ❌ Large emoji or icon-heavy layouts
-- ❌ "Startup SaaS" card patterns with oversized icons
-- ❌ Dark mode as default aesthetic choice
-
-### DO USE
-- ✅ Clean, minimal layouts with generous whitespace
-- ✅ Product photography as the hero (not abstract graphics)
-- ✅ Subtle shadows, thin borders, refined typography
-- ✅ Gold as a refined accent (thin lines, small badges, stat numbers)
-- ✅ Mint sparingly — only for sustainability callouts and primary CTAs
-- ✅ Dark sections reserved for: Hero, Footer, specific deep-dive sections only
-
-## Color Palette (NEVER deviate)
 | Token | Hex | Usage |
 |-------|-----|-------|
-| Mint | `#00B894` | Primary CTAs, active states, sustainability accents ONLY |
-| Gold | `#D4AF37` | Premium highlights, stat numbers, thin dividers, badges |
-| Charcoal | `#1A1A1A` | Hero overlays, footer, Sustainability deep-dives |
-| Gallery White | `#F5F5F0` | DEFAULT page background — warm, not sterile |
-| Mint Tint | `#E8F5F1` | Card backgrounds, section alternation |
-| Text Primary | `#0D0D0D` | Body text and headlines |
-| Text Secondary | `#6C757D` | Captions, metadata |
+| **Primary Dark Green** | `#0F3D26` | Buttons, links, accents, trust elements. Dark, authoritative, eco-luxury |
+| **Cool Gray bg** | `#F5F7F6` | DEFAULT page background — cool, clinical, premium |
+| **Light Gray** | `#EAECEB` | Card backgrounds, section alternation |
+| **Dark Text** | `#1A1A1A` | Headlines (not pure black) |
+| **Body Text** | `#333333` | Body copy |
+| **Muted Text** | `#757575` | Captions, metadata |
+| **White** | `#FFFFFF` | Cards, product photo backgrounds ONLY |
+| **Silver/Gold accent** | subtle gradient | Certification badges, premium indicators (use sparingly) |
+
+**FORBIDDEN:**
+- ❌ High saturation greens, bright colors
+- ❌ Gradient backgrounds
+- ❌ Heavy shadows (max 4px blur)
+- ❌ Rounded-full pill buttons (use subtle 4px radius)
+- ❌ Neon or fluorescent accents
 
 ## Typography
-- **One font:** Inter
-- Hero: `font-light` (300), 56px desktop, tight tracking (-0.02em)
-- H1: `font-medium`, 40px
-- H2: `font-medium`, 28px
-- Body: `font-normal`, 16px, leading-relaxed
-- Product names: `font-medium`, 18px
-- Stats: `font-semibold`, oversized, Gold
+- **Font:** Inter only
+- H1: 48-64px, `font-bold`, tight tracking (-0.02em), short sentences only
+- H2: 32-40px, `font-semibold`
+- Body: 16px, `font-normal`, line-height 1.6-1.8
+- Data/stats: oversized, `font-bold`, dark green
+- **NO:** serif fonts, heavy black weights, excessive italics
 
-## Spacing
-- Section padding: 80px vertical desktop, 56px mobile
-- Component gap: 40px
+## Spacing (Luxury = Air)
+- Section gap: 80-120px vertical
+- Content padding: 32-48px
+- Text area margins: 15-20% side whitespace
+- Card gaps: 24-32px
+- **Critical:** Reject crowding. White space is the luxury signal.
+
+## Layout Principles
+- Single-screen focus: Each hero/section should fit on one screen
 - Max width: 1200px centered
-- Product grid gap: 24px
+- 12-column grid
+- Asymmetric layouts encouraged (60/40, 70/30 splits)
+- Mobile: single column, cards full-width
 
-## Image Style
-- Product photos: clean white/light gray background, 3/4 view, soft shadow
-- Factory photos: real people working, natural lighting — NEVER stock photos
-- Hero: product hero shot or factory footage — NOT abstract gradients
+## Visual Texture
+- Cards: white bg + 1px `#EAECEB` border + subtle shadow (0 2px 8px rgba(0,0,0,0.04))
+- Glass: white bg + `backdrop-blur` + subtle border — for sticky nav only
+- Borders: 1px consistently, `#EAECEB` color
+- Icons: linear minimalist, 1.5px stroke, uniform rounding
+- Images: product on white/light gray bg, macro detail, material texture
+
+## Interaction (European restraint)
+- Scroll: smooth, content fades in on scroll (Intersection Observer)
+- Hover: button darkens, card lifts 2px (subtle), image scales 1.02x
+- Nav: sticky, transparent→semi-transparent white on scroll
+- **FORBIDDEN:** carousels, flashy animations, auto-play, strong blinking
+
+## Homepage Structure (15-second impression)
+1. **Hero (full screen):** High-quality product close-up video/image + slogan + 1 primary CTA
+2. **Client identity cards:** 4 cards, large icons, short copy
+3. **Core strengths:** 3 items (Delivery/Compliance/Sustainability), large images + short text
+4. **Case studies:** 3 horizontal cards, big images, minimal text, data prominent
+5. **Sustainability:** Large image + key points + CTA
+6. **Footer:** Minimal, compliance links + contact
