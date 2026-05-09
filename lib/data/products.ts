@@ -138,7 +138,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-608P-A1', 'GY-608A-AL', 'GY-608B'],
-    imagePlaceholder: '',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562750389.jpg',
   },
   {
     sku: 'GY-608A-AL',
@@ -461,7 +461,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-805P', 'GY-801A2', 'GY-801A3'],
-    imagePlaceholder: '',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
   },
   {
     sku: 'GY-801A2',
@@ -863,7 +863,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-901A-PP', 'GY-901B-ABS', 'GY-902A'],
-    imagePlaceholder: '',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190722/1563763574.jpg',
   },
   {
     sku: 'GY-901A-PP',
@@ -882,7 +882,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Ribbed', label: 'Ribbed PP' },
     ],
     relatedSkus: ['GY-901A-AL', 'GY-901B-ABS', 'GY-902A'],
-    imagePlaceholder: '',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562906543.jpg',
   },
   {
     sku: 'GY-901B-ABS',
@@ -900,7 +900,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth ABS' },
     ],
     relatedSkus: ['GY-901A-PP', 'GY-901A-AL', 'GY-903A'],
-    imagePlaceholder: '',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562909559.jpg',
   },
   {
     sku: 'GY-902A',
@@ -1252,7 +1252,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-805P', 'GY-320', 'GY-608A1'],
-    imagePlaceholder: '',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20230812/1691832789.jpg',
   },
   {
     sku: 'GY-805P',
@@ -1350,7 +1350,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'Base', label: 'Twist Base' },
     ],
     relatedSkus: ['GY-DS01B', 'GY-DS06A-B', 'GY-DS07'],
-    imagePlaceholder: '',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20241204/1733282664.jpg',
   },
   {
     sku: 'GY-DS06A-B',
@@ -1368,7 +1368,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'Base', label: 'Twist Base' },
     ],
     relatedSkus: ['GY-DS05A-B', 'GY-DS07', 'GY-DS08'],
-    imagePlaceholder: '',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20241204/1733291475.jpg',
   },
   {
     sku: 'GY-DS07',
@@ -1440,7 +1440,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'Base', label: 'Twist Base' },
     ],
     relatedSkus: ['GY-DS06A-B', 'GY-DS09', 'GY-DS05A-B'],
-    imagePlaceholder: '',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20241204/1733282535.jpg',
   },
 
   // ===== existing legacy SKUs kept for backward compatibility =====
@@ -1481,7 +1481,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Ribbed', label: 'Ribbed' },
     ],
     relatedSkus: ['GY-901A-PP', 'GY-902A', 'GY-901A-AL'],
-    imagePlaceholder: '',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190722/1563763574.jpg',
   },
   {
     sku: 'GY-2501A',
