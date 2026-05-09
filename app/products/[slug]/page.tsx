@@ -89,27 +89,27 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <main>
       {/* Category Header */}
-      <section className="section-padding bg-[#F5F5F0]">
+      <section className="section-padding bg-[#F5F7F6]">
         <div className="section-container">
-          <nav className="flex items-center gap-2 text-sm text-[#6C757D] mb-6">
-            <a href="/" className="hover:text-[#00B894] transition-colors">Home</a>
+          <nav className="flex items-center gap-2 text-sm text-[#757575] mb-6">
+            <a href="/" className="hover:text-[#0F3D26] transition-colors">Home</a>
             <span>/</span>
-            <a href="/products" className="hover:text-[#00B894] transition-colors">Products</a>
+            <a href="/products" className="hover:text-[#0F3D26] transition-colors">Products</a>
             <span>/</span>
-            <span className="text-[#0D0D0D]">{series?.name || slug}</span>
+            <span className="text-[#1A1A1A]">{series?.name || slug}</span>
           </nav>
 
-          <h1 className="text-3xl md:text-4xl font-medium text-[#0D0D0D]">
+          <h1 className="text-3xl md:text-4xl font-semibold text-[#1A1A1A]">
             {series?.name || 'Products'}
           </h1>
           {series && (
-            <p className="text-[#6C757D] mt-3 max-w-2xl">{series.description}</p>
+            <p className="text-[#757575] mt-3 max-w-2xl">{series.description}</p>
           )}
 
           {includedSeriesNames.length > 1 && (
             <div className="flex flex-wrap gap-2 mt-4">
               {includedSeriesNames.map(name => (
-                <span key={name} className="text-xs text-[#6C757D] bg-white px-3 py-1.5 border border-[#DEE2E6]">
+                <span key={name} className="text-xs text-[#757575] bg-white px-3 py-1.5 border border-[#EAECEB]">
                   {name}
                 </span>
               ))}

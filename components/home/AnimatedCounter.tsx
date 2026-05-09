@@ -54,11 +54,11 @@ export default function AnimatedCounter({ value, label }: AnimatedCounterProps) 
 
   return (
     <div ref={ref} className="text-center">
-      <div className="stat-number-gold">
+      <div className="stat-number">
         {display}
         {suffix}
       </div>
-      <p className="mt-2 text-sm md:text-base text-[#6C757D]">{label}</p>
+      <p className="mt-2 text-sm md:text-base text-[#333333]">{label}</p>
     </div>
   );
 }

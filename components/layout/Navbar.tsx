@@ -39,14 +39,14 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-[var(--z-sticky)] transition-all ${
-        scrolled ? "bg-[#F5F5F0] shadow-sm" : "bg-[#F5F5F0]"
+        scrolled ? "bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)]" : "bg-white"
       }`}
     >
       <div className="section-container flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
         <Link
           href="/"
-          className="text-lg font-medium tracking-tight text-[#0D0D0D] shrink-0"
+          className="text-lg font-semibold tracking-tight text-[#0F3D26] shrink-0"
         >
           {SITE_NAME}
         </Link>
@@ -69,8 +69,8 @@ export default function Navbar() {
                   <button
                     className={`flex items-center gap-1 px-3 py-2 text-sm transition-colors ${
                       dropdownOpen
-                        ? "text-[#00B894]"
-                        : "text-[#0D0D0D] hover:text-[#00B894]"
+                        ? "text-[#0F3D26]"
+                        : "text-[#333333] hover:text-[#0F3D26]"
                     }`}
                     aria-expanded={dropdownOpen}
                     aria-haspopup="true"
@@ -88,33 +88,33 @@ export default function Navbar() {
                     href={item.href}
                     className={`relative px-3 py-2 text-sm transition-colors ${
                       active
-                        ? "text-[#00B894]"
-                        : "text-[#0D0D0D] hover:text-[#00B894]"
+                        ? "text-[#0F3D26]"
+                        : "text-[#333333] hover:text-[#0F3D26]"
                     }`}
                   >
                     {item.label}
                     {active && (
-                      <span className="absolute bottom-0 left-3 right-3 h-px bg-[#00B894]" />
+                      <span className="absolute bottom-0 left-3 right-3 h-px bg-[#0F3D26]" />
                     )}
                   </Link>
                 )}
 
                 {/* Mega dropdown */}
                 {hasChildren && dropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-72 bg-[#F5F5F0] rounded-lg shadow-lg border border-[#DEE2E6] p-2 mega-menu-active">
+                  <div className="absolute top-full left-0 mt-1 w-72 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-[#EAECEB] p-2 mega-menu-active rounded-[4px]">
                     {item.children!.map((child) => (
                       <Link
                         key={child.label}
                         href={child.href}
                         className={`block px-4 py-3 rounded-md transition-colors ${
                           isActive(child.href)
-                            ? "bg-[#E8F5F1] text-[#00B894]"
-                            : "hover:bg-[#E8F5F1] text-[#0D0D0D]"
+                            ? "bg-[#EAECEB] text-[#0F3D26]"
+                            : "hover:bg-[#EAECEB] text-[#333333]"
                         }`}
                       >
                         <div className="text-sm">{child.label}</div>
                         {child.description && (
-                          <div className="text-xs text-[#6C757D] mt-0.5 leading-snug">
+                          <div className="text-xs text-[#757575] mt-0.5 leading-snug">
                             {child.description}
                           </div>
                         )}
@@ -130,16 +130,16 @@ export default function Navbar() {
         {/* Utility area */}
         <div className="hidden lg:flex items-center gap-4">
           <button
-            className="p-1.5 text-[#6C757D] hover:text-[#0D0D0D] transition-colors"
+            className="p-1.5 text-[#757575] hover:text-[#1A1A1A] transition-colors"
             aria-label="Search products"
           >
             <Search size={16} />
           </button>
-          <span className="text-xs text-[#6C757D] tracking-wider">EN</span>
-          <div className="w-px h-4 bg-[#DEE2E6]" />
+          <span className="text-xs text-[#757575] tracking-wider">EN</span>
+          <div className="w-px h-4 bg-[#EAECEB]" />
           <Link
             href="/contact"
-            className="text-sm text-[#0D0D0D] hover:text-[#00B894] transition-colors font-medium"
+            className="text-sm text-[#333333] hover:text-[#0F3D26] transition-colors font-medium"
           >
             Contact
           </Link>
@@ -147,7 +147,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden p-2 text-[#0D0D0D]"
+          className="lg:hidden p-2 text-[#1A1A1A]"
           onClick={() => setMobileOpen(true)}
           aria-label="Open menu"
         >
@@ -161,11 +161,11 @@ export default function Navbar() {
           <div className="absolute inset-0 bg-[#1A1A1A]" />
           <div className="relative z-10 flex flex-col h-full overflow-y-auto">
             <div className="flex items-center justify-between px-4 h-16">
-              <span className="text-lg font-medium text-[#F5F5F0]">
+              <span className="text-lg font-semibold text-[#F5F7F6]">
                 {SITE_NAME}
               </span>
               <button
-                className="p-2 text-[#F5F5F0]"
+                className="p-2 text-[#F5F7F6]"
                 onClick={() => setMobileOpen(false)}
                 aria-label="Close menu"
               >
@@ -180,7 +180,7 @@ export default function Navbar() {
                   <div key={item.label} className="mobile-nav-link">
                     {hasChildren ? (
                       <>
-                        <div className="text-xs font-medium text-[#D4AF37] uppercase tracking-wider mb-2 px-3 pt-4 first:pt-0">
+                        <div className="text-xs font-medium text-[#757575] uppercase tracking-wider mb-2 px-3 pt-4 first:pt-0">
                           {item.label}
                         </div>
                         <div className="space-y-1 pl-2">
@@ -190,14 +190,14 @@ export default function Navbar() {
                               href={child.href}
                               className={`block px-3 py-2.5 text-sm transition-colors ${
                                 isActive(child.href)
-                                  ? "bg-[#00B894]/10 text-[#00B894]"
-                                  : "text-[#F5F5F0] hover:bg-white/5"
+                                  ? "bg-[#0F3D26]/10 text-[#0F3D26]"
+                                  : "text-[#F5F7F6] hover:bg-white/5"
                               }`}
                               onClick={() => setMobileOpen(false)}
                             >
                               <div className="font-medium">{child.label}</div>
                               {child.description && (
-                                <div className="text-xs text-[#6C757D] mt-0.5">
+                                <div className="text-xs text-[#757575] mt-0.5">
                                   {child.description}
                                 </div>
                               )}
@@ -210,8 +210,8 @@ export default function Navbar() {
                         href={item.href}
                         className={`block px-3 py-2.5 text-sm transition-colors ${
                           isActive(item.href)
-                            ? "bg-[#00B894]/10 text-[#00B894]"
-                            : "text-[#F5F5F0] hover:bg-white/5"
+                            ? "bg-[#0F3D26]/10 text-[#0F3D26]"
+                            : "text-[#F5F7F6] hover:bg-white/5"
                         }`}
                         onClick={() => setMobileOpen(false)}
                       >
@@ -226,17 +226,17 @@ export default function Navbar() {
             <div className="px-4 py-6 border-t border-white/10 space-y-4">
               <div className="flex items-center gap-4">
                 <button
-                  className="flex items-center gap-2 text-sm text-[#F5F5F0]/70"
+                  className="flex items-center gap-2 text-sm text-[#F5F7F6]/70"
                   aria-label="Search"
                 >
                   <Search size={16} />
                   Search
                 </button>
-                <span className="text-sm text-[#F5F5F0]/70">EN</span>
+                <span className="text-sm text-[#F5F7F6]/70">EN</span>
               </div>
               <Link
                 href="/contact"
-                className="block w-full text-center px-4 py-3 text-sm font-medium bg-white/10 text-[#F5F5F0] hover:bg-white/20 transition-colors"
+                className="block w-full text-center px-4 py-3 text-sm font-medium bg-[#0F3D26] text-white hover:bg-[#0B2D1C] transition-colors rounded-[4px]"
                 onClick={() => setMobileOpen(false)}
               >
                 Contact Us

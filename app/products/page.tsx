@@ -45,44 +45,44 @@ export default function ProductsPage() {
   return (
     <main>
       {/* Page Header */}
-      <section className="section-padding bg-[#F5F5F0]">
+      <section className="section-padding bg-[#F5F7F6]">
         <div className="section-container">
-          <nav className="flex items-center gap-2 text-sm text-[#6C757D] mb-6">
-            <a href="/" className="hover:text-[#00B894] transition-colors">Home</a>
+          <nav className="flex items-center gap-2 text-sm text-[#757575] mb-6">
+            <a href="/" className="hover:text-[#0F3D26] transition-colors">Home</a>
             <span>/</span>
-            <span className="text-[#0D0D0D]">Products</span>
+            <span className="text-[#1A1A1A]">Products</span>
           </nav>
 
-          <h1 className="text-3xl md:text-4xl font-medium text-[#0D0D0D]">All Products</h1>
-          <p className="text-[#6C757D] mt-3 max-w-2xl">
+          <h1 className="text-3xl md:text-4xl font-semibold text-[#1A1A1A]">All Products</h1>
+          <p className="text-[#757575] mt-3 max-w-2xl">
             GreenYard offers 200+ SKUs across 13 product series. Browse by category below or filter by specification.
           </p>
         </div>
       </section>
 
       {/* Category Cards */}
-      <section className="section-padding pt-0 bg-[#F5F5F0]">
+      <section className="section-padding pt-0 bg-[#F5F7F6]">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map(cat => (
               <a
                 key={cat.category}
                 href={cat.route}
-                className="bg-white border border-[#DEE2E6] rounded-lg p-6 hover:shadow-md transition-shadow block"
+                className="bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-6 hover:translate-y-[-2px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all block rounded-[4px]"
               >
-                <h3 className="font-medium text-[#0D0D0D] text-lg">{cat.category}</h3>
-                <p className="text-xs text-[#6C757D] mt-1">
+                <h3 className="font-semibold text-[#1A1A1A] text-lg">{cat.category}</h3>
+                <p className="text-xs text-[#757575] mt-1">
                   {cat.products.length} products{cat.seriesCount > 1 ? ` · ${cat.seriesCount} series` : ''}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {cat.products.slice(0, 5).map(p => (
-                    <span key={p.sku} className="text-xs text-[#D4AF37] font-medium">{p.sku}</span>
+                    <span key={p.sku} className="text-xs text-[#757575] font-medium">{p.sku}</span>
                   ))}
                   {cat.products.length > 5 && (
-                    <span className="text-xs text-[#6C757D]">+{cat.products.length - 5} more</span>
+                    <span className="text-xs text-[#757575]">+{cat.products.length - 5} more</span>
                   )}
                 </div>
-                <span className="text-sm font-medium text-[#00B894] mt-3 inline-block">
+                <span className="text-sm font-medium text-[#0F3D26] mt-3 inline-block">
                   Browse {cat.category} &rarr;
                 </span>
               </a>

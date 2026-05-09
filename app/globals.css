@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   GreenYard Design System — Industrial B2B
-   "Precision meets Organic"
+   GreenYard Design System — Premium Luxury v3
+   "One Earth. Precision Engineering."
    ========================================================================== */
 
 :root {
-  /* --- Colors --- */
-  --color-mint: #00B894;
-  --color-gold: #D4AF37;
+  /* --- Colors (Premium Luxury Palette) --- */
+  --color-primary-dark: #0F3D26;
+  --color-primary-dark-hover: #0B2D1C;
+  --color-bg: #F5F7F6;
+  --color-card-bg: #EAECEB;
   --color-charcoal: #1A1A1A;
-  --color-gallery: #F5F5F0;
-  --color-mint-tint: #E8F5F1;
-  --color-text: #0D0D0D;
-  --color-text-secondary: #6C757D;
-  --color-border: #DEE2E6;
+  --color-text-primary: #1A1A1A;
+  --color-text-body: #333333;
+  --color-text-muted: #757575;
+  --color-border: #EAECEB;
   --color-white: #FFFFFF;
 
   /* --- Typography --- */
@@ -33,14 +34,16 @@
   --font-h3-line-height: 1.25;
   --font-body-line-height: 1.6;
 
-  --font-display-weight: 300;
-  --font-heading-weight: 500;
+  --font-display-weight: 700;
+  --font-heading-weight: 600;
   --font-body-weight: 400;
 
-  /* --- Spacing --- */
-  --section-padding: 96px;
-  --section-padding-tablet: 64px;
-  --section-padding-mobile: 48px;
+  --font-display-tracking: -0.02em;
+
+  /* --- Spacing (More Air) --- */
+  --section-padding: 120px;
+  --section-padding-tablet: 80px;
+  --section-padding-mobile: 64px;
   --component-gap: 48px;
   --component-gap-tablet: 32px;
   --component-gap-mobile: 24px;
@@ -55,10 +58,9 @@
   --border-radius-full: 9999px;
 
   /* --- Shadows --- */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
 
   /* --- Transitions --- */
   --transition-fast: 150ms ease;
@@ -78,13 +80,14 @@
    ========================================================================== */
 
 @theme {
-  --color-mint: var(--color-mint);
-  --color-gold: var(--color-gold);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-dark-hover: var(--color-primary-dark-hover);
+  --color-bg: var(--color-bg);
+  --color-card-bg: var(--color-card-bg);
   --color-charcoal: var(--color-charcoal);
-  --color-gallery: var(--color-gallery);
-  --color-mint-tint: var(--color-mint-tint);
-  --color-text-primary: var(--color-text);
-  --color-text-secondary: var(--color-text-secondary);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-body: var(--color-text-body);
+  --color-text-muted: var(--color-text-muted);
   --color-border: var(--color-border);
 
   --font-family-sans: 'Inter', sans-serif;
@@ -121,8 +124,8 @@
   }
 
   body {
-    background-color: var(--color-gallery);
-    color: var(--color-text);
+    background-color: var(--color-bg);
+    color: var(--color-text-body);
     font-family: 'Inter', sans-serif;
     font-size: var(--font-body-size);
     line-height: var(--font-body-line-height);
@@ -135,12 +138,12 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-mint);
+    outline: 2px solid var(--color-primary-dark);
     outline-offset: 2px;
   }
 
   ::selection {
-    background-color: var(--color-mint);
+    background-color: var(--color-primary-dark);
     color: var(--color-white);
   }
 }
@@ -150,39 +153,12 @@
    ========================================================================== */
 
 @layer utilities {
-  /* Oversized numbers for statistics */
+  /* Oversized numbers for statistics — dark green */
   .stat-number {
     font-size: clamp(3rem, 8vw, 5rem);
-    font-weight: 300;
+    font-weight: 700;
     line-height: 1;
-    color: var(--color-mint);
-  }
-
-  .stat-number-gold {
-    font-size: clamp(3rem, 8vw, 5rem);
-    font-weight: 300;
-    line-height: 1;
-    color: var(--color-gold);
-  }
-
-  /* Gold accent — thin lines and small accents only */
-  .gold-accent {
-    color: var(--color-gold);
-  }
-
-  .gold-divider {
-    width: 60px;
-    height: 1px;
-    background-color: var(--color-gold);
-  }
-
-  /* Mint accent utilities */
-  .mint-accent {
-    color: var(--color-mint);
-  }
-
-  .mint-bg {
-    background-color: var(--color-mint);
+    color: var(--color-primary-dark);
   }
 
   /* Section layouts */
@@ -215,15 +191,11 @@
 
   .section-dark {
     background-color: var(--color-charcoal);
-    color: var(--color-gallery);
+    color: var(--color-bg);
   }
 
   .section-light {
-    background-color: var(--color-gallery);
-  }
-
-  .section-mint-tint {
-    background-color: var(--color-mint-tint);
+    background-color: var(--color-bg);
   }
 
   /* Skip to main content (accessibility) */
@@ -233,7 +205,7 @@
     left: 0;
     z-index: 999;
     padding: 8px 16px;
-    background-color: var(--color-mint);
+    background-color: var(--color-primary-dark);
     color: var(--color-white);
     font-weight: 600;
     transition: top var(--transition-fast);
@@ -280,23 +252,42 @@
   .mobile-nav-link:nth-child(9) { animation-delay: 0.45s; }
   .mobile-nav-link:nth-child(10) { animation-delay: 0.5s; }
 
-  /* Gold thin underline accent (for cards, sections) */
-  .gold-underline {
-    display: inline-block;
-    border-bottom: 1px solid var(--color-gold);
-    padding-bottom: 2px;
-  }
-
-  /* Subtle card style */
+  /* Card style — white bg, 1px border, subtle shadow */
   .card-border {
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-lg);
     background-color: var(--color-white);
+    box-shadow: var(--shadow-sm);
   }
 
   .card-border-sm {
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-md);
     background-color: var(--color-white);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Button base */
+  .btn-primary {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-dark-hover);
+  }
+
+  /* Scroll reveal — animated on intersection */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
