@@ -38,7 +38,7 @@ export default function ProductCard({ product, selected, onToggleCompare, compar
       {/* Product Image */}
       <Link href={`/products/detail/${product.sku}`} className="block">
         <div className="aspect-[4/3] bg-white flex items-center justify-center p-6 border-b border-[#DEE2E6]">
-          {product.imagePlaceholder?.startsWith('http') ? (
+          {(product.imagePlaceholder?.startsWith('http') || product.imagePlaceholder?.startsWith('/')) ? (
             <img
               src={product.imagePlaceholder}
               alt={product.name}

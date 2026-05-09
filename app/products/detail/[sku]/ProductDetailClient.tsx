@@ -163,7 +163,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
                   className="bg-white border border-[#DEE2E6] rounded-lg p-5 hover:shadow-md transition-shadow block"
                 >
                   <div className="aspect-square bg-[#F5F5F0] flex items-center justify-center mb-3">
-                    {rp.imagePlaceholder?.startsWith('http') ? (
+                    {(rp.imagePlaceholder?.startsWith('http') || rp.imagePlaceholder?.startsWith('/')) ? (
                       <img src={rp.imagePlaceholder} alt={rp.name} className="w-full h-full object-contain" loading="lazy" />
                     ) : (
                       <span className="text-[#D4AF37] font-medium text-sm">{rp.sku}</span>
