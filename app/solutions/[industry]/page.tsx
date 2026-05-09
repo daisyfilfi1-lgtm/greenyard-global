@@ -1,139 +1,213 @@
-import { getProductsByIndustry } from '@/lib/data/products';
+import { getProductsByIndustry, getProductBySku } from '@/lib/data/products';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-const pageData: Record<string, { title: string; hero: string; desc: string; painPoints: { icon: string; title: string; desc: string }[]; compliance: string[]; moq: { prod: string; moq: string; lead: string }[] }> = {
+const data: Record<string, {
+  title: string; hero: string; sub: string;
+  painPoints: { icon: string; title: string; desc: string }[];
+  compliance: string[];
+  caseStudy: { headline: string; body: string; metric: string };
+  moq: { prod: string; moq: string; lead: string }[];
+}> = {
   skincare: {
     title: 'Skincare & Clean Beauty', hero: 'Packaging That Matches Your Clean Beauty Standards',
-    desc: 'From serums to moisturizers, our precision pumps and sprayers deliver the exact dosage your formula demands — with sustainable options that align with your brand values.',
+    sub: 'Low-MOQ, fast-sampling dispensing solutions for brands that put sustainability first.',
     painPoints: [
-      { icon: '📦', title: 'Low MOQ', desc: 'Starting from 1,000 units for startups and indie brands' },
-      { icon: '⚡', title: '7-Day Sampling', desc: '3D-printed samples in 7 days for rapid iteration' },
-      { icon: '♻️', title: 'Sustainable Options', desc: 'PCR up to 50%, monomaterial fully recyclable pumps' },
-      { icon: '🔬', title: 'Precision Dosing', desc: '0.06ml–4.00ml output range for any formula viscosity' },
-      { icon: '✅', title: 'REACH Compliant', desc: 'All materials certified for EU market access' },
+      { icon: '📦', title: 'MOQ from 1,000 units', desc: 'Launch without overcommitting inventory.' },
+      { icon: '⚡', title: '7-day 3D-printed sample', desc: 'Validate design before tooling.' },
+      { icon: '♻️', title: 'PCR up to 50%', desc: 'Meet consumer sustainability expectations.' },
+      { icon: '🔄', title: 'All-plastic recyclable', desc: 'Mono-material pumps for circularity.' },
+      { icon: '✅', title: 'REACH + BPA-free certified', desc: 'EU market-ready documentation.' },
     ],
-    compliance: ['REACH', 'BPA-Free', 'All-Plastic Options', 'PCR Available'],
+    compliance: ['REACH', 'BPA-Free', 'All-Plastic', 'PCR Available'],
+    caseStudy: {
+      headline: 'Clean Beauty Launch in 78 Days',
+      body: 'A California-based clean beauty brand needed to launch a 3-SKU vitamin C serum line within 90 days. Using GY-608A1 with all-plastic construction and matching PETG bottles, they went from sampling to shelf in 78 days.',
+      metric: '3,000-unit MOQ · Zero defects · 78 days to market',
+    },
     moq: [{ prod: 'Fine Mist Sprayer', moq: '3,000 pcs', lead: '25 days' }, { prod: 'Lotion Pump', moq: '5,000 pcs', lead: '30 days' }, { prod: 'Airless Bottle', moq: '1,000 pcs', lead: '35 days' }],
   },
   pharma: {
-    title: 'Pharma & Cosmeceutical', hero: 'Compliance-Driven Packaging for Regulated Markets',
-    desc: 'ISO 15378 certified manufacturing with full batch traceability. Metal-free monomaterial pathways for drug delivery and cosmeceutical applications.',
+    title: 'Pharma & Cosmeceutical', hero: 'Pharmaceutical-Grade Dispensing: Compliance Built In',
+    sub: 'ISO 15378–certified pumps with batch traceability and metal-free pathways for sterile formulations.',
     painPoints: [
-      { icon: '🏥', title: 'ISO 15378 Certified', desc: 'Pharmaceutical-grade manufacturing standards' },
-      { icon: '📋', title: 'Full Traceability', desc: 'Batch-level documentation and quality records' },
-      { icon: '🔒', title: 'Metal-Free Pathways', desc: 'All-plastic pumps — no metal spring contact' },
-      { icon: '📄', title: 'FDA & USP Class VI', desc: 'Regulatory documentation available' },
-      { icon: '🧪', title: 'Chemical Resistance', desc: 'Tested for ethanol, actives, and solvents' },
+      { icon: '🏥', title: 'ISO 15378 + GMP', desc: 'Pharma-grade manufacturing environment.' },
+      { icon: '📋', title: 'Batch traceability', desc: 'From resin lot to finished pump.' },
+      { icon: '🔒', title: 'Metal-free / Monomaterial', desc: 'Zero contamination risk.' },
+      { icon: '🧪', title: 'USP Class VI tested', desc: 'Material safety documentation on demand.' },
+      { icon: '📄', title: 'DMF-ready technical files', desc: 'Regulatory submission support.' },
     ],
     compliance: ['ISO 15378', 'FDA', 'USP Class VI', 'REACH', 'RoHS'],
+    caseStudy: {
+      headline: '500K Units with Full Documentation',
+      body: 'A European pharmaceutical contract manufacturer needed a secondary supplier for alcohol-based hand sanitizer pumps during a supply chain disruption. GY-101 trigger sprayers delivered 500K units across 6 months with full batch documentation.',
+      metric: '99.2% on-time · 500K units · Full batch traceability',
+    },
     moq: [{ prod: 'Fully Recyclable Mist', moq: '5,000 pcs', lead: '30 days' }, { prod: 'Treatment Pump', moq: '3,000 pcs', lead: '28 days' }, { prod: 'Dropper', moq: '2,000 pcs', lead: '25 days' }],
   },
   household: {
-    title: 'Household & Industrial', hero: 'Heavy-Duty Packaging for High-Volume Applications',
-    desc: 'Chemical-resistant trigger sprayers and high-output lotion pumps built for cleaning products, sanitizers, and industrial fluids.',
+    title: 'Household & Industrial', hero: 'Tough Chemistry. Reliable Dispensing.',
+    sub: 'Trigger sprayers and high-dose pumps engineered for chemical compatibility and long-haul durability.',
     painPoints: [
-      { icon: '🧹', title: 'Chemical Resistant', desc: 'PP/PE materials tested for harsh cleaning agents' },
-      { icon: '📊', title: 'Bulk Pricing', desc: 'Competitive pricing for 50K+ unit orders' },
-      { icon: '🏭', title: 'High Output', desc: '1.0–4.0ml dosage for large-format bottles' },
-      { icon: '🚛', title: 'Global Logistics', desc: 'Ningbo Port — 1.5h to international shipping' },
-      { icon: '🔧', title: 'Standard Necks', desc: '28/410, 24/410 compatibility' },
+      { icon: '🧹', title: 'Chemical-resistant PP/PE', desc: 'Compatibility matrix available.' },
+      { icon: '📊', title: 'High-dose 0.75–4.00ml', desc: 'For thick cleaners and concentrates.' },
+      { icon: '☀️', title: 'UV & heat stable', desc: 'Survives container shipping to MEA/LATAM.' },
+      { icon: '🎨', title: 'Color customization', desc: 'Match brand palettes at volume.' },
+      { icon: '🚢', title: 'FOB Ningbo pricing', desc: 'Transparent export cost structure.' },
     ],
-    compliance: ['Chemical Resistant', 'Heavy-Duty', '28/410 Standard'],
+    compliance: ['Chemical Resistant', 'Heavy-Duty', 'ISO 9001'],
+    caseStudy: {
+      headline: '2M Units/Year — 15% Cost Reduction',
+      body: 'A Middle Eastern cleaning products brand switched their trigger sprayer sourcing to GY-101 across 2M units annually. The standardized 28/410 neck eliminated line changeover time and delivered consistent chemical resistance.',
+      metric: '15% cost reduction · 2M units/year · Zero compatibility issues',
+    },
     moq: [{ prod: 'Trigger Sprayer', moq: '10,000 pcs', lead: '25 days' }, { prod: 'Lotion Pump 3.0ml', moq: '5,000 pcs', lead: '30 days' }, { prod: 'Foam Pump', moq: '5,000 pcs', lead: '28 days' }],
   },
   contract: {
-    title: 'Contract Packaging', hero: 'Reliable Supply for High-Volume Contract Manufacturing',
-    desc: 'Standard neck finishes with deep inventory. JIT delivery from Ningbo Port. Consistent batch quality for contract packagers.',
+    title: 'Contract Packaging', hero: 'Line-Compatible Dispensing at Scale',
+    sub: 'Standard neck finishes, deep inventory, and VMI-ready supply chains for contract manufacturers.',
     painPoints: [
-      { icon: '📐', title: 'Standard Necks', desc: '24/410, 28/410, 33/400 compatibility' },
-      { icon: '📦', title: 'Deep Inventory', desc: 'Buffer stock maintained for continuity' },
-      { icon: '🚚', title: 'JIT Delivery', desc: 'Just-in-time shipping from Ningbo Port' },
-      { icon: '✅', title: 'Batch Consistency', desc: 'ISO 9001 quality management system' },
-      { icon: '💰', title: 'Volume Pricing', desc: 'Tiered pricing from 10K to 1M+ units' },
+      { icon: '📐', title: '24/410 · 28/410 · 33/400', desc: 'Fits your existing filling lines.' },
+      { icon: '📦', title: 'VMI stocking programs', desc: 'Never stop production for a cap.' },
+      { icon: '✅', title: '<1% defect rate', desc: '100% inline inspection + batch CPK reports.' },
+      { icon: '🔄', title: 'Rapid SKU switching', desc: 'Same neck, different actuator.' },
+      { icon: '📋', title: 'Consolidated RFQ', desc: 'Quote 10 SKUs in one request.' },
     ],
-    compliance: ['ISO 9001', '24/410', '28/410', '33/400', 'JIT'],
+    compliance: ['ISO 9001', '24/410', '28/410', 'JIT Delivery'],
+    caseStudy: {
+      headline: '8 SKUs Consolidated to One Supplier',
+      body: 'A US contract packager consolidated fragmented pump sourcing to GreenYard — single-source 24/410 pumps across 4 brands. VMI program maintained 4-week buffer stock, eliminating 12 production stops in the first year.',
+      metric: '8 SKUs unified · 4-week buffer · Zero production stops',
+    },
     moq: [{ prod: 'Lotion Pump 24/410', moq: '10,000 pcs', lead: '25 days' }, { prod: 'Lotion Pump 28/410', moq: '10,000 pcs', lead: '25 days' }, { prod: 'Trigger Sprayer', moq: '10,000 pcs', lead: '25 days' }],
   },
 };
 
 export function generateStaticParams() {
-  return Object.keys(pageData).map((slug) => ({ industry: slug }));
+  return Object.keys(data).map((industry) => ({ industry }));
 }
 
 export default async function IndustryPage({ params }: { params: Promise<{ industry: string }> }) {
   const { industry } = await params;
-  const data = pageData[industry];
-  if (!data) return <div className="p-24 text-center text-[#757575]">Industry not found</div>;
-
+  const d = data[industry];
+  if (!d) return <div className="min-h-screen flex items-center justify-center text-[#757575]">Industry not found</div>;
   const products = getProductsByIndustry(industry);
 
   return (
     <main className="bg-[#F5F7F6]">
-      <section className="bg-[#0F3D26] text-white py-24">
+      {/* Section 1: Hero */}
+      <section className="bg-[#0F3D26] text-white py-28">
         <div className="max-w-[1200px] mx-auto px-8">
-          <p className="text-sm text-white/60 uppercase tracking-wider mb-3">Solutions</p>
-          <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight leading-[1.1]">{data.hero}</h1>
-          <p className="mt-4 text-lg text-white/80 max-w-2xl">{data.desc}</p>
+          <p className="text-xs text-white/50 uppercase tracking-[0.15em] mb-4">{d.title}</p>
+          <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-light tracking-tight leading-[1.1] max-w-3xl">{d.hero}</h1>
+          <p className="mt-5 text-lg text-white/70 leading-relaxed max-w-xl">{d.sub}</p>
         </div>
       </section>
 
-      <section className="max-w-[1200px] mx-auto px-8 py-24">
-        <h2 className="text-2xl font-semibold text-[#1A1A1A] mb-12">Key Capabilities</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {data.painPoints.map((p) => (
-            <div key={p.title} className="bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-8">
-              <span className="text-2xl">{p.icon}</span>
-              <h3 className="mt-3 font-semibold text-[#1A1A1A]">{p.title}</h3>
-              <p className="mt-2 text-sm text-[#757575] leading-relaxed">{p.desc}</p>
-            </div>
-          ))}
+      {/* Section 2: Pain-Point Matrix */}
+      <section className="bg-[#EAECEB] py-20">
+        <div className="max-w-[1200px] mx-auto px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {d.painPoints.map((p) => (
+              <div key={p.title} className="bg-white p-6">
+                <span className="text-xl">{p.icon}</span>
+                <h3 className="mt-3 text-sm font-semibold text-[#1A1A1A] leading-snug">{p.title}</h3>
+                <p className="mt-1.5 text-xs text-[#757575] leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {products.length > 0 && (
-        <section className="max-w-[1200px] mx-auto px-8 pb-24">
-          <h2 className="text-2xl font-semibold text-[#1A1A1A] mb-8">Recommended Products</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {products.slice(0, 4).map((p) => (
-              <Link key={p.sku} href={`/products/detail/${p.sku}`} className="bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:translate-y-[-2px] transition-all">
-                <div className="aspect-square bg-[#F5F7F6] flex items-center justify-center">
+      {/* Section 3: Recommended Products */}
+      <section className="py-24">
+        <div className="max-w-[1200px] mx-auto px-8">
+          <h2 className="text-3xl font-light tracking-tight text-[#1A1A1A]">
+            Recommended for {d.title}
+            <span className="block w-10 h-[2px] bg-[#0F3D26] mt-4" />
+          </h2>
+          <p className="mt-3 text-[#757575]">Curated SKUs tested for {industry === 'skincare' ? 'serums, toners, and moisturizers' : industry === 'pharma' ? 'sterile and regulated formulations' : industry === 'household' ? 'cleaning products and industrial fluids' : 'high-volume filling lines'}.</p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            {products.slice(0, 6).map((p) => (
+              <Link key={p.sku} href={`/products/detail/${p.sku}`}
+                className="bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300">
+                <div className="aspect-square bg-[#F5F7F6] flex items-center justify-center p-6">
                   {(p.imagePlaceholder?.startsWith('http') || p.imagePlaceholder?.startsWith('/')) ? (
                     <img src={p.imagePlaceholder} alt={p.name} className="w-full h-full object-contain" crossOrigin="anonymous" />
                   ) : (
-                    <span className="text-[#0F3D26] font-semibold">{p.sku}</span>
+                    <span className="text-[#0F3D26] font-semibold text-sm">{p.sku}</span>
                   )}
                 </div>
-                <div className="p-4">
-                  <p className="font-medium text-sm text-[#1A1A1A]">{p.name}</p>
-                  <p className="text-xs text-[#757575] mt-1">{p.dischargeRate || p.neckFinish.join(', ')}</p>
+                <div className="p-5">
+                  {p.monoMaterial && <span className="text-[10px] text-[#0F3D26] uppercase tracking-wider font-medium border border-[#0F3D26]/20 px-2 py-0.5 mb-2 inline-block">Sustainable</span>}
+                  <h3 className="font-semibold text-[#1A1A1A] text-sm">{p.name}</h3>
+                  <p className="text-xs text-[#757575] mt-1">{p.dischargeRate} · {p.neckFinish.join(', ')}</p>
+                  <p className="text-xs text-[#0F3D26] mt-2 font-medium">View Details →</p>
                 </div>
               </Link>
             ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
-      <section className="max-w-[1200px] mx-auto px-8 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-2xl font-semibold text-[#1A1A1A] mb-6">Compliance & Certifications</h2>
-            <div className="flex flex-wrap gap-2">
-              {data.compliance.map((c) => (
-                <span key={c} className="text-sm text-[#0F3D26] bg-white border border-[#EAECEB] px-4 py-2 rounded-[4px]">{c}</span>
-              ))}
+      {/* Section 4: Compliance */}
+      <section className="bg-white py-20">
+        <div className="max-w-[1200px] mx-auto px-8">
+          <h2 className="text-3xl font-light tracking-tight text-[#1A1A1A]">
+            Compliance You Can Verify
+            <span className="block w-10 h-[2px] bg-[#0F3D26] mt-4" />
+          </h2>
+          <div className="flex flex-wrap gap-3 mt-8">
+            {d.compliance.map((c) => (
+              <span key={c} className="text-sm text-[#0F3D26] bg-[#F5F7F6] border border-[#EAECEB] px-5 py-2.5 font-medium">{c}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Case Study */}
+      <section className="py-24">
+        <div className="max-w-[1200px] mx-auto px-8">
+          <h2 className="text-3xl font-light tracking-tight text-[#1A1A1A]">
+            In the Market
+            <span className="block w-10 h-[2px] bg-[#0F3D26] mt-4" />
+          </h2>
+          <div className="mt-10 bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-12">
+            <div className="max-w-2xl">
+              <h3 className="text-xl font-semibold text-[#1A1A1A]">{d.caseStudy.headline}</h3>
+              <p className="mt-4 text-[#333333] leading-relaxed">{d.caseStudy.body}</p>
+              <p className="mt-4 text-[#0F3D26] font-semibold">{d.caseStudy.metric}</p>
             </div>
           </div>
-          <div>
-            <h2 className="text-2xl font-semibold text-[#1A1A1A] mb-6">MOQ & Lead Time</h2>
-            <table className="w-full text-sm">
-              <thead><tr className="border-b border-[#EAECEB]"><th className="text-left py-2 text-[#757575] font-normal">Product</th><th className="text-left py-2 text-[#757575] font-normal">MOQ</th><th className="text-left py-2 text-[#757575] font-normal">Lead Time</th></tr></thead>
-              <tbody>{data.moq.map((m) => (
-                <tr key={m.prod} className="border-b border-[#EAECEB]">
-                  <td className="py-2 text-[#1A1A1A]">{m.prod}</td><td className="py-2 text-[#0F3D26] font-semibold">{m.moq}</td><td className="py-2 text-[#757575]">{m.lead}</td>
-                </tr>
-              ))}</tbody>
-            </table>
+        </div>
+      </section>
+
+      {/* Section 6: Process Timeline */}
+      <section className="bg-white py-20">
+        <div className="max-w-[1200px] mx-auto px-8">
+          <h2 className="text-3xl font-light tracking-tight text-[#1A1A1A]">
+            From Inquiry to Delivery
+            <span className="block w-10 h-[2px] bg-[#0F3D26] mt-4" />
+          </h2>
+          <div className="mt-12 flex flex-col lg:flex-row items-start lg:items-center gap-0">
+            {['Inquiry', 'Sample\n7–15 days', 'Approval', 'Production\n30 days', 'Delivery'].map((step, i) => (
+              <div key={i} className="flex lg:flex-col items-center gap-4 lg:gap-0 flex-1 relative py-4 lg:py-0">
+                <div className="w-10 h-10 rounded-full bg-[#0F3D26] text-white flex items-center justify-center text-sm font-semibold shrink-0">{i + 1}</div>
+                <p className="text-sm text-[#1A1A1A] whitespace-pre-line leading-snug">{step}</p>
+                {i < 4 && <div className="hidden lg:block absolute top-5 left-[calc(50%+20px)] w-[calc(100%-40px)] h-[1px] bg-[#EAECEB]" />}
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Section 7: Expert CTA */}
+      <section className="bg-[#0F3D26] py-24">
+        <div className="max-w-[1200px] mx-auto px-8 text-center">
+          <h2 className="text-3xl font-light tracking-tight text-white">Not sure which pump fits your formula?</h2>
+          <p className="mt-4 text-white/60 max-w-md mx-auto">Our packaging engineers typically respond within 24 hours with a tailored recommendation.</p>
+          <Link href="/contact" className="inline-block mt-8 px-8 py-3 border border-white/30 text-white text-sm font-medium hover:bg-white hover:text-[#0F3D26] transition-colors">Speak to an Engineer →</Link>
         </div>
       </section>
     </main>
