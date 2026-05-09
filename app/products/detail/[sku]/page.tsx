@@ -78,7 +78,7 @@ export default async function ProductDetailPage({ params }: Props) {
             {/* Product Image */}
             <div className="w-full lg:w-1/2">
               <div className="aspect-square bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex items-center justify-center p-8 rounded-[4px]">
-                {product.imagePlaceholder?.startsWith('http') ? (
+                {(product.imagePlaceholder?.startsWith('http') || product.imagePlaceholder?.startsWith('/')) ? (
                   <img
                     src={product.imagePlaceholder}
                     alt={product.name}
