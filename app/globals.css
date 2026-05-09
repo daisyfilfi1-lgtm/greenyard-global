@@ -1,0 +1,366 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   GreenYard Design System
+   Custom Properties (Design Tokens)
+   ========================================================================== */
+
+:root {
+  /* --- Colors --- */
+  --color-mint: #00B894;
+  --color-gold: #D4AF37;
+  --color-charcoal: #1A1A1A;
+  --color-gallery: #F5F5F0;
+  --color-mint-tint: #E8F5F1;
+  --color-text: #0D0D0D;
+  --color-text-secondary: #6C757D;
+  --color-border: #DEE2E6;
+  --color-white: #FFFFFF;
+
+  /* --- Typography --- */
+  --font-display-size: 64px;
+  --font-h1-size: 48px;
+  --font-h2-size: 36px;
+  --font-h3-size: 28px;
+  --font-h4-size: 20px;
+  --font-body-size: 16px;
+  --font-small-size: 14px;
+  --font-xs-size: 12px;
+
+  --font-display-line-height: 1.1;
+  --font-h1-line-height: 1.15;
+  --font-h2-line-height: 1.2;
+  --font-h3-line-height: 1.25;
+  --font-body-line-height: 1.6;
+
+  --font-display-weight: 700;
+  --font-heading-weight: 600;
+  --font-body-weight: 400;
+
+  /* --- Spacing --- */
+  --section-padding: 96px;
+  --section-padding-tablet: 64px;
+  --section-padding-mobile: 48px;
+  --component-gap: 48px;
+  --component-gap-tablet: 32px;
+  --component-gap-mobile: 24px;
+  --container-max-width: 1280px;
+  --container-padding: 24px;
+
+  /* --- Borders --- */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.12);
+
+  /* --- Transitions --- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* --- Z-Index Scale --- */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
+
+/* ==========================================================================
+   Tailwind v4 Theme Extension
+   ========================================================================== */
+
+@theme {
+  /* Colors */
+  --color-mint: var(--color-mint);
+  --color-gold: var(--color-gold);
+  --color-charcoal: var(--color-charcoal);
+  --color-gallery: var(--color-gallery);
+  --color-mint-tint: var(--color-mint-tint);
+  --color-text-primary: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-border: var(--color-border);
+
+  /* Typography */
+  --font-family-sans: 'Inter', sans-serif;
+  --font-size-display: var(--font-display-size);
+  --font-size-h1: var(--font-h1-size);
+  --font-size-h2: var(--font-h2-size);
+  --font-size-h3: var(--font-h3-size);
+  --font-size-h4: var(--font-h4-size);
+  --font-size-body: var(--font-body-size);
+  --font-size-small: var(--font-small-size);
+  --font-size-xs: var(--font-xs-size);
+
+  /* Spacing */
+  --spacing-section: var(--section-padding);
+  --spacing-component: var(--component-gap);
+
+  /* Container */
+  --container-max: var(--container-max-width);
+
+  /* Border Radius */
+  --radius-sm: var(--border-radius-sm);
+  --radius-md: var(--border-radius-md);
+  --radius-lg: var(--border-radius-lg);
+  --radius-xl: var(--border-radius-xl);
+  --radius-full: var(--border-radius-full);
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-gallery);
+    color: var(--color-text);
+    font-family: 'Inter', sans-serif;
+    font-size: var(--font-body-size);
+    line-height: var(--font-body-line-height);
+  }
+
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-border);
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--color-mint);
+    outline-offset: 2px;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: var(--color-mint);
+    color: var(--color-white);
+  }
+}
+
+/* ==========================================================================
+   Custom Utility Classes
+   ========================================================================== */
+
+@layer utilities {
+  /* Oversized numbers for statistics */
+  .stat-number {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-mint);
+  }
+
+  .stat-number-gold {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-gold);
+  }
+
+  /* Gold accent utilities */
+  .gold-accent {
+    color: var(--color-gold);
+  }
+
+  .gold-border {
+    border-color: var(--color-gold);
+  }
+
+  .gold-divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-gold);
+    border-radius: 2px;
+  }
+
+  /* Mint accent utilities */
+  .mint-accent {
+    color: var(--color-mint);
+  }
+
+  .mint-bg {
+    background-color: var(--color-mint);
+  }
+
+  /* Section layouts */
+  .section-container {
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+
+  .section-padding {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      padding-top: var(--section-padding-tablet);
+      padding-bottom: var(--section-padding-tablet);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-padding {
+      padding-top: var(--section-padding-mobile);
+      padding-bottom: var(--section-padding-mobile);
+    }
+  }
+
+  .section-dark {
+    background-color: var(--color-charcoal);
+    color: var(--color-gallery);
+  }
+
+  .section-light {
+    background-color: var(--color-gallery);
+  }
+
+  .section-mint-tint {
+    background-color: var(--color-mint-tint);
+  }
+
+  /* Gold badge */
+  .gold-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--color-gold);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-xs-size);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Mint badge */
+  .mint-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background-color: rgba(0, 184, 148, 0.1);
+    color: var(--color-mint);
+    border: 1px solid rgba(0, 184, 148, 0.3);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-xs-size);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Glass effect */
+  .glass-effect {
+    background-color: rgba(245, 245, 240, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-dark {
+    background-color: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Text gradient (premium use only) */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-mint), var(--color-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Focus ring for interactive elements */
+  .focus-ring {
+    transition: box-shadow var(--transition-fast);
+  }
+
+  .focus-ring:focus-visible {
+    box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.4);
+  }
+
+  /* Skip to main content (accessibility) */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 999;
+    padding: 8px 16px;
+    background-color: var(--color-mint);
+    color: var(--color-white);
+    font-weight: 600;
+    transition: top var(--transition-fast);
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Mega menu transition */
+  .mega-menu-enter {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  .mega-menu-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--transition-base), transform var(--transition-base);
+  }
+
+  /* Mobile nav animation */
+  .mobile-nav-link {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: mobileNavFadeIn 0.3s ease forwards;
+  }
+
+  @keyframes mobileNavFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .mobile-nav-link:nth-child(1) { animation-delay: 0.05s; }
+  .mobile-nav-link:nth-child(2) { animation-delay: 0.1s; }
+  .mobile-nav-link:nth-child(3) { animation-delay: 0.15s; }
+  .mobile-nav-link:nth-child(4) { animation-delay: 0.2s; }
+  .mobile-nav-link:nth-child(5) { animation-delay: 0.25s; }
+  .mobile-nav-link:nth-child(6) { animation-delay: 0.3s; }
+  .mobile-nav-link:nth-child(7) { animation-delay: 0.35s; }
+  .mobile-nav-link:nth-child(8) { animation-delay: 0.4s; }
+  .mobile-nav-link:nth-child(9) { animation-delay: 0.45s; }
+  .mobile-nav-link:nth-child(10) { animation-delay: 0.5s; }
+}
