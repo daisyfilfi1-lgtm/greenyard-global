@@ -34,49 +34,59 @@ export default function ProductCard({ product, selected, onToggleCompare, compar
   }
 
   return (
-    <div className="bg-white rounded-lg border border-[#E8E8E0] overflow-hidden hover-lift">
-      {/* Product Image Placeholder */}
+    <div className="bg-white border border-[#DEE2E6] rounded-lg overflow-hidden transition-shadow hover:shadow-md">
+      {/* Product Image */}
       <Link href={`/products/detail/${product.sku}`} className="block">
-        <div className="aspect-[4/3] bg-white flex items-center justify-center p-6 border-b border-[#E8E8E0]">
-          <div className="w-full h-full bg-[#F5F5F0] rounded-md flex flex-col items-center justify-center text-center p-4">
-            <span className="text-[#00B894] font-semibold text-sm">{product.sku}</span>
-            <span className="text-text-secondary text-xs mt-2 line-clamp-2">{product.name}</span>
-          </div>
+        <div className="aspect-[4/3] bg-white flex items-center justify-center p-6 border-b border-[#DEE2E6]">
+          {product.imagePlaceholder?.startsWith('http') ? (
+            <img
+              src={product.imagePlaceholder}
+              alt={product.name}
+              className="w-full h-full object-contain"
+              loading="lazy"
+            />
+          ) : (
+            <div className="w-full h-full bg-[#F5F5F0] rounded flex flex-col items-center justify-center text-center p-4">
+              <span className="text-[#00B894] font-medium text-sm">{product.sku}</span>
+              <span className="text-[#6C757D] text-xs mt-2 line-clamp-2">{product.name}</span>
+            </div>
+          )}
         </div>
       </Link>
 
-      {/* Card Content */}
       <div className="p-5">
         {/* Series Badge */}
         <div className="flex items-center gap-2 mb-2">
           {product.monoMaterial && (
-            <span className="gold-badge text-[10px]">Mono Material</span>
+            <span className="text-[10px] text-[#D4AF37] uppercase tracking-wider font-medium">{product.sku}</span>
           )}
-          {product.sustainable && !product.monoMaterial && (
-            <span className="mint-badge text-[10px]">Sustainable</span>
+          {!product.monoMaterial && product.sustainable && (
+            <span className="text-[10px] text-[#00B894] uppercase tracking-wider font-medium">{product.sku}</span>
+          )}
+          {!product.monoMaterial && !product.sustainable && (
+            <span className="text-[10px] text-[#6C757D] uppercase tracking-wider">{product.sku}</span>
           )}
         </div>
 
-        {/* SKU + Name */}
+        {/* Name */}
         <Link href={`/products/detail/${product.sku}`} className="block group">
-          <h3 className="font-semibold text-[#D4AF37] text-sm">{product.sku}</h3>
-          <p className="text-text-primary font-medium text-sm mt-0.5 group-hover:text-[#00B894] transition-colors">
+          <h3 className="font-medium text-[#0D0D0D] text-sm mt-0.5 group-hover:text-[#00B894] transition-colors">
             {product.name}
-          </p>
+          </h3>
         </Link>
 
         {/* Specs */}
-        <div className="mt-3 space-y-1.5 text-xs text-text-secondary">
+        <div className="mt-3 space-y-1.5 text-xs text-[#6C757D]">
           <div className="flex items-center gap-2">
-            <span className="font-medium text-text-primary">Output:</span>
+            <span className="font-medium text-[#0D0D0D]">Output:</span>
             <span>{product.dischargeRate || '—'}</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-medium text-text-primary">Closure:</span>
+            <span className="font-medium text-[#0D0D0D]">Closure:</span>
             <span>{closureSummary}</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-medium text-text-primary">Material:</span>
+            <span className="font-medium text-[#0D0D0D]">Material:</span>
             <span>{product.material.join(', ')}</span>
           </div>
         </div>
@@ -85,7 +95,7 @@ export default function ProductCard({ product, selected, onToggleCompare, compar
         <div className="mt-4 flex items-center gap-3">
           <Link
             href={`/products/detail/${product.sku}`}
-            className="text-xs font-semibold text-[#00B894] hover:text-[#009B7A] transition-colors"
+            className="text-xs font-medium text-[#00B894] hover:text-[#009B7A] transition-colors"
           >
             View Details &rarr;
           </Link>
@@ -94,12 +104,12 @@ export default function ProductCard({ product, selected, onToggleCompare, compar
             <button
               onClick={() => onToggleCompare(product.sku)}
               disabled={!selected && compareDisabled}
-              className={`text-xs font-medium transition-colors ml-auto ${
+              className={`text-xs transition-colors ml-auto ${
                 selected
-                  ? 'text-[#00B894]'
+                  ? 'text-[#00B894] font-medium'
                   : compareDisabled
-                    ? 'text-text-secondary cursor-not-allowed opacity-50'
-                    : 'text-text-secondary hover:text-[#00B894]'
+                    ? 'text-[#6C757D] cursor-not-allowed opacity-50'
+                    : 'text-[#6C757D] hover:text-[#00B894]'
               }`}
             >
               {selected ? '✓ Selected' : 'Compare'}

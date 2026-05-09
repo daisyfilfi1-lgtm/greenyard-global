@@ -29,12 +29,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-/** Map category route slug to matching series slugs */
 function getSeriesForSlug(slug: string) {
   const directMatch = Object.values(SERIES_INFO).find(s => s.categoryRoute === `/products/${slug}`);
   if (directMatch) return directMatch;
 
-  // Map slug patterns to series
   const slugMappings: Record<string, string[]> = {
     'fully-recyclable': ['fully-recyclable'],
     'mist-sprayers': ['mist-sprayer', 'fine-mist'],
@@ -75,7 +73,6 @@ export default async function CategoryPage({ params }: Props) {
   const series = getSeriesForSlug(slug);
   const categoryProducts = getProductsBySlug(slug);
 
-  // Collect all series names in this category
   const slugMappings: Record<string, string[]> = {
     'fully-recyclable': ['fully-recyclable'],
     'mist-sprayers': ['mist-sprayer', 'fine-mist'],
@@ -92,28 +89,27 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <main>
       {/* Category Header */}
-      <section className="section-padding section-light">
+      <section className="section-padding bg-[#F5F5F0]">
         <div className="section-container">
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm text-text-secondary mb-6">
+          <nav className="flex items-center gap-2 text-sm text-[#6C757D] mb-6">
             <a href="/" className="hover:text-[#00B894] transition-colors">Home</a>
             <span>/</span>
             <a href="/products" className="hover:text-[#00B894] transition-colors">Products</a>
             <span>/</span>
-            <span className="text-text-primary">{series?.name || slug}</span>
+            <span className="text-[#0D0D0D]">{series?.name || slug}</span>
           </nav>
 
-          <h1 className="text-h2 md:text-h1 font-heading text-text-primary">
+          <h1 className="text-3xl md:text-4xl font-medium text-[#0D0D0D]">
             {series?.name || 'Products'}
           </h1>
           {series && (
-            <p className="text-text-secondary mt-3 max-w-2xl">{series.description}</p>
+            <p className="text-[#6C757D] mt-3 max-w-2xl">{series.description}</p>
           )}
 
           {includedSeriesNames.length > 1 && (
             <div className="flex flex-wrap gap-2 mt-4">
               {includedSeriesNames.map(name => (
-                <span key={name} className="text-xs text-text-secondary bg-white px-3 py-1.5 rounded-full border border-[#DEE2E6]">
+                <span key={name} className="text-xs text-[#6C757D] bg-white px-3 py-1.5 border border-[#DEE2E6]">
                   {name}
                 </span>
               ))}
@@ -122,7 +118,6 @@ export default async function CategoryPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Product Listing with Filters */}
       <CategoryPageClient
         initialProducts={categoryProducts}
         seriesName={series?.name || 'Products'}

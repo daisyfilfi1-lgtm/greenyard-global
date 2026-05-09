@@ -47,40 +47,36 @@ export default function CategoryPageClient({ initialProducts, seriesName }: Cate
   }, [initialProducts, filters]);
 
   return (
-    <section className="section-padding section-light">
+    <section className="section-padding bg-[#F5F5F0]">
       <div className="section-container">
-        {/* Filter Bar */}
         <FilterBar
           products={initialProducts}
           onFilterChange={setFilters}
         />
 
-        {/* Results Count */}
         <div className="mt-6 mb-4 flex items-center justify-between">
-          <p className="text-sm text-text-secondary">
-            Showing <span className="font-semibold text-text-primary">{filteredProducts.length}</span>{' '}
+          <p className="text-sm text-[#6C757D]">
+            Showing <span className="font-medium text-[#0D0D0D]">{filteredProducts.length}</span>{' '}
             of {initialProducts.length} products
           </p>
         </div>
 
-        {/* Product Grid */}
         <ProductGrid
           products={filteredProducts}
           emptyMessage="No products match your current filters. Try adjusting your selection."
         />
 
-        {/* Bulk Inquiry CTA */}
-        <div className="mt-12 p-6 bg-[#E8F5F1] rounded-lg border border-[#00B894]/20">
+        <div className="mt-12 p-6 bg-[#E8F5F1] border border-[#00B894]/20 rounded-lg">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <h3 className="text-lg font-semibold text-text-primary">Need Multiple SKUs?</h3>
-              <p className="text-sm text-text-secondary mt-1">
+              <h3 className="text-base font-medium text-[#0D0D0D]">Need Multiple SKUs?</h3>
+              <p className="text-sm text-[#6C757D] mt-1">
                 Send a consolidated RFQ for 5+ products. Get volume pricing and lead times in one response.
               </p>
             </div>
             <a
               href={`mailto:info@cngreenyard.com?subject=RFQ: Bulk Inquiry - ${seriesName}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00B894] text-white font-semibold text-sm rounded-md hover:bg-[#009B7A] transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00B894] text-white font-medium text-sm hover:bg-[#009B7A] transition-colors whitespace-nowrap"
             >
               Send Bulk RFQ &rarr;
             </a>

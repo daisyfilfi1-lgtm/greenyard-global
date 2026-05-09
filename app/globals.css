@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   GreenYard Design System
-   Custom Properties (Design Tokens)
+   GreenYard Design System — Industrial B2B
+   "Precision meets Organic"
    ========================================================================== */
 
 :root {
@@ -20,8 +20,8 @@
   /* --- Typography --- */
   --font-display-size: 64px;
   --font-h1-size: 48px;
-  --font-h2-size: 36px;
-  --font-h3-size: 28px;
+  --font-h2-size: 32px;
+  --font-h3-size: 24px;
   --font-h4-size: 20px;
   --font-body-size: 16px;
   --font-small-size: 14px;
@@ -33,8 +33,8 @@
   --font-h3-line-height: 1.25;
   --font-body-line-height: 1.6;
 
-  --font-display-weight: 700;
-  --font-heading-weight: 600;
+  --font-display-weight: 300;
+  --font-heading-weight: 500;
   --font-body-weight: 400;
 
   /* --- Spacing --- */
@@ -78,7 +78,6 @@
    ========================================================================== */
 
 @theme {
-  /* Colors */
   --color-mint: var(--color-mint);
   --color-gold: var(--color-gold);
   --color-charcoal: var(--color-charcoal);
@@ -88,7 +87,6 @@
   --color-text-secondary: var(--color-text-secondary);
   --color-border: var(--color-border);
 
-  /* Typography */
   --font-family-sans: 'Inter', sans-serif;
   --font-size-display: var(--font-display-size);
   --font-size-h1: var(--font-h1-size);
@@ -99,14 +97,11 @@
   --font-size-small: var(--font-small-size);
   --font-size-xs: var(--font-xs-size);
 
-  /* Spacing */
   --spacing-section: var(--section-padding);
   --spacing-component: var(--component-gap);
 
-  /* Container */
   --container-max: var(--container-max-width);
 
-  /* Border Radius */
   --radius-sm: var(--border-radius-sm);
   --radius-md: var(--border-radius-md);
   --radius-lg: var(--border-radius-lg);
@@ -139,13 +134,11 @@
     border-color: var(--color-border);
   }
 
-  /* Focus styles for accessibility */
   :focus-visible {
     outline: 2px solid var(--color-mint);
     outline-offset: 2px;
   }
 
-  /* Selection color */
   ::selection {
     background-color: var(--color-mint);
     color: var(--color-white);
@@ -160,32 +153,27 @@
   /* Oversized numbers for statistics */
   .stat-number {
     font-size: clamp(3rem, 8vw, 5rem);
-    font-weight: 700;
+    font-weight: 300;
     line-height: 1;
     color: var(--color-mint);
   }
 
   .stat-number-gold {
     font-size: clamp(3rem, 8vw, 5rem);
-    font-weight: 700;
+    font-weight: 300;
     line-height: 1;
     color: var(--color-gold);
   }
 
-  /* Gold accent utilities */
+  /* Gold accent — thin lines and small accents only */
   .gold-accent {
     color: var(--color-gold);
   }
 
-  .gold-border {
-    border-color: var(--color-gold);
-  }
-
   .gold-divider {
     width: 60px;
-    height: 3px;
+    height: 1px;
     background-color: var(--color-gold);
-    border-radius: 2px;
   }
 
   /* Mint accent utilities */
@@ -236,78 +224,6 @@
 
   .section-mint-tint {
     background-color: var(--color-mint-tint);
-  }
-
-  /* Gold badge */
-  .gold-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 12px;
-    background-color: rgba(212, 175, 55, 0.1);
-    color: var(--color-gold);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: var(--border-radius-full);
-    font-size: var(--font-xs-size);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  /* Mint badge */
-  .mint-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 12px;
-    background-color: rgba(0, 184, 148, 0.1);
-    color: var(--color-mint);
-    border: 1px solid rgba(0, 184, 148, 0.3);
-    border-radius: var(--border-radius-full);
-    font-size: var(--font-xs-size);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  /* Glass effect */
-  .glass-effect {
-    background-color: rgba(245, 245, 240, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-
-  .glass-dark {
-    background-color: rgba(26, 26, 26, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-
-  /* Text gradient (premium use only) */
-  .text-gradient {
-    background: linear-gradient(135deg, var(--color-mint), var(--color-gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Hover lift effect */
-  .hover-lift {
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  /* Focus ring for interactive elements */
-  .focus-ring {
-    transition: box-shadow var(--transition-fast);
-  }
-
-  .focus-ring:focus-visible {
-    box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.4);
   }
 
   /* Skip to main content (accessibility) */
@@ -363,4 +279,24 @@
   .mobile-nav-link:nth-child(8) { animation-delay: 0.4s; }
   .mobile-nav-link:nth-child(9) { animation-delay: 0.45s; }
   .mobile-nav-link:nth-child(10) { animation-delay: 0.5s; }
+
+  /* Gold thin underline accent (for cards, sections) */
+  .gold-underline {
+    display: inline-block;
+    border-bottom: 1px solid var(--color-gold);
+    padding-bottom: 2px;
+  }
+
+  /* Subtle card style */
+  .card-border {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    background-color: var(--color-white);
+  }
+
+  .card-border-sm {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-white);
+  }
 }
