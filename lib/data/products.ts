@@ -45,7 +45,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-604A', 'GY-606A', 'GY-608A1'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562746342.jpg',
   },
   {
     sku: 'GY-606A',
@@ -67,7 +67,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-606B', 'GY-608A1', 'GY-604A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562747699.jpg',
   },
   {
     sku: 'GY-606B',
@@ -89,7 +89,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-606A', 'GY-607A', 'GY-608A1'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562754081.jpg',
   },
   {
     sku: 'GY-607A',
@@ -111,7 +111,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-608A1', 'GY-606A', 'GY-607B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562751228.jpg',
   },
   {
     sku: 'GY-608A1',
@@ -138,7 +138,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-608P-A1', 'GY-608A-AL', 'GY-608B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-608A-AL',
@@ -159,7 +159,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-608A1', 'GY-608B', 'GY-608P-A1'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562752815.jpg',
   },
   {
     sku: 'GY-608B',
@@ -181,7 +181,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-608A1', 'GY-608A-AL', 'GY-607A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562751456.jpg',
   },
 
   // ===== PERFUME ATOMIZER SERIES =====
@@ -204,7 +204,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-609C', 'GY-609D', 'GY-609G'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562755302.jpg',
   },
   {
     sku: 'GY-609C',
@@ -225,7 +225,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-609A', 'GY-609D', 'GY-609G'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562760273.jpg',
   },
   {
     sku: 'GY-609D',
@@ -246,7 +246,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-609A', 'GY-609C', 'GY-609G'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562758531.jpg',
   },
   {
     sku: 'GY-609G',
@@ -267,7 +267,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-609A', 'GY-609C', 'GY-609D'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562754218.jpg',
   },
 
   // ===== CRIMP PUMP SERIES =====
@@ -290,7 +290,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum Ferrule' },
     ],
     relatedSkus: ['GY-401B', 'GY-401C', 'GY-402A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562757856.jpg',
   },
   {
     sku: 'GY-401B',
@@ -311,7 +311,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum Ferrule' },
     ],
     relatedSkus: ['GY-401A', 'GY-401C', 'GY-402B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562760777.jpg',
   },
   {
     sku: 'GY-401C',
@@ -332,7 +332,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum Ferrule' },
     ],
     relatedSkus: ['GY-401A', 'GY-401B', 'GY-402C'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562756993.jpg',
   },
   {
     sku: 'GY-402A',
@@ -353,7 +353,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum Ferrule' },
     ],
     relatedSkus: ['GY-402B', 'GY-402C', 'GY-401A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562763525.jpg',
   },
   {
     sku: 'GY-402B',
@@ -374,7 +374,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum Ferrule' },
     ],
     relatedSkus: ['GY-402A', 'GY-402C', 'GY-401B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562760126.jpg',
   },
   {
     sku: 'GY-402C',
@@ -395,7 +395,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum Ferrule' },
     ],
     relatedSkus: ['GY-402A', 'GY-402B', 'GY-401C'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562761279.jpg',
   },
   {
     sku: 'GY-403A',
@@ -416,7 +416,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum Ferrule' },
     ],
     relatedSkus: ['GY-401C', 'GY-402C'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562757201.jpg',
   },
 
   // ===== TREATMENT PUMP SERIES =====
@@ -461,7 +461,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-805P', 'GY-801A2', 'GY-801A3'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-801A2',
@@ -482,7 +482,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-801A1', 'GY-801A3', 'GY-801B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562838554.jpg',
   },
   {
     sku: 'GY-801A3',
@@ -503,7 +503,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-801A1', 'GY-801A2', 'GY-801F'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562836642.jpg',
   },
   {
     sku: 'GY-801B',
@@ -525,7 +525,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-801A1', 'GY-801F', 'GY-802A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562831088.jpg',
   },
   {
     sku: 'GY-801F',
@@ -546,7 +546,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-801A1', 'GY-801A2', 'GY-802B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562835314.jpg',
   },
   {
     sku: 'GY-802A',
@@ -567,7 +567,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-801B', 'GY-802B', 'GY-802C'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834926.jpg',
   },
   {
     sku: 'GY-802B',
@@ -589,7 +589,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-802A', 'GY-802C', 'GY-801B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562835731.jpg',
   },
   {
     sku: 'GY-802C',
@@ -610,7 +610,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-802A', 'GY-802B', 'GY-801A1'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562835228.jpg',
   },
 
   // ===== LOTION PUMP SERIES =====
@@ -633,7 +633,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-303', 'GY-302B1', 'GY-305'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562898980.jpg',
   },
   {
     sku: 'GY-303',
@@ -655,7 +655,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-302', 'GY-305', 'GY-302B1'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562901143.jpg',
   },
   {
     sku: 'GY-302B1',
@@ -678,7 +678,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Ribbed-1', label: 'Ribbed' },
     ],
     relatedSkus: ['GY-303', 'GY-320', 'GY-305'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-305',
@@ -701,7 +701,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-302B1', 'GY-306', 'GY-303'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562915295.jpg',
   },
   {
     sku: 'GY-306',
@@ -722,7 +722,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-305', 'GY-302B1', 'GY-307'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562912830.jpg',
   },
   {
     sku: 'GY-307',
@@ -743,7 +743,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-306', 'GY-302B1'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562917470.jpg',
   },
 
   // ===== TRIGGER SPRAYER SERIES =====
@@ -765,7 +765,7 @@ export const products: Product[] = [
       { type: 'nozzle', code: 'Plastic foam', label: 'Foam' },
     ],
     relatedSkus: ['GY-102A', 'GY-103A', 'GY-104'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190722/1563763574.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562923473.jpg',
   },
   {
     sku: 'GY-102A',
@@ -785,7 +785,7 @@ export const products: Product[] = [
       { type: 'nozzle', code: 'Plastic foam', label: 'Foam' },
     ],
     relatedSkus: ['GY-101', 'GY-103A', 'GY-104'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190722/1563763574.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562922675.jpg',
   },
   {
     sku: 'GY-103A',
@@ -805,7 +805,7 @@ export const products: Product[] = [
       { type: 'nozzle', code: 'Plastic foam', label: 'Foam' },
     ],
     relatedSkus: ['GY-102A', 'GY-101', 'GY-104'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190722/1563763574.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562918769.jpg',
   },
   {
     sku: 'GY-104',
@@ -824,7 +824,7 @@ export const products: Product[] = [
       { type: 'nozzle', code: 'Spray/spray', label: 'Fine Spray' },
     ],
     relatedSkus: ['GY-103A', 'GY-102A', 'GY-110A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190722/1563763574.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562924918.jpg',
   },
   {
     sku: 'GY-110A',
@@ -843,7 +843,7 @@ export const products: Product[] = [
       { type: 'nozzle', code: 'Spray/spray', label: 'Adjustable' },
     ],
     relatedSkus: ['GY-101', 'GY-104', 'GY-102A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190722/1563763574.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562916255.jpg',
   },
 
   // ===== DROPPER SERIES =====
@@ -863,7 +863,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-901A-PP', 'GY-901B-ABS', 'GY-902A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220114/1642167702.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-901A-PP',
@@ -882,7 +882,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Ribbed', label: 'Ribbed PP' },
     ],
     relatedSkus: ['GY-901A-AL', 'GY-901B-ABS', 'GY-902A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220114/1642167702.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-901B-ABS',
@@ -900,7 +900,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth ABS' },
     ],
     relatedSkus: ['GY-901A-PP', 'GY-901A-AL', 'GY-903A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220114/1642167702.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-902A',
@@ -918,7 +918,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-901A-PP', 'GY-903A', 'GY-901A-AL'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220114/1642167702.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562918977.jpg',
   },
   {
     sku: 'GY-903A',
@@ -936,7 +936,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-902A', 'GY-901A-PP', 'GY-901B-ABS'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220114/1642167702.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562909365.jpg',
   },
 
   // ===== NAIL PUMP SERIES =====
@@ -959,7 +959,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-702A', 'GY-705A', 'GY-705B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562912130.jpg',
   },
   {
     sku: 'GY-702A',
@@ -980,7 +980,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-701A', 'GY-705A', 'GY-705B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562910297.jpg',
   },
   {
     sku: 'GY-705A',
@@ -1001,7 +1001,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-701A', 'GY-702A', 'GY-705B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562913650.jpg',
   },
   {
     sku: 'GY-705B',
@@ -1022,7 +1022,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-705A', 'GY-702A', 'GY-701A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562915498.jpg',
   },
 
   // ===== CAPS SERIES =====
@@ -1043,7 +1043,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Ribbed-1', label: 'Ribbed' },
     ],
     relatedSkus: ['GY-202A-AL', 'GY-201A', 'GY-201C'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562917157.jpg',
   },
   {
     sku: 'GY-202A-AL',
@@ -1061,7 +1061,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-202A', 'GY-201D', 'GY-201F'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562917110.jpg',
   },
   {
     sku: 'GY-201A',
@@ -1079,7 +1079,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-201C', 'GY-201D', 'GY-202A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562920506.jpg',
   },
   {
     sku: 'GY-201C',
@@ -1097,7 +1097,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Ribbed-1', label: 'Ribbed' },
     ],
     relatedSkus: ['GY-201A', 'GY-201D', 'GY-201F'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562914917.jpg',
   },
   {
     sku: 'GY-201D',
@@ -1115,7 +1115,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Alu', label: 'Aluminum' },
     ],
     relatedSkus: ['GY-201A', 'GY-201C', 'GY-201F'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562912899.jpg',
   },
   {
     sku: 'GY-201F',
@@ -1133,7 +1133,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-201A', 'GY-201C', 'GY-201D'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562909773.jpg',
   },
   {
     sku: 'GY-204A',
@@ -1151,7 +1151,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-204B', 'GY-201A', 'GY-202A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562917077.jpg',
   },
   {
     sku: 'GY-204B',
@@ -1169,7 +1169,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Ribbed-1', label: 'Ribbed' },
     ],
     relatedSkus: ['GY-204A', 'GY-201C', 'GY-202A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562913346.jpg',
   },
 
   // ===== MINI TRIGGER SERIES =====
@@ -1190,7 +1190,7 @@ export const products: Product[] = [
       { type: 'nozzle', code: 'Spray/spray', label: 'Spray' },
     ],
     relatedSkus: ['GY-109B', 'GY-109C', 'GY-104'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190722/1563763574.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562916731.jpg',
   },
   {
     sku: 'GY-109B',
@@ -1209,7 +1209,7 @@ export const products: Product[] = [
       { type: 'nozzle', code: 'Spray/spray', label: 'Spray' },
     ],
     relatedSkus: ['GY-109A', 'GY-109C', 'GY-110A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190722/1563763574.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562918942.jpg',
   },
   {
     sku: 'GY-109C',
@@ -1228,7 +1228,7 @@ export const products: Product[] = [
       { type: 'nozzle', code: 'Spray/spray', label: 'Spray' },
     ],
     relatedSkus: ['GY-109A', 'GY-109B', 'GY-104'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190722/1563763574.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190712/1562925676.jpg',
   },
 
   // ===== FULLY RECYCLABLE SERIES =====
@@ -1252,7 +1252,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-805P', 'GY-320', 'GY-608A1'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-805P',
@@ -1273,7 +1273,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-608P-A1', 'GY-320', 'GY-801A1'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-320',
@@ -1294,7 +1294,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-302B1', 'GY-805P', 'GY-608P-A1'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: '',
   },
 
   // ===== DEODORANT STICK SERIES =====
@@ -1314,7 +1314,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'Base', label: 'Twist Base' },
     ],
     relatedSkus: ['GY-DS01B', 'GY-DS05A-B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20241204/1733283944.jpg',
   },
   {
     sku: 'GY-DS01B',
@@ -1332,7 +1332,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'Base', label: 'Twist Base' },
     ],
     relatedSkus: ['GY-DS01A', 'GY-DS05A-B', 'GY-DS06A-B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20241204/1733288663.jpg',
   },
   {
     sku: 'GY-DS05A-B',
@@ -1350,7 +1350,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'Base', label: 'Twist Base' },
     ],
     relatedSkus: ['GY-DS01B', 'GY-DS06A-B', 'GY-DS07'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-DS06A-B',
@@ -1368,7 +1368,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'Base', label: 'Twist Base' },
     ],
     relatedSkus: ['GY-DS05A-B', 'GY-DS07', 'GY-DS08'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-DS07',
@@ -1386,7 +1386,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'Base', label: 'Twist Base' },
     ],
     relatedSkus: ['GY-DS06A-B', 'GY-DS08', 'GY-DS09'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20241204/1733287235.jpg',
   },
   {
     sku: 'GY-DS08',
@@ -1404,7 +1404,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'Base', label: 'Twist Base' },
     ],
     relatedSkus: ['GY-DS07', 'GY-DS09', 'GY-DS06A-B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20241204/1733289265.jpg',
   },
   {
     sku: 'GY-DS09',
@@ -1422,7 +1422,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'Base', label: 'Twist Base' },
     ],
     relatedSkus: ['GY-DS07', 'GY-DS08', 'GY-DS10A-B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20241204/1733282535.jpg',
   },
   {
     sku: 'GY-DS10A-B',
@@ -1440,7 +1440,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'Base', label: 'Twist Base' },
     ],
     relatedSkus: ['GY-DS06A-B', 'GY-DS09', 'GY-DS05A-B'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
 
   // ===== existing legacy SKUs kept for backward compatibility =====
@@ -1462,7 +1462,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-608A1', 'GY-609A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190710/1562742431.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-901A1',
@@ -1481,7 +1481,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Ribbed', label: 'Ribbed' },
     ],
     relatedSkus: ['GY-901A-PP', 'GY-902A', 'GY-901A-AL'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220114/1642167702.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-2501A',
@@ -1499,7 +1499,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'A1', label: 'Standard Pump' },
     ],
     relatedSkus: ['GY-902A', 'GY-805P'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
 
   // ===== FOAM PUMP SERIES =====
@@ -1521,7 +1521,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-FP02', 'GY-FP03'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-FP02',
@@ -1541,7 +1541,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-FP01', 'GY-FP03'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-FP03',
@@ -1561,7 +1561,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth' },
     ],
     relatedSkus: ['GY-FP01', 'GY-FP02'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
 
   // ===== CREAM JAR SERIES =====
@@ -1581,7 +1581,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Screw', label: 'Screw Cap' },
     ],
     relatedSkus: ['GY-CJ02', 'GY-CJ03'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-CJ02',
@@ -1599,7 +1599,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Screw', label: 'Screw Cap' },
     ],
     relatedSkus: ['GY-CJ01', 'GY-CJ03', 'GY-CJ04'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-CJ03',
@@ -1617,7 +1617,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Screw', label: 'Screw Cap' },
     ],
     relatedSkus: ['GY-CJ02', 'GY-CJ04', 'GY-CJ05'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-CJ04',
@@ -1635,7 +1635,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Screw', label: 'Screw Cap' },
     ],
     relatedSkus: ['GY-CJ03', 'GY-CJ05'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-CJ05',
@@ -1653,7 +1653,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Screw', label: 'Screw Cap' },
     ],
     relatedSkus: ['GY-CJ03', 'GY-CJ04'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
 
   // ===== AIRLESS BOTTLE SERIES =====
@@ -1673,7 +1673,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'A1', label: 'Standard Pump' },
     ],
     relatedSkus: ['GY-2501A', 'GY-2503A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-2503A',
@@ -1691,7 +1691,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'A1', label: 'Standard Pump' },
     ],
     relatedSkus: ['GY-2501A', 'GY-2502A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-2504A',
@@ -1709,7 +1709,7 @@ export const products: Product[] = [
       { type: 'actuator', code: 'A1', label: 'Standard Pump' },
     ],
     relatedSkus: ['GY-2503A', 'GY-2501A'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20190711/1562834296.jpg',
+    imagePlaceholder: '',
   },
 
   // ===== PLASTIC BOTTLE SET SERIES =====
@@ -1729,7 +1729,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth Cap' },
     ],
     relatedSkus: ['GY-PB02', 'GY-PB03', 'GY-302B1'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-PB02',
@@ -1747,7 +1747,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth Cap' },
     ],
     relatedSkus: ['GY-PB01', 'GY-PB03', 'GY-303'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: '',
   },
   {
     sku: 'GY-PB03',
@@ -1765,7 +1765,7 @@ export const products: Product[] = [
       { type: 'closure', code: 'Smooth', label: 'Smooth Cap' },
     ],
     relatedSkus: ['GY-PB01', 'GY-PB02', 'GY-306'],
-    imagePlaceholder: 'https://www.cngreenyard.cn/uploads/image/20220419/1650356418.jpg',
+    imagePlaceholder: '',
   },
 ];
 

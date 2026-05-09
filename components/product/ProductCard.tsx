@@ -44,6 +44,7 @@ export default function ProductCard({ product, selected, onToggleCompare, compar
               alt={product.name}
               className="w-full h-full object-contain"
               loading="lazy"
+              crossOrigin="anonymous"
             />
           ) : (
             <div className="w-full h-full bg-[#F5F5F0] rounded flex flex-col items-center justify-center text-center p-4">
