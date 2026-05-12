@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sparkles, Building2, Globe, ShieldCheck, ArrowRight } from 'lucide-react';
-import { SITE_TAGLINE, BUYER_SEGMENTS, TRUST_STATS } from '@/lib/constants';
+import { BUYER_SEGMENTS, TRUST_STATS } from '@/lib/constants';
 import AnimatedCounter from '@/components/home/AnimatedCounter';
+import { useI18n } from '@/lib/i18n';
 
 // ---------------------------------------------------------------------------
 // Scroll reveal hook
@@ -37,31 +38,52 @@ function CircularProgress({ value, size = 80 }: { value: number; size?: number }
   const strokeWidth = 4;
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (value / 100) * circumference;
+  const [animated, setAnimated] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimated(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const offset = animated ? circumference - (value / 100) * circumference : circumference;
 
   return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="transform -rotate-90">
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        fill="none"
-        stroke="#EAECEB"
-        strokeWidth={strokeWidth}
-      />
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        fill="none"
-        stroke="#00B894"
-        strokeWidth={strokeWidth}
-        strokeDasharray={circumference}
-        strokeDashoffset={offset}
-        strokeLinecap="round"
-        className="transition-all duration-1000"
-      />
-    </svg>
+    <div ref={ref}>
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="transform -rotate-90">
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke="#EAECEB"
+          strokeWidth={strokeWidth}
+        />
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke="#00B894"
+          strokeWidth={strokeWidth}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          strokeLinecap="round"
+          className="transition-all duration-1000 ease-out"
+        />
+      </svg>
+    </div>
   );
 }
 
@@ -69,6 +91,7 @@ function CircularProgress({ value, size = 80 }: { value: number; size?: number }
 // 1. Hero — 80vh, background image with overlay
 // ---------------------------------------------------------------------------
 function HeroSection() {
+  const { t } = useI18n();
   return (
     <section className="relative min-h-[80vh] flex items-center bg-[#1A1A1A] overflow-hidden">
       {/* Background image with dark overlay */}
@@ -86,24 +109,28 @@ function HeroSection() {
       <div className="relative z-10 section-container w-full py-24">
         <div className="max-w-3xl">
           <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1.1] text-white tracking-tight">
-            Packaging Solutions Defining{' '}
-            <span className="text-[#00B894]">Premium Quality</span> and Sustainability
+            {t.hero.title}
+            <span className="text-[#00B894]">{t.hero.titleHighlight}</span>
+            {t.hero.titleEnd}
           </h1>
 
           <p className="mt-6 text-base md:text-lg text-[#d1d1d1] max-w-xl leading-relaxed">
-            Engineering thoughtful packaging for global brands
+            {t.hero.subtitle}
           </p>
 
           <p className="mt-2 text-sm text-[#a0a0a0] max-w-xl">
-            Sustainable &middot; Compliant &middot; Luxury Dispensing Systems
+            {t.hero.tag}
           </p>
 
-          <div className="flex gap-4 mt-8 flex-wrap">
+          <div className="flex gap-3 mt-8 flex-wrap">
             {['ISO 15378', 'FDA', 'REACH', 'RoHS', 'Prop 65'].map((cert) => (
               <span
                 key={cert}
-                className="text-[11px] text-[#a0a0a0] uppercase tracking-[0.12em] border border-white/15 px-3 py-1.5"
+                className="inline-flex items-center gap-1.5 text-[11px] text-[#d1d1d1] uppercase tracking-[0.1em] bg-white/10 backdrop-blur-sm border border-white/20 px-3.5 py-1.5 rounded-[6px] font-medium"
               >
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B894" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
                 {cert}
               </span>
             ))}
@@ -114,7 +141,7 @@ function HeroSection() {
               href="/products"
               className="inline-flex items-center justify-center px-8 py-3.5 bg-[#00B894] text-white font-medium hover:bg-[#00A37E] transition-all duration-300 hover:translate-y-[-1px] text-sm tracking-wide rounded-[4px]"
             >
-              Find Your Solution
+              {t.hero.cta}
               <ArrowRight size={16} className="ml-2" />
             </Link>
           </div>
@@ -163,16 +190,16 @@ function SegmentCard({
 }
 
 function ClientIdentityCards() {
+  const { t } = useI18n();
   return (
     <section className="bg-[#F5F7F6]">
       <div className="section-container section-padding">
         <div className="reveal">
           <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-semibold text-[#1A1A1A] mb-4">
-            Who We Serve
+            {t.whoWeServe.title}
           </h2>
           <p className="text-[#333333] max-w-xl mb-12 leading-relaxed">
-            From indie launches to global pharmaceutical production — we tailor our packaging
-            solutions to your business model.
+            {t.whoWeServe.description}
           </p>
         </div>
 
@@ -211,10 +238,10 @@ function CoreStrengths() {
 
             <div className="flex flex-col items-center text-center">
               <div className="w-24 h-24 rounded-full border-4 border-[#EAECEB] flex items-center justify-center">
-                <span className="text-[28px] md:text-[42px] font-bold text-[#00B894]">500万+</span>
+                <span className="text-[28px] md:text-[42px] font-bold text-[#00B894]">5M+</span>
               </div>
               <div className="mt-4">
-                <div className="text-[32px] md:text-[42px] font-bold text-[#00B894] leading-none">500万+</div>
+                <div className="text-[32px] md:text-[42px] font-bold text-[#00B894] leading-none">5M+</div>
                 <p className="text-[#333333] text-sm mt-1.5">Monthly Production Capacity</p>
               </div>
             </div>
@@ -313,15 +340,16 @@ function CaseStudyCard({
 }
 
 function CaseStudies() {
+  const { t } = useI18n();
   return (
     <section className="bg-[#F5F7F6]">
       <div className="section-container section-padding">
         <div className="reveal">
           <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-semibold text-[#1A1A1A] mb-4">
-            In the Market
+            {t.caseStudies.title}
           </h2>
           <p className="text-[#333333] max-w-xl mb-12 leading-relaxed">
-            From indie launches to global scale-ups — real stories from our brand partners.
+            {t.caseStudies.description}
           </p>
         </div>
 
@@ -339,6 +367,7 @@ function CaseStudies() {
 // 5. Sustainability — image left, points right
 // ---------------------------------------------------------------------------
 function Sustainability() {
+  const { t } = useI18n();
   return (
     <section className="bg-[#1A1A1A] text-white">
       <div className="section-container section-padding">
@@ -354,19 +383,13 @@ function Sustainability() {
           </div>
           <div>
             <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-semibold leading-tight mb-6">
-              Packaging that performs.<br />Planet that persists.
+              {t.sustainability.title}<br />{t.sustainability.titleBreak}
             </h2>
             <p className="text-[#757575] leading-relaxed mb-6">
-              Our <strong className="text-white">Mono Pump</strong> is a fully recyclable,
-              all-plastic pump that processes in standard PE recycling streams. No metal parts. No
-              separation required. Just recycle.
+              {t.sustainability.description}
             </p>
             <ul className="space-y-3 mb-8">
-              {[
-                'Mono-material all-plastic pump — recyclable in standard PE stream',
-                'PCR (Post-Consumer Recycled) material options up to 50%',
-                'Global compliance: REACH, RoHS, FDA, California Prop 65',
-              ].map((item) => (
+              {t.sustainability.points.map((item: string) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-[#757575]">
                   <span className="text-[#00B894] mt-0.5 flex-shrink-0">&#10003;</span>
                   {item}
@@ -374,10 +397,10 @@ function Sustainability() {
               ))}
             </ul>
             <Link
-              href="/sustainability"
+              href="/about/sustainability"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#00B894] text-white font-medium text-sm hover:bg-[#00A37E] transition-all duration-300 rounded-[4px]"
             >
-              Explore Sustainability &rarr;
+              {t.sustainability.cta} &rarr;
             </Link>
           </div>
         </div>
@@ -414,22 +437,22 @@ function TrustBar() {
 // 7. Expert CTA
 // ---------------------------------------------------------------------------
 function ExpertCta() {
+  const { t } = useI18n();
   return (
     <section className="bg-[#1A1A1A]">
       <div className="section-container section-padding">
         <div className="max-w-2xl reveal">
           <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-semibold text-white mb-6 leading-tight">
-            Not sure which pump fits your formula?
+            {t.expertCta.title}
           </h2>
           <p className="text-[#757575] leading-relaxed mb-8 max-w-lg">
-            Our packaging engineers will analyze your formula viscosity, bottle neck finish, and
-            sustainability requirements to recommend the optimal solution.
+            {t.expertCta.description}
           </p>
           <Link
-            href="/resources"
+            href="/about/resources"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#00B894] text-white font-medium text-sm tracking-wide hover:bg-[#00A37E] transition-all duration-300 rounded-[4px]"
           >
-            Speak to Our Packaging Engineer &rarr;
+            {t.expertCta.cta} &rarr;
           </Link>
         </div>
       </div>

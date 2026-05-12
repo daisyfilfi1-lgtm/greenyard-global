@@ -1,18 +1,16 @@
+'use client';
+
 import Link from "next/link";
-import { SITE_NAME, PRIMARY_NAV } from "@/lib/constants";
+import { SITE_NAME, PRIMARY_NAV, SOLUTIONS_NAV } from "@/lib/constants";
+import { useI18n } from "@/lib/i18n";
 
 const PRODUCT_LINKS = PRIMARY_NAV.find((n) => n.label === "Products")?.children ?? [];
-const SOLUTION_LINKS = PRIMARY_NAV.find((n) => n.label === "Solutions by Industry")?.children ?? [];
+const SOLUTION_LINKS = SOLUTIONS_NAV.children ?? [];
 const ABOUT_LINKS = PRIMARY_NAV.find((n) => n.label === "About")?.children ?? [];
-
-const COMPANY_LINKS = [
-  { label: "Sustainability", href: "/sustainability" },
-  { label: "Resources", href: "/resources" },
-  { label: "Contact", href: "/contact" },
-];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useI18n();
 
   return (
     <footer className="bg-[#1A1A1A] text-[#F5F7F6]">
@@ -21,7 +19,7 @@ export default function Footer() {
           {/* Products */}
           <div>
             <h3 className="text-sm font-semibold text-[#757575] uppercase tracking-wider mb-4">
-              Products
+              {t.footer.products}
             </h3>
             <ul className="space-y-2.5">
               {PRODUCT_LINKS.map((link) => (
@@ -40,7 +38,7 @@ export default function Footer() {
           {/* Solutions */}
           <div>
             <h3 className="text-sm font-semibold text-[#757575] uppercase tracking-wider mb-4">
-              Solutions
+              {t.footer.solutions}
             </h3>
             <ul className="space-y-2.5">
               {SOLUTION_LINKS.map((link) => (
@@ -59,20 +57,10 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h3 className="text-sm font-semibold text-[#757575] uppercase tracking-wider mb-4">
-              Company
+              {t.footer.company}
             </h3>
             <ul className="space-y-2.5">
               {ABOUT_LINKS.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[#F5F7F6]/70 hover:text-[#F5F7F6] transition-colors duration-[var(--transition-fast)]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              {COMPANY_LINKS.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -88,15 +76,11 @@ export default function Footer() {
           {/* Connect */}
           <div>
             <h3 className="text-sm font-semibold text-[#757575] uppercase tracking-wider mb-4">
-              Connect
+              {t.footer.connect}
             </h3>
             <div className="space-y-3 text-sm text-[#F5F7F6]/70">
-              <p className="leading-relaxed">
-                Ningbo GreenYard Sprayer Co., Ltd.
-                <br />
-                No.97-1 Fengyi Road, Lanjiang Street
-                <br />
-                Yuyao City, Zhejiang, China
+              <p className="leading-relaxed whitespace-pre-line">
+                {t.footer.address}
               </p>
               <p>
                 <a
@@ -131,7 +115,7 @@ export default function Footer() {
         {/* Certifications row */}
         <div className="mt-10 pt-8 border-t border-white/10">
           <p className="text-xs text-[#757575] text-center tracking-wider">
-            ISO 15378 &nbsp;|&nbsp; FDA &nbsp;|&nbsp; REACH &nbsp;|&nbsp; RoHS &nbsp;|&nbsp; Prop 65
+            {t.footer.certifications}
           </p>
         </div>
 
@@ -149,13 +133,13 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-4 py-6 text-xs text-[#F5F7F6]/50">
           <p>
-            &copy; {currentYear} Ningbo {SITE_NAME} Sprayers Co., Ltd. All rights reserved.
+            {t.footer.copyright.replace('{year}', String(currentYear))}
           </p>
           <Link
             href="/privacy"
             className="hover:text-[#F5F7F6]/80 transition-colors duration-[var(--transition-fast)]"
           >
-            Privacy Policy
+            {t.footer.privacy}
           </Link>
         </div>
       </div>

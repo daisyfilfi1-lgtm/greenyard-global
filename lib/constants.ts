@@ -9,16 +9,21 @@ export interface NavItem {
   children?: { label: string; href: string; description?: string }[];
 }
 
+export const SOLUTIONS_NAV: NavItem = {
+  label: 'Solutions by Industry',
+  href: '#',
+  children: [
+    { label: 'Skincare & Clean Beauty', href: '/solutions/skincare', description: 'Low MOQ, fast sampling, sustainable packaging' },
+    { label: 'Pharma & Cosmeceutical', href: '/solutions/pharma', description: 'ISO 15378, FDA, metal-free pathways' },
+    { label: 'Household & Industrial', href: '/solutions/household', description: 'Heavy-duty, chemical resistant, bulk pricing' },
+    { label: 'Contract Packaging', href: '/solutions/contract', description: '24/410, 28/410 standard compatibility' },
+  ],
+};
+
 export const PRIMARY_NAV: NavItem[] = [
   {
-    label: 'Solutions by Industry',
-    href: '#',
-    children: [
-      { label: 'Skincare & Clean Beauty', href: '/solutions/skincare', description: 'Low MOQ, fast sampling, sustainable packaging' },
-      { label: 'Pharma & Cosmeceutical', href: '/solutions/pharma', description: 'ISO 15378, FDA, metal-free pathways' },
-      { label: 'Household & Industrial', href: '/solutions/household', description: 'Heavy-duty, chemical resistant, bulk pricing' },
-      { label: 'Contract Packaging', href: '/solutions/contract', description: '24/410, 28/410 standard compatibility' },
-    ],
+    label: 'Home',
+    href: '/',
   },
   {
     label: 'Products',
@@ -33,21 +38,20 @@ export const PRIMARY_NAV: NavItem[] = [
     ],
   },
   {
-    label: 'Sustainability',
-    href: '/sustainability',
+    label: 'Factory & Capabilities',
+    href: '/about/factory',
   },
   {
     label: 'About',
     href: '#',
     children: [
-      { label: 'Factory & Capabilities', href: '/about/factory' },
-      { label: 'Certifications', href: '/about/certifications' },
+      { label: 'Company Overview', href: '/about', description: 'Our story, team and journey' },
+      { label: 'Sustainability', href: '/about/sustainability', description: 'Eco-friendly packaging commitments' },
+      { label: 'Resources', href: '/about/resources', description: 'Documents, guides and technical support' },
+      { label: 'Certifications', href: '/about/certifications', description: 'ISO, FDA, REACH, RoHS compliance' },
     ],
   },
-  {
-    label: 'Resources',
-    href: '/resources',
-  },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export const SERIES_INFO: Record<string, SeriesInfo> = {

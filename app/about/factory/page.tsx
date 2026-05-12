@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -9,8 +10,19 @@ export const metadata: Metadata = {
 export default function FactoryPage() {
   return (
     <main>
-      <section className="section-dark">
-        <div className="section-container section-padding">
+      <section className="relative section-dark min-h-[60vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/Modern High-End Cosmetic Packaging Factory Interior.png"
+            alt="GreenYard modern factory facility in Yuyao"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        <div className="relative z-10 section-container w-full py-24">
           <nav className="flex items-center gap-2 text-sm text-[#6C757D] mb-6">
             <a href="/" className="hover:text-[#00B894] transition-colors">Home</a>
             <span>/</span>
@@ -34,22 +46,33 @@ export default function FactoryPage() {
 
       <section className="bg-[#F5F5F0]">
         <div className="section-container section-padding">
-          <div className="max-w-3xl space-y-8 text-[#6C757D] leading-relaxed">
-            <p>
-              Since the building of our factory, its size has been expanding continually and its
-              management mode has been modernized. We have advanced mould design, manufacture,
-              injection, automatic assemble, quality inspection equipment and technology.
-            </p>
-            <p>
-              We have built an experienced, professional team dedicated to producing precision
-              packaging components that meet international quality standards. By our relentless
-              hard work, we have passed the ISO9001 accreditation and won reputation around the
-              world.
-            </p>
-            <p>
-              Our factory is located at No.97-1 Fengyi Road, Lanjiang Street, Yuyao City, Zhejiang,
-              China — near Ningbo Port, providing convenient access for international shipping.
-            </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 text-[#6C757D] leading-relaxed">
+              <p>
+                Since the building of our factory, its size has been expanding continually and its
+                management mode has been modernized. We have advanced mould design, manufacture,
+                injection, automatic assemble, quality inspection equipment and technology.
+              </p>
+              <p>
+                We have built an experienced, professional team dedicated to producing precision
+                packaging components that meet international quality standards. By our relentless
+                hard work, we have passed the ISO9001 accreditation and won reputation around the
+                world.
+              </p>
+              <p>
+                Our factory is located at No.97-1 Fengyi Road, Lanjiang Street, Yuyao City, Zhejiang,
+                China — near Ningbo Port, providing convenient access for international shipping.
+              </p>
+            </div>
+            <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden">
+              <Image
+                src="/images/Modern High-End Cosmetic Packaging Factory Interior.png"
+                alt="Modern High-End Cosmetic Packaging Factory Interior"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>

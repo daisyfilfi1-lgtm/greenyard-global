@@ -1,13 +1,34 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useI18n } from '@/lib/i18n';
 
-export const metadata: Metadata = {
-  title: 'About GreenYard - Packaging Engineering for Global Brands',
-  description: 'China-based premium packaging engineering partner for European and American beauty & healthcare brands. 15+ years of export experience. Mono Pump innovation.',
-};
+function useScrollReveal() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const targets = document.querySelectorAll('.reveal');
+    targets.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+}
 
 export default function AboutPage() {
+  const { t } = useI18n();
+  useScrollReveal();
+
   return (
     <main>
       {/* Hero */}
@@ -27,13 +48,11 @@ export default function AboutPage() {
           <div className="max-w-3xl">
             <p className="text-xs text-[#757575] uppercase tracking-[0.15em] mb-4">About Us</p>
             <h1 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold text-[#F5F7F6] leading-tight">
-              Engineering Precision Packaging for Global Brands
+              {t.about.title}
             </h1>
             <div className="w-12 h-px bg-[#00B894] my-6" />
             <p className="text-[#a0a0a0] leading-relaxed max-w-xl">
-              We are a China-based premium packaging engineering partner dedicated to serving
-              European and American beauty & healthcare brands. Core focus: sustainable mono-material
-              design, regulatory compliance, and luxury user experience.
+              {t.about.description}
             </p>
           </div>
         </div>
@@ -45,7 +64,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold text-[#1A1A1A] mb-6">
-                Our Story
+                {t.about.storyTitle}
               </h2>
               <div className="w-12 h-px bg-[#00B894] mb-8" />
               <div className="space-y-4 text-[#757575] leading-relaxed">

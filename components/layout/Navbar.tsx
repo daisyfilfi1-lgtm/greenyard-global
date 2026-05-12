@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Search, ChevronDown } from "lucide-react";
 import { SITE_NAME, PRIMARY_NAV } from "@/lib/constants";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -112,7 +113,7 @@ export default function Navbar() {
                             : "hover:bg-[#EAECEB] text-[#333333]"
                         }`}
                       >
-                        <div className="text-sm">{child.label}</div>
+                        <div className="text-sm font-medium">{child.label}</div>
                         {child.description && (
                           <div className="text-xs text-[#757575] mt-0.5 leading-snug">
                             {child.description}
@@ -135,7 +136,7 @@ export default function Navbar() {
           >
             <Search size={16} />
           </button>
-          <span className="text-xs text-[#757575] tracking-wider">EN</span>
+          <LanguageSwitcher />
           <div className="w-px h-4 bg-[#EAECEB]" />
           <Link
             href="/contact"
@@ -232,7 +233,7 @@ export default function Navbar() {
                   <Search size={16} />
                   Search
                 </button>
-                <span className="text-sm text-[#F5F7F6]/70">EN</span>
+                <LanguageSwitcher />
               </div>
               <Link
                 href="/contact"
