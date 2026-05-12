@@ -92,6 +92,8 @@ export default function Footer() {
             </h3>
             <div className="space-y-3 text-sm text-[#F5F7F6]/70">
               <p className="leading-relaxed">
+                Ningbo GreenYard Sprayer Co., Ltd.
+                <br />
                 No.97-1 Fengyi Road, Lanjiang Street
                 <br />
                 Yuyao City, Zhejiang, China
@@ -112,8 +114,34 @@ export default function Footer() {
                   +86-574-6249 3001
                 </a>
               </p>
+              <p>
+                <a
+                  href="https://wa.me/8657462493001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#F5F7F6] transition-colors duration-[var(--transition-fast)]"
+                >
+                  WhatsApp: +86-574-6249 3001
+                </a>
+              </p>
             </div>
           </div>
+        </div>
+
+        {/* Certifications row */}
+        <div className="mt-10 pt-8 border-t border-white/10">
+          <p className="text-xs text-[#757575] text-center tracking-wider">
+            ISO 15378 &nbsp;|&nbsp; FDA &nbsp;|&nbsp; REACH &nbsp;|&nbsp; RoHS &nbsp;|&nbsp; Prop 65
+          </p>
+        </div>
+
+        {/* Social links placeholder */}
+        <div className="mt-4 flex justify-center gap-4">
+          <span className="text-xs text-[#757575]">LinkedIn</span>
+          <span className="text-[#F5F7F6]/20" aria-hidden="true">|</span>
+          <span className="text-xs text-[#757575]">YouTube</span>
+          <span className="text-[#F5F7F6]/20" aria-hidden="true">|</span>
+          <span className="text-xs text-[#757575]">Alibaba</span>
         </div>
       </div>
 

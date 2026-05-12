@@ -7,6 +7,8 @@
 
 :root {
   /* --- Colors (Premium Luxury Palette) --- */
+  --color-primary: #00B894;
+  --color-primary-hover: #00A37E;
   --color-primary-dark: #0F3D26;
   --color-primary-dark-hover: #0B2D1C;
   --color-bg: #F5F7F6;
@@ -80,6 +82,8 @@
    ========================================================================== */
 
 @theme {
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
   --color-primary-dark: var(--color-primary-dark);
   --color-primary-dark-hover: var(--color-primary-dark-hover);
   --color-bg: var(--color-bg);
@@ -138,12 +142,12 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-primary-dark);
+    outline: 2px solid var(--color-primary);
     outline-offset: 2px;
   }
 
   ::selection {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary);
     color: var(--color-white);
   }
 }
@@ -153,12 +157,12 @@
    ========================================================================== */
 
 @layer utilities {
-  /* Oversized numbers for statistics — dark green */
+  /* Oversized numbers for statistics */
   .stat-number {
     font-size: clamp(3rem, 8vw, 5rem);
     font-weight: 700;
     line-height: 1;
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
   }
 
   /* Section layouts */
@@ -205,7 +209,7 @@
     left: 0;
     z-index: 999;
     padding: 8px 16px;
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary);
     color: var(--color-white);
     font-weight: 600;
     transition: top var(--transition-fast);
@@ -258,6 +262,12 @@
     border-radius: var(--border-radius-lg);
     background-color: var(--color-white);
     box-shadow: var(--shadow-sm);
+    transition: all 300ms;
+  }
+
+  .card-border:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
   }
 
   .card-border-sm {
@@ -265,18 +275,26 @@
     border-radius: var(--border-radius-md);
     background-color: var(--color-white);
     box-shadow: var(--shadow-sm);
+    transition: all 300ms;
+  }
+
+  .card-border-sm:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
   }
 
   /* Button base */
   .btn-primary {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary);
     color: var(--color-white);
     border-radius: 4px;
     font-weight: 500;
+    transition: all 300ms;
   }
 
   .btn-primary:hover {
-    background-color: var(--color-primary-dark-hover);
+    background-color: var(--color-primary-hover);
+    transform: scale(1.02);
   }
 
   /* Scroll reveal — animated on intersection */
@@ -289,5 +307,15 @@
   .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Image utilities */
+  .img-rounded {
+    border-radius: var(--border-radius-md);
+  }
+
+  /* CTA/action element uniform transition */
+  .action-transition {
+    transition: all 300ms;
   }
 }

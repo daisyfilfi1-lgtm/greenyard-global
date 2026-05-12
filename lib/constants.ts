@@ -155,31 +155,31 @@ export const TRUST_STATS = [
 
 export const BUYER_SEGMENTS = [
   {
-    id: 'startup',
-    title: "I'm a Startup Brand",
+    id: 'clean-beauty',
+    title: 'Clean Beauty & Skincare Brands',
     description: 'Low MOQ from 1,000 units. 7-day sampling. Speed to market.',
-    icon: 'Rocket',
+    icon: 'Sparkles',
     href: '/solutions/skincare',
   },
   {
-    id: 'contract',
-    title: "I'm a Contract Manufacturer",
-    description: 'Standard neck finishes. Inventory depth. JIT delivery.',
-    icon: 'Cog',
-    href: '/solutions/contract',
-  },
-  {
-    id: 'distributor',
-    title: "I'm a Distributor",
-    description: 'Price competitive. Durable in transit. Supplier stability.',
-    icon: 'Globe',
-    href: '/solutions/household',
-  },
-  {
     id: 'pharma',
-    title: "I'm a Pharma Brand",
+    title: 'Pharma & Healthcare Brands',
     description: 'ISO 15378. FDA. Batch traceability. Metal-free pathways.',
     icon: 'ShieldCheck',
     href: '/solutions/pharma',
+  },
+  {
+    id: 'haircare',
+    title: 'Natural Haircare & Body Care',
+    description: 'Salon-grade packaging. Refill designs. Sustainable solutions.',
+    icon: 'Building2',
+    href: '/solutions/hair-care',
+  },
+  {
+    id: 'dtc',
+    title: 'DTC & E-Commerce Brands',
+    description: 'Fast customization. Small batch. Direct-to-consumer ready.',
+    icon: 'Globe',
+    href: '/solutions/beauty',
   },
 ];
