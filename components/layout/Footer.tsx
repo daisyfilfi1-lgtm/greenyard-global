@@ -1,11 +1,11 @@
 'use client';
 
 import Link from "next/link";
-import { SITE_NAME, PRIMARY_NAV, SOLUTIONS_NAV } from "@/lib/constants";
+import { SITE_NAME, PRIMARY_NAV } from "@/lib/constants";
 import { useI18n } from "@/lib/i18n";
 
 const PRODUCT_LINKS = PRIMARY_NAV.find((n) => n.label === "Products")?.children ?? [];
-const SOLUTION_LINKS = SOLUTIONS_NAV.children ?? [];
+const SOLUTION_LINKS = PRIMARY_NAV.find((n) => n.label === "Solutions by Industry")?.children ?? [];
 const ABOUT_LINKS = PRIMARY_NAV.find((n) => n.label === "About")?.children ?? [];
 
 export default function Footer() {

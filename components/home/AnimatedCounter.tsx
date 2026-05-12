@@ -15,25 +15,25 @@ function parseValue(value: string): { num: number; suffix: string } {
 
 export default function AnimatedCounter({ value, label }: AnimatedCounterProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [display, setDisplay] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const { num: target, suffix } = parseValue(value);
+  const [display, setDisplay] = useState(target); // start with target, not 0
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || hasAnimated) return;
+    if (!el || visible) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
+        if (entry.isIntersecting && !visible) {
+          setVisible(true);
+          setDisplay(0); // reset to 0, then animate
           const duration = 1500;
           const start = performance.now();
 
           function animate(now: number) {
             const elapsed = now - start;
             const progress = Math.min(elapsed / duration, 1);
-            // Ease-out cubic
             const eased = 1 - Math.pow(1 - progress, 3);
             setDisplay(Math.round(eased * target));
 
@@ -50,7 +50,7 @@ export default function AnimatedCounter({ value, label }: AnimatedCounterProps) 
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [target, hasAnimated]);
+  }, [target, visible]);
 
   return (
     <div ref={ref} className="text-center">

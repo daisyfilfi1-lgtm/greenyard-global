@@ -203,7 +203,7 @@ function ClientIdentityCards() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl reveal">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto reveal">
           {BUYER_SEGMENTS.map((seg) => (
             <SegmentCard
               key={seg.id}
@@ -229,26 +229,26 @@ function CoreStrengths() {
         <div className="bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-10 md:p-14 reveal rounded-[4px]">
           <div className="grid md:grid-cols-3 gap-12 md:gap-8">
             <div className="flex flex-col items-center text-center">
-              <CircularProgress value={98.5} size={96} />
+              <CircularProgress value={98.5} size={104} />
               <div className="mt-4">
-                <div className="text-[32px] md:text-[42px] font-bold text-[#00B894] leading-none">98.5%</div>
+                <div className="text-[32px] md:text-[40px] font-bold text-[#00B894] leading-none">98.5%</div>
                 <p className="text-[#333333] text-sm mt-1.5">On-Time Delivery Rate</p>
               </div>
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 rounded-full border-4 border-[#EAECEB] flex items-center justify-center">
-                <span className="text-[28px] md:text-[42px] font-bold text-[#00B894]">5M+</span>
+              <div className="w-28 h-28 rounded-full border-4 border-[#EAECEB] flex items-center justify-center">
+                <span className="text-[22px] md:text-[28px] font-bold text-[#00B894]">5M+</span>
               </div>
               <div className="mt-4">
-                <div className="text-[32px] md:text-[42px] font-bold text-[#00B894] leading-none">5M+</div>
+                <div className="text-[32px] md:text-[40px] font-bold text-[#00B894] leading-none">5M+</div>
                 <p className="text-[#333333] text-sm mt-1.5">Monthly Production Capacity</p>
               </div>
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 rounded-full border-4 border-[#00B894] flex items-center justify-center">
-                <span className="text-[28px] md:text-[42px] font-bold text-[#00B894]">100%</span>
+              <div className="w-28 h-28 rounded-full border-4 border-[#00B894] flex items-center justify-center">
+                <span className="text-[22px] md:text-[28px] font-bold text-[#00B894]">100%</span>
               </div>
               <div className="mt-4">
                 <div className="text-[32px] md:text-[42px] font-bold text-[#00B894] leading-none">100%</div>
