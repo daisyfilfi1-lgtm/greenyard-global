@@ -16,6 +16,7 @@
   --color-charcoal: #1A1A1A;
   --color-text-primary: #1A1A1A;
   --color-text-body: #333333;
+  --color-text-caption: #666666;
   --color-text-muted: #757575;
   --color-border: #EAECEB;
   --color-white: #FFFFFF;
@@ -30,10 +31,10 @@
   --font-small-size: 14px;
   --font-xs-size: 12px;
 
-  --font-display-line-height: 1.1;
-  --font-h1-line-height: 1.15;
-  --font-h2-line-height: 1.2;
-  --font-h3-line-height: 1.25;
+  --font-display-line-height: 1.15;
+  --font-h1-line-height: 1.2;
+  --font-h2-line-height: 1.3;
+  --font-h3-line-height: 1.35;
   --font-body-line-height: 1.6;
 
   --font-display-weight: 700;
@@ -41,6 +42,8 @@
   --font-body-weight: 400;
 
   --font-display-tracking: -0.02em;
+  --font-h1-tracking: 0.05em;
+  --font-h2-tracking: 0.02em;
 
   /* --- Spacing (More Air) --- */
   --section-padding: 120px;
@@ -159,10 +162,46 @@
 @layer utilities {
   /* Oversized numbers for statistics */
   .stat-number {
-    font-size: clamp(3rem, 8vw, 5rem);
-    font-weight: 700;
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    font-weight: 800;
     line-height: 1;
     color: var(--color-primary);
+    letter-spacing: -0.02em;
+  }
+
+  /* Stat labels — small, muted, under numbers */
+  .stat-label {
+    font-size: var(--font-small-size);
+    font-weight: 400;
+    color: var(--color-text-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    margin-top: 0.25rem;
+  }
+
+  /* Section title — H2 standard across all sections */
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+    letter-spacing: 0.02em;
+  }
+
+  /* Card title — bold, primary color */
+  .card-title {
+    font-size: var(--font-h4-size);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+  }
+
+  /* Card description — smaller, lighter, airy */
+  .card-desc {
+    font-size: var(--font-small-size);
+    color: var(--color-text-caption);
+    line-height: 1.65;
   }
 
   /* Section layouts */

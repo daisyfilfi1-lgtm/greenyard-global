@@ -107,18 +107,18 @@ function HeroSection() {
         <div className="absolute inset-0 bg-black/55" />
       </div>
       <div className="relative z-10 section-container w-full py-24">
-        <div className="max-w-3xl">
-          <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1.1] text-white tracking-tight">
+        <div className="max-w-4xl">
+          <h1 className="text-[clamp(2.25rem,5vw,4rem)] font-bold leading-[1.2] text-white tracking-[0.05em]">
             {t.hero.title}
             <span className="text-[#00B894]">{t.hero.titleHighlight}</span>
             {t.hero.titleEnd}
           </h1>
 
-          <p className="mt-6 text-base md:text-lg text-[#d1d1d1] max-w-xl leading-relaxed">
+          <p className="mt-5 text-base md:text-lg text-[#999999] max-w-xl leading-relaxed">
             {t.hero.subtitle}
           </p>
 
-          <p className="mt-2 text-sm text-[#a0a0a0] max-w-xl">
+          <p className="mt-1 text-sm text-[#888888] max-w-xl">
             {t.hero.tag}
           </p>
 
@@ -136,10 +136,10 @@ function HeroSection() {
             ))}
           </div>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <div className="mt-14 flex flex-col sm:flex-row gap-4">
             <Link
               href="/products"
-              className="inline-flex items-center justify-center px-8 py-3.5 bg-[#00B894] text-white font-medium hover:bg-[#00A37E] transition-all duration-300 hover:translate-y-[-1px] text-sm tracking-wide rounded-[4px]"
+              className="inline-flex items-center justify-center px-8 py-3.5 bg-[#00B894] text-white font-semibold hover:bg-[#00A37E] transition-all duration-300 hover:translate-y-[-1px] text-sm tracking-wide rounded-[4px]"
             >
               {t.hero.cta}
               <ArrowRight size={16} className="ml-2" />
@@ -180,9 +180,9 @@ function SegmentCard({
       <div className="text-[#00B894] mb-5 opacity-80 group-hover:opacity-100 transition-opacity">
         {SEGMENT_ICONS[icon] ?? <Sparkles size={28} aria-hidden="true" strokeWidth={1.5} />}
       </div>
-      <h3 className="text-lg font-semibold text-[#1A1A1A] mb-2">{title}</h3>
-      <p className="text-[#333333] text-sm leading-relaxed flex-1">{description}</p>
-      <span className="mt-4 inline-flex items-center gap-1 text-[#00B894] text-sm group-hover:underline underline-offset-2">
+      <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">{title}</h3>
+      <p className="text-[#666666] text-xs leading-7 flex-1">{description}</p>
+      <span className="mt-4 inline-flex items-center gap-1 text-[#00B894] text-sm font-medium group-hover:underline underline-offset-2">
         Learn More &rarr;
       </span>
     </Link>
@@ -195,10 +195,10 @@ function ClientIdentityCards() {
     <section className="bg-[#F5F7F6]">
       <div className="section-container section-padding">
         <div className="reveal">
-          <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-semibold text-[#1A1A1A] mb-4">
+          <h2 className="section-title mb-4">
             {t.whoWeServe.title}
           </h2>
-          <p className="text-[#333333] max-w-xl mb-12 leading-relaxed">
+          <p className="text-[#666666] max-w-xl mb-12 leading-relaxed">
             {t.whoWeServe.description}
           </p>
         </div>
@@ -232,7 +232,7 @@ function CoreStrengths() {
               <CircularProgress value={98.5} size={104} />
               <div className="mt-4">
                 <div className="text-[32px] md:text-[40px] font-bold text-[#00B894] leading-none">98.5%</div>
-                <p className="text-[#333333] text-sm mt-1.5">On-Time Delivery Rate</p>
+                <p className="text-[#666666] text-xs uppercase tracking-wider mt-1.5">On-Time Delivery Rate</p>
               </div>
             </div>
 
@@ -242,7 +242,7 @@ function CoreStrengths() {
               </div>
               <div className="mt-4">
                 <div className="text-[32px] md:text-[40px] font-bold text-[#00B894] leading-none">5M+</div>
-                <p className="text-[#333333] text-sm mt-1.5">Monthly Production Capacity</p>
+                <p className="text-[#666666] text-xs uppercase tracking-wider mt-1.5">Monthly Production Capacity</p>
               </div>
             </div>
 
@@ -252,7 +252,7 @@ function CoreStrengths() {
               </div>
               <div className="mt-4">
                 <div className="text-[32px] md:text-[42px] font-bold text-[#00B894] leading-none">100%</div>
-                <p className="text-[#333333] text-sm mt-1.5">Fully Recyclable Mono-Material Options</p>
+                <p className="text-[#666666] text-xs uppercase tracking-wider mt-1.5">Fully Recyclable Mono-Material Options</p>
               </div>
             </div>
           </div>
@@ -324,14 +324,14 @@ function CaseStudyCard({
         />
       </div>
       <div className="p-6 md:p-8 flex flex-col flex-1">
-        <h3 className="text-base font-semibold text-[#1A1A1A] mb-3">{title}</h3>
-        <div className="space-y-2 text-sm text-[#333333] leading-relaxed flex-1 mb-4">
+        <h3 className="text-base font-bold text-[#1A1A1A] mb-3">{title}</h3>
+        <div className="space-y-2 text-xs text-[#666666] leading-relaxed flex-1 mb-4">
           <p><strong className="text-[#1A1A1A]">Challenge:</strong> {challenge}</p>
           <p><strong className="text-[#1A1A1A]">Solution:</strong> {solution}</p>
-          <p><strong className="text-[#1A1A1A]">Result:</strong> <span className="text-[#00B894]">{result}</span></p>
+          <p><strong className="text-[#1A1A1A]">Result:</strong> <span className="text-[#00B894] font-bold">{result}</span></p>
         </div>
         <div className="pt-4 border-t border-[#EAECEB]">
-          <p className="text-[28px] font-bold text-[#00B894]">{metric}</p>
+          <p className="text-[28px] font-extrabold text-[#00B894]">{metric}</p>
           <p className="text-xs text-[#757575] mt-1">{metricSub}</p>
         </div>
       </div>
@@ -345,10 +345,10 @@ function CaseStudies() {
     <section className="bg-[#F5F7F6]">
       <div className="section-container section-padding">
         <div className="reveal">
-          <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-semibold text-[#1A1A1A] mb-4">
+          <h2 className="section-title mb-4">
             {t.caseStudies.title}
           </h2>
-          <p className="text-[#333333] max-w-xl mb-12 leading-relaxed">
+          <p className="text-[#666666] max-w-xl mb-12 leading-relaxed">
             {t.caseStudies.description}
           </p>
         </div>
@@ -382,10 +382,10 @@ function Sustainability() {
             />
           </div>
           <div>
-            <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-semibold leading-tight mb-6">
+            <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-bold leading-tight mb-6">
               {t.sustainability.title}<br />{t.sustainability.titleBreak}
             </h2>
-            <p className="text-[#757575] leading-relaxed mb-6">
+            <p className="text-[#999999] leading-relaxed mb-6">
               {t.sustainability.description}
             </p>
             <ul className="space-y-3 mb-8">
@@ -442,7 +442,7 @@ function ExpertCta() {
     <section className="bg-[#1A1A1A]">
       <div className="section-container section-padding">
         <div className="max-w-2xl reveal">
-          <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-semibold text-white mb-6 leading-tight">
+          <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-white mb-6 leading-tight">
             {t.expertCta.title}
           </h2>
           <p className="text-[#757575] leading-relaxed mb-8 max-w-lg">

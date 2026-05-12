@@ -58,7 +58,7 @@ export default function AnimatedCounter({ value, label }: AnimatedCounterProps) 
         {display}
         {suffix}
       </div>
-      <p className="mt-2 text-sm md:text-base text-[#333333]">{label}</p>
+      <p className="stat-label">{label}</p>
     </div>
   );
 }
