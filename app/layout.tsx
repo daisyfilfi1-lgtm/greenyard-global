@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { I18nProvider } from "@/lib/i18n";
+import JsonLd from "@/components/JsonLd";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,9 +13,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://greenyardglobal.netlify.app"),
   title: "GreenYard | Premium Packaging Solutions — One Earth. Precision Engineering.",
   description:
     "Ningbo GreenYard Sprayer Co., Ltd. — precision sprayers, pumps, droppers, and cosmetic packaging with flexible MOQ, fast sampling, and fully recyclable pathways. Serving 200+ brand partners across 40+ countries.",
+  alternates: {
+    canonical: "https://greenyardglobal.netlify.app",
+  },
+  keywords: [
+    "sprayer manufacturer",
+    "cosmetic packaging",
+    "fine mist sprayer",
+    "lotion pump",
+    "trigger sprayer",
+    "recyclable pump",
+    "mono-material packaging",
+    "B2B packaging supplier",
+    "Ningbo GreenYard",
+  ],
   openGraph: {
     title: "GreenYard | Premium Packaging Solutions",
     description:
@@ -22,6 +38,14 @@ export const metadata: Metadata = {
     siteName: "GreenYard",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "https://greenyardglobal.netlify.app/images/Minimalist%20Luxury%20Beauty%20Packaging%20Banner.png",
+        width: 1920,
+        height: 1080,
+        alt: "GreenYard Premium Packaging Solutions",
+      },
+    ],
   },
 };
 
@@ -49,6 +73,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </I18nProvider>
+        <JsonLd />
       </body>
     </html>
   );

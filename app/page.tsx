@@ -104,7 +104,7 @@ function HeroSection() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.55) 100%)" }} />
       </div>
       <div className="relative z-10 section-container w-full py-24">
         <div className="max-w-4xl">
@@ -114,11 +114,11 @@ function HeroSection() {
             {t.hero.titleEnd}
           </h1>
 
-          <p className="mt-5 text-base md:text-lg text-[#999999] max-w-xl leading-relaxed">
+          <p className="mt-5 text-base md:text-lg text-[#d1d1d1] max-w-xl leading-relaxed">
             {t.hero.subtitle}
           </p>
 
-          <p className="mt-1 text-sm text-[#888888] max-w-xl">
+          <p className="mt-1 text-sm text-[#b0b0b0] max-w-xl">
             {t.hero.tag}
           </p>
 
