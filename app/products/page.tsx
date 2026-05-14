@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { products } from '@/lib/data/products';
 import { SERIES_INFO } from '@/lib/constants';
 import ProductsPageClient from './ProductsPageClient';
@@ -44,24 +45,36 @@ export default function ProductsPage() {
 
   return (
     <main>
-      {/* Page Header */}
-      <section className="section-padding bg-[#F5F7F6]">
-        <div className="section-container">
-          <nav className="flex items-center gap-2 text-sm text-[#757575] mb-6">
-            <a href="/" className="hover:text-[#0F3D26] transition-colors">Home</a>
-            <span>/</span>
-            <span className="text-[#1A1A1A]">Products</span>
+      {/* Page Hero with Background Image */}
+      <section className="relative min-h-[45vh] flex items-end bg-[#1A1A1A] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/Top-Down Grid of 24 Lotion Pumps.png"
+            alt="All Products"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+        </div>
+
+        <div className="relative z-10 section-container w-full py-16 lg:py-24">
+          <nav className="flex items-center gap-2 text-sm text-[#d1d1d1] mb-6">
+            <a href="/" className="hover:text-[#D4AF37] transition-colors">Home</a>
+            <span className="text-[#666666]">/</span>
+            <span className="text-[#D4AF37]">Products</span>
           </nav>
 
-          <h1 className="text-3xl md:text-4xl font-semibold text-[#1A1A1A]">All Products</h1>
-          <p className="text-[#757575] mt-3 max-w-2xl">
+          <h1 className="text-3xl md:text-5xl font-semibold text-white mb-4">All Products</h1>
+          <p className="text-[#d1d1d1] text-base md:text-lg max-w-2xl leading-relaxed">
             GreenYard offers 200+ SKUs across 13 product series. Browse by category below or filter by specification.
           </p>
         </div>
       </section>
 
       {/* Category Cards */}
-      <section className="section-padding pt-0 bg-[#F5F7F6]">
+      <section className="section-padding bg-[#F5F7F6]">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map(cat => (

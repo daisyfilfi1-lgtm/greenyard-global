@@ -39,17 +39,19 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-[var(--z-sticky)] transition-all ${
-        scrolled ? "bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)]" : "bg-white"
+      className={`sticky top-0 z-[var(--z-sticky)] transition-all duration-300 ${
+        scrolled ? "bg-white/95 backdrop-blur-md shadow-[0_4px_16px_rgba(0,0,0,0.06)]" : "bg-white"
       }`}
     >
       <div className="section-container flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-[#0F3D26] shrink-0"
+          className="text-xl font-semibold tracking-tight text-[#0D0D0D] shrink-0 flex items-center gap-2"
         >
-          {SITE_NAME}
+          <span className="text-[#D4AF37]">{SITE_NAME.charAt(0)}</span>
+          {SITE_NAME.slice(1)}
+          <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full" />
         </Link>
 
         {/* Desktop nav */}
@@ -68,10 +70,10 @@ export default function Navbar() {
               >
                 {hasChildren ? (
                   <button
-                    className={`flex items-center gap-1 px-3 py-2 text-sm transition-colors ${
+                    className={`flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium transition-all ${
                       dropdownOpen
-                        ? "text-[#0F3D26]"
-                        : "text-[#333333] hover:text-[#0F3D26]"
+                        ? "text-[#0D0D0D]"
+                        : "text-[#333333] hover:text-[#0D0D0D]"
                     }`}
                     aria-expanded={dropdownOpen}
                     aria-haspopup="true"
@@ -79,7 +81,7 @@ export default function Navbar() {
                     {item.label}
                     <ChevronDown
                       size={14}
-                      className={`transition-transform ${
+                      className={`transition-transform duration-200 ${
                         dropdownOpen ? "rotate-180" : ""
                       }`}
                     />
@@ -87,35 +89,36 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`relative px-3 py-2 text-sm transition-colors ${
+                    className={`relative px-4 py-2.5 text-sm font-medium transition-all ${
                       active
-                        ? "text-[#0F3D26]"
-                        : "text-[#333333] hover:text-[#0F3D26]"
+                        ? "text-[#0D0D0D]"
+                        : "text-[#333333] hover:text-[#0D0D0D]"
                     }`}
                   >
                     {item.label}
                     {active && (
-                      <span className="absolute bottom-0 left-3 right-3 h-px bg-[#0F3D26]" />
+                      <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#D4AF37]" />
                     )}
                   </Link>
                 )}
 
                 {/* Mega dropdown */}
                 {hasChildren && dropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-72 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-[#EAECEB] p-2 mega-menu-active rounded-[4px]">
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-[0_8px_28px_rgba(0,0,0,0.1)] border border-[#EAECEB] p-3 mega-menu-active rounded-[12px]">
+                    <div className="absolute -top-1 left-8 w-16 h-2 bg-white border border-t-0 border-x-0 border-[#EAECEB] rounded-b-md" />
                     {item.children!.map((child) => (
                       <Link
                         key={child.label}
                         href={child.href}
-                        className={`block px-4 py-3 rounded-md transition-colors ${
+                        className={`block px-4 py-3 rounded-lg transition-all ${
                           isActive(child.href)
-                            ? "bg-[#EAECEB] text-[#0F3D26]"
-                            : "hover:bg-[#EAECEB] text-[#333333]"
+                            ? "bg-[#E8F5F1] text-[#00B894]"
+                            : "hover:bg-[#F5F5F0] text-[#333333]"
                         }`}
                       >
                         <div className="text-sm font-medium">{child.label}</div>
                         {child.description && (
-                          <div className="text-xs text-[#757575] mt-0.5 leading-snug">
+                          <div className="text-xs text-[#6C757D] mt-1 leading-relaxed">
                             {child.description}
                           </div>
                         )}
@@ -129,18 +132,17 @@ export default function Navbar() {
         </nav>
 
         {/* Utility area */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-6">
           <button
-            className="p-1.5 text-[#757575] hover:text-[#1A1A1A] transition-colors"
+            className="p-2 text-[#6C757D] hover:text-[#0D0D0D] transition-all hover:bg-[#F5F5F0] rounded-lg"
             aria-label="Search products"
           >
-            <Search size={16} />
+            <Search size={18} />
           </button>
           <LanguageSwitcher />
-          <div className="w-px h-4 bg-[#EAECEB]" />
           <Link
             href="/contact"
-            className="text-sm text-[#333333] hover:text-[#0F3D26] transition-colors font-medium"
+            className="px-5 py-2.5 bg-[#00B894] text-white text-sm font-medium hover:bg-[#00A37E] transition-all rounded-lg hover:-translate-y-0.5 shadow-md hover:shadow-lg"
           >
             Contact
           </Link>
