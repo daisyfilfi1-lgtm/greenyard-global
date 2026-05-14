@@ -60,12 +60,6 @@ export default function ProductsPage() {
         </div>
 
         <div className="relative z-10 section-container w-full py-16 lg:py-24">
-          <nav className="flex items-center gap-2 text-sm text-[#d1d1d1] mb-6">
-            <a href="/" className="hover:text-[#D4AF37] transition-colors">Home</a>
-            <span className="text-[#666666]">/</span>
-            <span className="text-[#D4AF37]">Products</span>
-          </nav>
-
           <h1 className="text-3xl md:text-5xl font-semibold text-white mb-4">All Products</h1>
           <p className="text-[#d1d1d1] text-base md:text-lg max-w-2xl leading-relaxed">
             GreenYard offers 200+ SKUs across 13 product series. Browse by category below or filter by specification.

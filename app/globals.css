@@ -177,17 +177,17 @@
 @layer utilities {
   /* Oversized numbers for statistics - Gold color per design spec */
   .stat-number {
-    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: var(--font-stat-weight);
-    line-height: 1;
+    line-height: 1.1;
     color: var(--color-gold);
     letter-spacing: var(--font-stat-tracking);
   }
 
   .stat-number-mint {
-    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: var(--font-stat-weight);
-    line-height: 1;
+    line-height: 1.1;
     color: var(--color-primary);
     letter-spacing: var(--font-stat-tracking);
   }

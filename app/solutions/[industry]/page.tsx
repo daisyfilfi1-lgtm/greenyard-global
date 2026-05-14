@@ -1,6 +1,14 @@
 import { getProductsByIndustry, getProductBySku } from '@/lib/data/products';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
+
+const HERO_IMAGES: Record<string, string> = {
+  skincare: '/images/Minimalist Luxury Eco-Friendly Packaging.png',
+  pharma: '/images/Clinical Laboratory Pharmaceutical Bottles.png',
+  household: '/images/Modern Kitchen Premium Cleaning Products.png',
+  contract: '/images/Industrial Packaging Facility .png',
+};
 
 const data: Record<string, {
   title: string; hero: string; sub: string;
@@ -95,12 +103,35 @@ export default async function IndustryPage({ params }: { params: Promise<{ indus
 
   return (
     <main className="bg-[#F5F7F6]">
-      {/* Section 1: Hero */}
-      <section className="bg-[#0F3D26] text-white py-28">
-        <div className="max-w-[1200px] mx-auto px-8">
-          <p className="text-xs text-white/50 uppercase tracking-[0.15em] mb-4">{d.title}</p>
-          <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-light tracking-tight leading-[1.1] max-w-3xl">{d.hero}</h1>
-          <p className="mt-5 text-lg text-white/70 leading-relaxed max-w-xl">{d.sub}</p>
+      {/* Section 1: Hero with Background Image */}
+      <section className="relative min-h-[55vh] flex items-end bg-[#1A1A1A] overflow-hidden">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0">
+          <Image
+            src={HERO_IMAGES[industry] || '/images/Premium Eco-Friendly Pump Dispenser.png'}
+            alt={d.title}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 section-container w-full py-16 lg:py-24">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full mb-6">
+            <span className="w-2 h-2 bg-[#D4AF37] rounded-full animate-pulse" />
+            <span className="text-xs text-[#D4AF37] uppercase tracking-widest font-medium">{d.title}</span>
+          </div>
+
+          <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-light tracking-tight leading-[1.15] text-white max-w-3xl mb-4">
+            {d.hero}
+          </h1>
+          
+          <p className="text-base md:text-lg text-[#d1d1d1] leading-relaxed max-w-xl">
+            {d.sub}
+          </p>
         </div>
       </section>
 

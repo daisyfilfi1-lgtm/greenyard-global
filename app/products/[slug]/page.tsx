@@ -115,14 +115,6 @@ export default async function CategoryPage({ params }: Props) {
 
         {/* Content */}
         <div className="relative z-10 section-container w-full py-16 lg:py-24">
-          <nav className="flex items-center gap-2 text-sm text-[#d1d1d1] mb-6">
-            <a href="/" className="hover:text-[#D4AF37] transition-colors">Home</a>
-            <span className="text-[#666666]">/</span>
-            <a href="/products" className="hover:text-[#D4AF37] transition-colors">Products</a>
-            <span className="text-[#666666]">/</span>
-            <span className="text-[#D4AF37]">{series?.name || slug}</span>
-          </nav>
-
           <h1 className="text-3xl md:text-5xl font-semibold text-white mb-4">
             {series?.name || 'Products'}
           </h1>

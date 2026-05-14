@@ -214,16 +214,16 @@ function ClientIdentityCards() {
   return (
     <section className="bg-[#F5F7F6]">
       <div className="section-container section-padding">
-        <div className="reveal">
+        <div className="reveal text-center">
           <h2 className="section-title mb-4">
             {t.whoWeServe.title}
           </h2>
-          <p className="text-[#666666] max-w-xl mb-12 leading-relaxed">
+          <p className="text-[#666666] max-w-xl mx-auto leading-relaxed">
             {t.whoWeServe.description}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto reveal">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12 reveal">
           {BUYER_SEGMENTS.map((seg) => (
             <SegmentCard
               key={seg.id}
@@ -253,11 +253,10 @@ function CoreStrengths() {
               <div className="relative">
                 <CircularProgress value={98.5} size={112} />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[24px] md:text-[30px] font-semibold text-[#D4AF37]">98.5%</span>
+                  <span className="text-[20px] md:text-[24px] font-semibold text-[#D4AF37]">98.5%</span>
                 </div>
               </div>
-              <div className="mt-6">
-                <div className="stat-number text-[#D4AF37]">98.5%</div>
+              <div className="mt-5">
                 <p className="stat-label">On-Time Delivery Rate</p>
               </div>
             </div>
@@ -266,14 +265,13 @@ function CoreStrengths() {
             <div className="flex flex-col items-center text-center group">
               <div className="relative">
                 <div className="w-28 h-28 rounded-full border-4 border-[#E8F5F1] flex items-center justify-center group-hover:border-[#00B894] transition-colors duration-300">
-                  <span className="text-[24px] md:text-[32px] font-semibold text-[#00B894]">5M+</span>
+                  <span className="text-[20px] md:text-[24px] font-semibold text-[#00B894]">5M+</span>
                 </div>
                 <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center">
                   <span className="text-[10px] text-white font-bold">TOP</span>
                 </div>
               </div>
-              <div className="mt-6">
-                <div className="stat-number-mint">5M+</div>
+              <div className="mt-5">
                 <p className="stat-label">Monthly Production Capacity</p>
               </div>
             </div>
@@ -282,14 +280,13 @@ function CoreStrengths() {
             <div className="flex flex-col items-center text-center group">
               <div className="relative">
                 <div className="w-28 h-28 rounded-full border-4 border-[#00B894] bg-[#E8F5F1] flex items-center justify-center group-hover:bg-[#00B894] transition-colors duration-300">
-                  <span className="text-[24px] md:text-[32px] font-semibold text-[#00B894] group-hover:text-white transition-colors duration-300">100%</span>
+                  <span className="text-[20px] md:text-[24px] font-semibold text-[#00B894] group-hover:text-white transition-colors duration-300">100%</span>
                 </div>
                 <svg className="absolute -bottom-1 -right-1 w-10 h-10 text-[#D4AF37]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
               </div>
-              <div className="mt-6">
-                <div className="stat-number text-[#D4AF37]">100%</div>
+              <div className="mt-5">
                 <p className="stat-label">Fully Recyclable Mono-Material Options</p>
               </div>
             </div>
@@ -385,16 +382,16 @@ function CaseStudies() {
   return (
     <section className="bg-[#F5F7F6]">
       <div className="section-container section-padding">
-        <div className="reveal">
+        <div className="reveal text-center">
           <h2 className="section-title mb-4">
             {t.caseStudies.title}
           </h2>
-          <p className="text-[#666666] max-w-xl mb-12 leading-relaxed">
+          <p className="text-[#666666] max-w-xl mx-auto leading-relaxed">
             {t.caseStudies.description}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 reveal">
+        <div className="grid md:grid-cols-3 gap-6 mt-12 reveal">
           {CASE_STUDIES.map((cs) => (
             <CaseStudyCard key={cs.title} {...cs} />
           ))}
