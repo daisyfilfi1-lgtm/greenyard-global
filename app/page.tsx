@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sparkles, Building2, Globe, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Sparkles, Building2, Globe, ShieldCheck, ArrowRight, Leaf } from 'lucide-react';
 import { BUYER_SEGMENTS, TRUST_STATS } from '@/lib/constants';
 import AnimatedCounter from '@/components/home/AnimatedCounter';
 import { useI18n } from '@/lib/i18n';
@@ -32,7 +32,7 @@ function useScrollReveal() {
 }
 
 // ---------------------------------------------------------------------------
-// Circular Progress — SVG-based, no external libs
+// Circular Progress — SVG-based, gold stroke
 // ---------------------------------------------------------------------------
 function CircularProgress({ value, size = 80 }: { value: number; size?: number }) {
   const strokeWidth = 4;
@@ -67,7 +67,7 @@ function CircularProgress({ value, size = 80 }: { value: number; size?: number }
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="#EAECEB"
+          stroke="#E5E0D8"
           strokeWidth={strokeWidth}
         />
         <circle
@@ -75,7 +75,7 @@ function CircularProgress({ value, size = 80 }: { value: number; size?: number }
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="#00B894"
+          stroke="#D4AF37"
           strokeWidth={strokeWidth}
           strokeDasharray={circumference}
           strokeDashoffset={offset}
@@ -88,7 +88,7 @@ function CircularProgress({ value, size = 80 }: { value: number; size?: number }
 }
 
 // ---------------------------------------------------------------------------
-// 1. Hero — 80vh, background image with overlay
+// 1. Hero — Cinematic, reductive. Full-bleed product image, dark overlay
 // ---------------------------------------------------------------------------
 function HeroSection() {
   const { t } = useI18n();
@@ -97,23 +97,18 @@ function HeroSection() {
       {/* Background image with dark overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/images/Minimalist Luxury Beauty Packaging Banner.png"
+          src="/images/Dark Moody Premium Skincare Bottle.png"
           alt="Premium packaging solutions"
           fill
           className="object-cover"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.6) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.65) 100%)" }} />
       </div>
       <div className="relative z-10 section-container w-full py-24 lg:py-32">
         <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full mb-6">
-            <span className="w-2 h-2 bg-[#D4AF37] rounded-full animate-pulse" />
-            <span className="text-xs text-[#D4AF37] uppercase tracking-widest font-medium">Premium Packaging Partner</span>
-          </div>
-
-          <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-light leading-[1.15] text-white tracking-[0.03em]">
+          <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-light leading-[1.1] text-white tracking-[-0.03em]">
             {t.hero.title}
             <span className="text-[#D4AF37] font-semibold">{t.hero.titleHighlight}</span>
             {t.hero.titleEnd}
@@ -123,50 +118,44 @@ function HeroSection() {
             {t.hero.subtitle}
           </p>
 
-          <p className="mt-2 text-sm text-[#999999] max-w-xl">
-            {t.hero.tag}
-          </p>
-
-          <div className="flex gap-2 mt-8 flex-wrap">
-            {['ISO 15378', 'FDA', 'REACH', 'RoHS', 'Prop 65'].map((cert) => (
-              <span
-                key={cert}
-                className="inline-flex items-center gap-1.5 text-[11px] text-[#d1d1d1] uppercase tracking-[0.15em] bg-white/8 backdrop-blur-sm border border-white/15 px-3.5 py-1.5 rounded-full font-medium"
-              >
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B894" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-                {cert}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-12 flex flex-col sm:flex-row gap-4">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link
               href="/products"
-              className="inline-flex items-center justify-center px-10 py-4 bg-[#00B894] text-white font-medium hover:bg-[#00A37E] transition-all duration-300 hover:-translate-y-0.5 text-sm tracking-wide rounded-[6px] shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center px-10 py-4 bg-[#D4AF37] text-[#1A1A1A] font-medium hover:bg-[#E8D58A] transition-all duration-300 hover:-translate-y-0.5 text-sm tracking-wide rounded-[6px] shadow-lg hover:shadow-xl"
             >
               {t.hero.cta}
               <ArrowRight size={16} className="ml-2" />
             </Link>
             <Link
               href="/solutions/skincare"
-              className="inline-flex items-center justify-center px-10 py-4 bg-transparent text-white font-medium border border-white/30 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all duration-300 text-sm tracking-wide rounded-[6px]"
+              className="inline-flex items-center justify-center px-10 py-4 bg-transparent text-white font-medium border border-white/30 hover:border-white/60 hover:bg-white/5 transition-all duration-300 text-sm tracking-wide rounded-[6px]"
             >
               Explore Solutions
             </Link>
           </div>
+
+          {/* Certification row at bottom of hero */}
+          <div className="mt-16 pt-8 border-t border-white/10">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] text-[#999999] uppercase tracking-[0.12em]">
+              <span className="text-white/50 text-[10px] font-medium tracking-[0.15em]">ISO 15378</span>
+              <span className="w-px h-3 bg-white/10" />
+              <span className="text-white/50 text-[10px] font-medium tracking-[0.15em]">FDA</span>
+              <span className="w-px h-3 bg-white/10" />
+              <span className="text-white/50 text-[10px] font-medium tracking-[0.15em]">REACH</span>
+              <span className="w-px h-3 bg-white/10" />
+              <span className="text-white/50 text-[10px] font-medium tracking-[0.15em]">200+ SKUs</span>
+              <span className="w-px h-3 bg-white/10" />
+              <span className="text-white/50 text-[10px] font-medium tracking-[0.15em]">3-Day Sampling</span>
+            </div>
+          </div>
         </div>
       </div>
-      
-      {/* Decorative gold line */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
     </section>
   );
 }
 
 // ---------------------------------------------------------------------------
-// 2. Who We Serve — 4 cards with lucide icons
+// 2. Who We Serve — 4 cards with gold outline icons, warm tint bg
 // ---------------------------------------------------------------------------
 const SEGMENT_ICONS: Record<string, React.ReactNode> = {
   Sparkles: <Sparkles size={28} aria-hidden="true" strokeWidth={1.5} />,
@@ -189,19 +178,16 @@ function SegmentCard({
   return (
     <Link
       href={href}
-      className="group bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-8 flex flex-col relative transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] rounded-[12px] hover:border-[#00B894]/30"
+      className="group bg-white border border-[#E5E0D8] shadow-[0_2px_8px_rgba(26,26,26,0.04)] p-8 flex flex-col relative transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(26,26,26,0.10)] rounded-[12px] hover:border-[#D4AF37]/50"
     >
       <div className="relative mb-6">
-        <div className="w-14 h-14 bg-[#E8F5F1] rounded-xl flex items-center justify-center group-hover:bg-[#00B894] transition-all duration-300">
-          <div className="text-[#00B894] group-hover:text-white transition-colors duration-300">
-            {SEGMENT_ICONS[icon] ?? <Sparkles size={28} aria-hidden="true" strokeWidth={1.5} />}
-          </div>
+        <div className="w-14 h-14 rounded-xl flex items-center justify-center border-2 border-[#D4AF37] text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-all duration-300">
+          {SEGMENT_ICONS[icon] ?? <Sparkles size={28} aria-hidden="true" strokeWidth={1.5} />}
         </div>
-        <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#D4AF37] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
       <h3 className="text-lg font-semibold text-[#0D0D0D] mb-3 leading-tight">{title}</h3>
-      <p className="text-[#6C757D] text-sm leading-relaxed flex-1">{description}</p>
-      <span className="mt-5 inline-flex items-center gap-1.5 text-[#00B894] text-sm font-medium group-hover:gap-2.5 transition-all duration-300">
+      <p className="text-[#6B6B6B] text-sm leading-relaxed flex-1">{description}</p>
+      <span className="mt-5 inline-flex items-center gap-1.5 text-[#D4AF37] text-sm font-medium group-hover:gap-2.5 transition-all duration-300">
         Learn More
         <ArrowRight size={14} />
       </span>
@@ -212,13 +198,13 @@ function SegmentCard({
 function ClientIdentityCards() {
   const { t } = useI18n();
   return (
-    <section className="bg-[#F5F7F6]">
+    <section className="bg-[#F0EDE8]">
       <div className="section-container section-padding">
         <div className="reveal text-center">
           <h2 className="section-title mb-4">
             {t.whoWeServe.title}
           </h2>
-          <p className="text-[#666666] max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#6B6B6B] max-w-xl mx-auto leading-relaxed">
             {t.whoWeServe.description}
           </p>
         </div>
@@ -240,13 +226,13 @@ function ClientIdentityCards() {
 }
 
 // ---------------------------------------------------------------------------
-// 3. Core Strengths — 3 items centered, gold and mint accents
+// 3. Core Strengths — Gold accents only
 // ---------------------------------------------------------------------------
 function CoreStrengths() {
   return (
-    <section className="bg-[#F5F5F0]">
+    <section className="bg-[#F7F4EF]">
       <div className="section-container section-padding pt-0">
-        <div className="bg-white border border-[#EAECEB] shadow-[0_4px_20px_rgba(0,0,0,0.05)] p-10 md:p-16 reveal rounded-[16px]">
+        <div className="bg-white border border-[#E5E0D8] shadow-[0_4px_20px_rgba(26,26,26,0.05)] p-10 md:p-16 reveal rounded-[16px]">
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {/* On-Time Delivery */}
             <div className="flex flex-col items-center text-center group">
@@ -264,8 +250,8 @@ function CoreStrengths() {
             {/* Production Capacity */}
             <div className="flex flex-col items-center text-center group">
               <div className="relative">
-                <div className="w-28 h-28 rounded-full border-4 border-[#E8F5F1] flex items-center justify-center group-hover:border-[#00B894] transition-colors duration-300">
-                  <span className="text-[20px] md:text-[24px] font-semibold text-[#00B894]">5M+</span>
+                <div className="w-28 h-28 rounded-full border-4 border-[#D4AF37]/40 flex items-center justify-center group-hover:border-[#D4AF37] transition-colors duration-300">
+                  <span className="text-[20px] md:text-[24px] font-semibold text-[#D4AF37]">5M+</span>
                 </div>
                 <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center">
                   <span className="text-[10px] text-white font-bold">TOP</span>
@@ -279,8 +265,8 @@ function CoreStrengths() {
             {/* Recyclable Options */}
             <div className="flex flex-col items-center text-center group">
               <div className="relative">
-                <div className="w-28 h-28 rounded-full border-4 border-[#00B894] bg-[#E8F5F1] flex items-center justify-center group-hover:bg-[#00B894] transition-colors duration-300">
-                  <span className="text-[20px] md:text-[24px] font-semibold text-[#00B894] group-hover:text-white transition-colors duration-300">100%</span>
+                <div className="w-28 h-28 rounded-full border-4 border-[#D4AF37] bg-[#F0EDE8] flex items-center justify-center group-hover:bg-[#D4AF37] transition-colors duration-300">
+                  <span className="text-[20px] md:text-[24px] font-semibold text-[#D4AF37] group-hover:text-white transition-colors duration-300">100%</span>
                 </div>
                 <svg className="absolute -bottom-1 -right-1 w-10 h-10 text-[#D4AF37]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
@@ -298,7 +284,7 @@ function CoreStrengths() {
 }
 
 // ---------------------------------------------------------------------------
-// 4. Case Studies — In the Market, with real images
+// 4. Case Studies — Gold badge, gold results
 // ---------------------------------------------------------------------------
 const CASE_STUDIES = [
   {
@@ -348,8 +334,8 @@ function CaseStudyCard({
   metricSub: string;
 }) {
   return (
-    <article className="bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)] flex flex-col rounded-[12px] group">
-      <div className="relative aspect-[16/10] bg-[#EAECEB] overflow-hidden">
+    <article className="bg-white border border-[#E5E0D8] shadow-[0_2px_8px_rgba(26,26,26,0.04)] overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_12px_32px_rgba(26,26,26,0.10)] flex flex-col rounded-[12px] group">
+      <div className="relative aspect-[16/10] bg-[#E5E0D8] overflow-hidden">
         <Image
           src={image}
           alt={title}
@@ -358,19 +344,19 @@ function CaseStudyCard({
           sizes="(max-width: 768px) 100vw, 33vw"
         />
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-[#D4AF37]/90 text-white text-xs font-medium rounded-full">Case Study</span>
+          <span className="px-3 py-1 bg-[#D4AF37] text-[#1A1A1A] text-xs font-medium rounded-full">Case Study</span>
         </div>
       </div>
       <div className="p-6 md:p-7 flex flex-col flex-1">
         <h3 className="text-lg font-semibold text-[#0D0D0D] mb-4 leading-tight">{title}</h3>
-        <div className="space-y-2.5 text-sm text-[#6C757D] leading-relaxed flex-1 mb-5">
+        <div className="space-y-2.5 text-sm text-[#6B6B6B] leading-relaxed flex-1 mb-5">
           <p><span className="text-[#0D0D0D] font-medium">Challenge:</span> {challenge}</p>
           <p><span className="text-[#0D0D0D] font-medium">Solution:</span> {solution}</p>
-          <p><span className="text-[#0D0D0D] font-medium">Result:</span> <span className="text-[#00B894] font-semibold">{result}</span></p>
+          <p><span className="text-[#0D0D0D] font-medium">Result:</span> <span className="text-[#D4AF37] font-semibold">{result}</span></p>
         </div>
-        <div className="pt-5 border-t border-[#EAECEB]">
+        <div className="pt-5 border-t border-[#E5E0D8]">
           <p className="text-[32px] font-bold text-[#D4AF37] leading-tight">{metric}</p>
-          <p className="text-xs text-[#999999] mt-1.5 uppercase tracking-wider">{metricSub}</p>
+          <p className="text-xs text-[#6B6B6B] mt-1.5 uppercase tracking-wider">{metricSub}</p>
         </div>
       </div>
     </article>
@@ -380,13 +366,13 @@ function CaseStudyCard({
 function CaseStudies() {
   const { t } = useI18n();
   return (
-    <section className="bg-[#F5F7F6]">
+    <section className="bg-[#F0EDE8]">
       <div className="section-container section-padding">
         <div className="reveal text-center">
           <h2 className="section-title mb-4">
             {t.caseStudies.title}
           </h2>
-          <p className="text-[#666666] max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#6B6B6B] max-w-xl mx-auto leading-relaxed">
             {t.caseStudies.description}
           </p>
         </div>
@@ -402,7 +388,7 @@ function CaseStudies() {
 }
 
 // ---------------------------------------------------------------------------
-// 5. Sustainability — image left, points right
+// 5. Sustainability — Emerald badge, dark split layout
 // ---------------------------------------------------------------------------
 function Sustainability() {
   const { t } = useI18n();
@@ -420,17 +406,13 @@ function Sustainability() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#00B894]/10 rounded-full blur-3xl" />
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#D4AF37]/10 rounded-full blur-2xl" />
           </div>
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#00B894]/10 border border-[#00B894]/30 rounded-full mb-6">
-              <svg className="w-4 h-4 text-[#00B894]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-              <span className="text-xs text-[#00B894] uppercase tracking-widest font-medium">Sustainability Focused</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#006B5E]/15 border border-[#006B5E]/30 rounded-full mb-6">
+              <Leaf className="w-4 h-4 text-[#006B5E]" />
+              <span className="text-xs text-[#006B5E] uppercase tracking-widest font-medium">Sustainability Focused</span>
             </div>
-            
+
             <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-light leading-tight mb-6">
               {t.sustainability.title}
               <br />
@@ -442,8 +424,8 @@ function Sustainability() {
             <ul className="space-y-4 mb-10">
               {t.sustainability.points.map((item: string) => (
                 <li key={item} className="flex items-start gap-4 text-sm text-[#B3B3B3]">
-                  <div className="w-6 h-6 rounded-full bg-[#00B894]/20 border border-[#00B894]/40 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#00B894] text-xs">&#10003;</span>
+                  <div className="w-6 h-6 rounded-full bg-[#006B5E]/20 border border-[#006B5E]/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#006B5E] text-xs">&#10003;</span>
                   </div>
                   {item}
                 </li>
@@ -451,7 +433,7 @@ function Sustainability() {
             </ul>
             <Link
               href="/about/sustainability"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00B894] text-white font-medium text-sm hover:bg-[#00A37E] transition-all duration-300 hover:-translate-y-0.5 rounded-[8px] shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#D4AF37] text-[#1A1A1A] font-medium text-sm hover:bg-[#E8D58A] transition-all duration-300 hover:-translate-y-0.5 rounded-[8px] shadow-lg hover:shadow-xl"
             >
               {t.sustainability.cta}
               <ArrowRight size={16} />
@@ -464,28 +446,45 @@ function Sustainability() {
 }
 
 // ---------------------------------------------------------------------------
-// 6. Enterprise Stats Trust Bar
+// 6. Enterprise Stats Trust Bar — Larger numbers, certification row
 // ---------------------------------------------------------------------------
 function TrustBar() {
   return (
-    <section className="bg-[#F5F5F0]">
+    <section className="bg-[#F7F4EF]">
       <div className="section-container section-padding">
-        <div className="border-t border-[#EAECEB] pt-16 reveal">
+        <div className="border-t border-[#E5E0D8] pt-16 reveal">
           <div className="text-center mb-10">
-            <h3 className="text-sm uppercase tracking-[0.15em] text-[#6C757D] font-medium">Trusted By</h3>
+            <h3 className="text-sm uppercase tracking-[0.15em] text-[#6B6B6B] font-medium">Trusted By</h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
             {TRUST_STATS.map((stat, i) => (
               <div
                 key={stat.label}
-                className={`relative text-center px-4 ${i < TRUST_STATS.length - 1 ? 'md:border-r md:border-[#EAECEB]' : ''}`}
+                className={`relative text-center px-4 ${i < TRUST_STATS.length - 1 ? 'md:border-r md:border-[#E5E0D8]' : ''}`}
               >
                 <div className="inline-flex flex-col items-center">
-                  <div className="stat-number text-[#D4AF37]">{stat.value}</div>
+                  <div className="stat-number">{stat.value}</div>
                   <p className="stat-label text-center max-w-[120px]">{stat.label}</p>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Certification row */}
+          <div className="mt-12 pt-8 border-t border-[#E5E0D8]">
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
+              {['ISO 15378', 'FDA', 'REACH', 'RoHS', 'California Prop 65'].map((cert) => (
+                <span
+                  key={cert}
+                  className="inline-flex items-center gap-2 text-xs text-[#6B6B6B] uppercase tracking-[0.12em] font-medium"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                  {cert}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -494,45 +493,55 @@ function TrustBar() {
 }
 
 // ---------------------------------------------------------------------------
-// 7. Expert CTA
+// 7. Expert CTA — Clean dark bg, product macro shot, gold CTA
 // ---------------------------------------------------------------------------
 function ExpertCta() {
   const { t } = useI18n();
   return (
     <section className="bg-[#1A1A1A] relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00B894]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-3xl" />
-      </div>
-      
       <div className="section-container section-padding relative z-10">
-        <div className="max-w-2xl reveal">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full mb-6">
-            <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-            <span className="text-xs text-[#D4AF37] uppercase tracking-widest font-medium">Expert Support</span>
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center reveal">
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+              <span className="text-xs text-[#D4AF37] uppercase tracking-widest font-medium">Expert Support</span>
+            </div>
+
+            <h2 className="text-[clamp(1.75rem,4vw,2.75rem)] font-light text-white mb-6 leading-tight">
+              {t.expertCta.title}
+            </h2>
+            <p className="text-[#999999] text-base leading-relaxed mb-10 max-w-lg">
+              {t.expertCta.description}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/about/resources"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#D4AF37] text-[#1A1A1A] font-medium text-sm hover:bg-[#E8D58A] transition-all duration-300 hover:-translate-y-0.5 rounded-[8px] shadow-lg hover:shadow-xl"
+              >
+                {t.expertCta.cta}
+                <ArrowRight size={16} />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-transparent text-white font-medium text-sm border border-white/30 hover:border-white/60 hover:bg-white/5 transition-all duration-300 rounded-[8px]"
+              >
+                Contact Sales Team
+              </Link>
+            </div>
           </div>
-          
-          <h2 className="text-[clamp(1.75rem,4vw,2.75rem)] font-light text-white mb-6 leading-tight">
-            {t.expertCta.title}
-          </h2>
-          <p className="text-[#999999] text-base leading-relaxed mb-10 max-w-lg">
-            {t.expertCta.description}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/about/resources"
-              className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#00B894] text-white font-medium text-sm hover:bg-[#00A37E] transition-all duration-300 hover:-translate-y-0.5 rounded-[8px] shadow-lg hover:shadow-xl"
-            >
-              {t.expertCta.cta}
-              <ArrowRight size={16} />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-transparent text-white font-medium text-sm border border-white/30 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all duration-300 rounded-[8px]"
-            >
-              Contact Sales Team
-            </Link>
+
+          {/* Right: product macro shot */}
+          <div className="relative hidden md:block">
+            <div className="aspect-square rounded-[16px] overflow-hidden shadow-2xl">
+              <Image
+                src="/images/Macro Pump Head with Chemical .png"
+                alt="Precision pump engineering"
+                fill
+                className="object-cover"
+                sizes="50vw"
+              />
+            </div>
           </div>
         </div>
       </div>

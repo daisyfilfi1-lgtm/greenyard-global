@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { I18nProvider } from "@/lib/i18n";
 import JsonLd from "@/components/JsonLd";
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -57,9 +57,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} h-full`}
+      className={`${dmSans.className} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-[#F5F5F0] text-[#0D0D0D] antialiased">
+      <body className="min-h-full flex flex-col bg-[#F7F4EF] text-[#0D0D0D] antialiased">
         <I18nProvider>
           <a
             href="#main-content"

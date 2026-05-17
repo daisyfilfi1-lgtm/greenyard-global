@@ -1,34 +1,33 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   GreenYard Design System — Premium Luxury v3
+   GreenYard Design System — Premium Luxury v3 (Top-3 Benchmark Overhaul)
    "One Earth. Precision Engineering."
+   Master reference: BMW precision engineering × Apple product-as-hero
    ========================================================================== */
 
 :root {
-  /* --- Colors (Premium Luxury Palette) --- */
-  --color-primary: #00B894;
-  --color-primary-hover: #00A37E;
-  --color-primary-dark: #0F3D26;
-  --color-primary-dark-hover: #0B2D1C;
-  --color-mint-tint: #E8F5F1;
+  /* --- Colors (Top-3 Benchmark Palette) --- */
   --color-gold: #D4AF37;
   --color-gold-light: #E8D58A;
-  --color-bg: #F5F5F0;
+  --color-emerald: #006B5E;
+  --color-emerald-light: #E0F0EC;
+  --color-bg: #F7F4EF;
   --color-card-bg: #FFFFFF;
+  --color-warm-tint: #F0EDE8;
   --color-charcoal: #1A1A1A;
   --color-text-primary: #0D0D0D;
   --color-text-body: #333333;
-  --color-text-caption: #6C757D;
+  --color-text-caption: #6B6B6B;
   --color-text-muted: #757575;
-  --color-border: #EAECEB;
+  --color-border: #E5E0D8;
   --color-white: #FFFFFF;
 
   /* --- Typography --- */
-  --font-display-size: 72px;
+  --font-display-size: 64px;
   --font-h1-size: 52px;
-  --font-h2-size: 36px;
-  --font-h3-size: 28px;
+  --font-h2-size: 32px;
+  --font-h3-size: 24px;
   --font-h4-size: 22px;
   --font-body-size: 16px;
   --font-small-size: 14px;
@@ -36,9 +35,9 @@
 
   --font-display-line-height: 1.1;
   --font-h1-line-height: 1.15;
-  --font-h2-line-height: 1.25;
+  --font-h2-line-height: 1.2;
   --font-h3-line-height: 1.3;
-  --font-body-line-height: 1.7;
+  --font-body-line-height: 1.6;
 
   --font-display-weight: 300;
   --font-heading-weight: 500;
@@ -46,11 +45,11 @@
   --font-stat-weight: 600;
 
   --font-display-tracking: -0.03em;
-  --font-h1-tracking: 0.03em;
-  --font-h2-tracking: 0.01em;
+  --font-h1-tracking: -0.01em;
+  --font-h2-tracking: -0.01em;
   --font-stat-tracking: -0.02em;
 
-  /* --- Spacing (More Air) --- */
+  /* --- Spacing --- */
   --section-padding: 120px;
   --section-padding-tablet: 80px;
   --section-padding-mobile: 64px;
@@ -67,11 +66,12 @@
   --border-radius-xl: 20px;
   --border-radius-full: 9999px;
 
-  /* --- Shadows --- */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 8px 28px rgba(0, 0, 0, 0.09);
-  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.12);
+  /* --- Shadows (tinted with brand charcoal, not generic gray) --- */
+  --shadow-sm: 0 2px 8px rgba(26, 26, 26, 0.04);
+  --shadow-md: 0 4px 20px rgba(26, 26, 26, 0.06);
+  --shadow-lg: 0 8px 28px rgba(26, 26, 26, 0.09);
+  --shadow-xl: 0 12px 40px rgba(26, 26, 26, 0.10);
+  --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.20);
 
   /* --- Transitions --- */
   --transition-fast: 150ms ease;
@@ -91,15 +91,13 @@
    ========================================================================== */
 
 @theme {
-  --color-primary: var(--color-primary);
-  --color-primary-hover: var(--color-primary-hover);
-  --color-primary-dark: var(--color-primary-dark);
-  --color-primary-dark-hover: var(--color-primary-dark-hover);
-  --color-mint-tint: var(--color-mint-tint);
   --color-gold: var(--color-gold);
   --color-gold-light: var(--color-gold-light);
+  --color-emerald: var(--color-emerald);
+  --color-emerald-light: var(--color-emerald-light);
   --color-bg: var(--color-bg);
   --color-card-bg: var(--color-card-bg);
+  --color-warm-tint: var(--color-warm-tint);
   --color-charcoal: var(--color-charcoal);
   --color-text-primary: var(--color-text-primary);
   --color-text-body: var(--color-text-body);
@@ -107,7 +105,7 @@
   --color-text-muted: var(--color-text-muted);
   --color-border: var(--color-border);
 
-  --font-family-sans: 'Inter', sans-serif;
+  --font-family-sans: 'DM Sans', sans-serif;
   --font-size-display: var(--font-display-size);
   --font-size-h1: var(--font-h1-size);
   --font-size-h2: var(--font-h2-size);
@@ -148,7 +146,7 @@
   body {
     background-color: var(--color-bg);
     color: var(--color-text-body);
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: var(--font-body-size);
     line-height: var(--font-body-line-height);
   }
@@ -160,12 +158,12 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-gold);
     outline-offset: 2px;
   }
 
   ::selection {
-    background-color: var(--color-primary);
+    background-color: var(--color-gold);
     color: var(--color-white);
   }
 }
@@ -175,24 +173,16 @@
    ========================================================================== */
 
 @layer utilities {
-  /* Oversized numbers for statistics - Gold color per design spec */
+  /* Oversized numbers for statistics — Gold, light weight */
   .stat-number {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: var(--font-stat-weight);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
     line-height: 1.1;
     color: var(--color-gold);
     letter-spacing: var(--font-stat-tracking);
   }
 
-  .stat-number-mint {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: var(--font-stat-weight);
-    line-height: 1.1;
-    color: var(--color-primary);
-    letter-spacing: var(--font-stat-tracking);
-  }
-
-  /* Stat labels — small, muted, under numbers */
+  /* Stat labels — small, muted, uppercase */
   .stat-label {
     font-size: var(--font-xs-size);
     font-weight: 500;
@@ -203,7 +193,7 @@
     margin-top: 0.5rem;
   }
 
-  /* Section title — H2 standard across all sections */
+  /* Section title — H2 standard */
   .section-title {
     font-size: clamp(1.75rem, 4vw, 2.75rem);
     font-weight: var(--font-heading-weight);
@@ -220,7 +210,7 @@
     letter-spacing: var(--font-h2-tracking);
   }
 
-  /* Card title — bold, primary color */
+  /* Card title */
   .card-title {
     font-size: var(--font-h4-size);
     font-weight: 600;
@@ -228,7 +218,7 @@
     line-height: var(--font-h3-line-height);
   }
 
-  /* Card description — smaller, lighter, airy */
+  /* Card description */
   .card-desc {
     font-size: var(--font-small-size);
     color: var(--color-text-caption);
@@ -272,8 +262,8 @@
     background-color: var(--color-bg);
   }
 
-  .section-mint {
-    background-color: var(--color-mint-tint);
+  .section-warm {
+    background-color: var(--color-warm-tint);
   }
 
   /* Skip to main content (accessibility) */
@@ -283,9 +273,9 @@
     left: 0;
     z-index: 999;
     padding: 10px 20px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    font-weight: 600;
+    background-color: var(--color-gold);
+    color: var(--color-charcoal);
+    font-weight: 500;
     border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
     transition: top var(--transition-fast);
   }
@@ -331,7 +321,7 @@
   .mobile-nav-link:nth-child(9) { animation-delay: 0.45s; }
   .mobile-nav-link:nth-child(10) { animation-delay: 0.5s; }
 
-  /* Card style — white bg, 1px border, subtle shadow */
+  /* Card style — white bg, border, shadow */
   .card-border {
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-lg);
@@ -343,7 +333,7 @@
   .card-border:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--color-primary);
+    border-color: var(--color-gold);
   }
 
   .card-border-sm {
@@ -359,46 +349,33 @@
     box-shadow: var(--shadow-md);
   }
 
-  .card-mint {
-    border: 1px solid var(--color-primary);
-    border-radius: var(--border-radius-lg);
-    background-color: var(--color-mint-tint);
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-base);
-  }
-
-  .card-mint:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  /* Button base */
+  /* Button base - gold primary */
   .btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+    background-color: var(--color-gold);
+    color: var(--color-charcoal);
     border-radius: var(--border-radius-sm);
     font-weight: 500;
     transition: all var(--transition-base);
   }
 
   .btn-primary:hover {
-    background-color: var(--color-primary-hover);
+    background-color: var(--color-gold-light);
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
   }
 
-  .btn-outline {
-    background-color: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    border-radius: var(--border-radius-sm);
-    font-weight: 500;
-    transition: all var(--transition-base);
+  /* Gold divider line */
+  .divider-gold {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    width: 60px;
+    margin: 1.5rem auto;
   }
 
-  .btn-outline:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+  /* Focus ring with gold accent */
+  .focus-ring-gold:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
   }
 
   /* Scroll reveal — animated on intersection */
@@ -439,25 +416,11 @@
     transition: all var(--transition-base);
   }
 
-  /* Gradient text - Gold shimmer */
+  /* Gradient text — Gold shimmer */
   .text-gradient-gold {
     background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
-
-  /* Gold divider line */
-  .divider-gold {
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
-    width: 60px;
-    margin: 1.5rem auto;
-  }
-
-  /* Focus ring with gold accent */
-  .focus-ring-gold:focus-visible {
-    outline: 2px solid var(--color-gold);
-    outline-offset: 3px;
   }
 }

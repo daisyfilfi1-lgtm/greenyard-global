@@ -112,8 +112,8 @@ export default function Navbar() {
                         href={child.href}
                         className={`block px-4 py-3 rounded-lg transition-all ${
                           isActive(child.href)
-                            ? "bg-[#E8F5F1] text-[#00B894]"
-                            : "hover:bg-[#F5F5F0] text-[#333333]"
+                            ? "bg-[#F0EDE8] text-[#D4AF37]"
+                            : "hover:bg-[#F7F4EF] text-[#333333]"
                         }`}
                       >
                         <div className="text-sm font-medium">{child.label}</div>
@@ -142,7 +142,7 @@ export default function Navbar() {
           <LanguageSwitcher />
           <Link
             href="/contact"
-            className="px-5 py-2.5 bg-[#00B894] text-white text-sm font-medium hover:bg-[#00A37E] transition-all rounded-lg hover:-translate-y-0.5 shadow-md hover:shadow-lg"
+            className="px-5 py-2.5 bg-[#D4AF37] text-[#1A1A1A] text-sm font-medium hover:bg-[#E8D58A] transition-all rounded-lg hover:-translate-y-0.5 shadow-md hover:shadow-lg"
           >
             Contact
           </Link>
@@ -193,7 +193,7 @@ export default function Navbar() {
                               href={child.href}
                               className={`block px-3 py-2.5 text-sm transition-colors ${
                                 isActive(child.href)
-                                  ? "bg-[#0F3D26]/10 text-[#0F3D26]"
+                                  ? "bg-[#D4AF37]/10 text-[#D4AF37]"
                                   : "text-[#F5F7F6] hover:bg-white/5"
                               }`}
                               onClick={() => setMobileOpen(false)}
@@ -213,7 +213,7 @@ export default function Navbar() {
                         href={item.href}
                         className={`block px-3 py-2.5 text-sm transition-colors ${
                           isActive(item.href)
-                            ? "bg-[#0F3D26]/10 text-[#0F3D26]"
+                            ? "bg-[#D4AF37]/10 text-[#D4AF37]"
                             : "text-[#F5F7F6] hover:bg-white/5"
                         }`}
                         onClick={() => setMobileOpen(false)}
@@ -239,7 +239,7 @@ export default function Navbar() {
               </div>
               <Link
                 href="/contact"
-                className="block w-full text-center px-4 py-3 text-sm font-medium bg-[#0F3D26] text-white hover:bg-[#0B2D1C] transition-colors rounded-[4px]"
+                className="block w-full text-center px-4 py-3 text-sm font-medium bg-[#D4AF37] text-[#1A1A1A] hover:bg-[#E8D58A] transition-colors rounded-[4px]"
                 onClick={() => setMobileOpen(false)}
               >
                 Contact Us
