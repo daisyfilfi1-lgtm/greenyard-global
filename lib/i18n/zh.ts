@@ -13,6 +13,7 @@ const zh = {
     resources: '资源中心',
     certifications: '认证资质',
     contact: '联系我们',
+    solutions: '行业方案',
   },
   hero: {
     title: '定义',

@@ -111,8 +111,8 @@ export default function FilterBar({ products, onFilterChange }: FilterBarProps) 
                 onClick={() => updateFilter('neckFinish', option)}
                 className={`px-3 py-1.5 text-xs rounded-full border transition-colors ${
                   filters.neckFinish.includes(option)
-                    ? 'bg-[#00B894] text-white border-[#00B894]'
-                    : 'bg-white text-text-secondary border-[#DEE2E6] hover:border-[#00B894] hover:text-[#00B894]'
+                    ? 'bg-[#D4AF37] text-white border-[#D4AF37]'
+                    : 'bg-white text-text-secondary border-[#E5E0D8] hover:border-[#D4AF37] hover:text-[#D4AF37]'
                 }`}
               >
                 {option}
@@ -131,8 +131,8 @@ export default function FilterBar({ products, onFilterChange }: FilterBarProps) 
                 onClick={() => updateFilter('material', option)}
                 className={`px-3 py-1.5 text-xs rounded-full border transition-colors ${
                   filters.material.includes(option)
-                    ? 'bg-[#00B894] text-white border-[#00B894]'
-                    : 'bg-white text-text-secondary border-[#DEE2E6] hover:border-[#00B894] hover:text-[#00B894]'
+                    ? 'bg-[#D4AF37] text-white border-[#D4AF37]'
+                    : 'bg-white text-text-secondary border-[#E5E0D8] hover:border-[#D4AF37] hover:text-[#D4AF37]'
                 }`}
               >
                 {option}
@@ -152,8 +152,8 @@ export default function FilterBar({ products, onFilterChange }: FilterBarProps) 
                   onClick={() => updateFilter('lockType', option)}
                   className={`px-3 py-1.5 text-xs rounded-full border transition-colors ${
                     filters.lockType.includes(option)
-                      ? 'bg-[#00B894] text-white border-[#00B894]'
-                      : 'bg-white text-text-secondary border-[#DEE2E6] hover:border-[#00B894] hover:text-[#00B894]'
+                      ? 'bg-[#D4AF37] text-white border-[#D4AF37]'
+                      : 'bg-white text-text-secondary border-[#E5E0D8] hover:border-[#D4AF37] hover:text-[#D4AF37]'
                   }`}
                 >
                   {option}
@@ -162,7 +162,7 @@ export default function FilterBar({ products, onFilterChange }: FilterBarProps) 
               {availableOptions.lockType.length > 5 && (
                 <button
                   onClick={() => setShowMore(!showMore)}
-                  className="px-3 py-1.5 text-xs text-[#00B894] hover:text-[#009B7A] transition-colors"
+                  className="px-3 py-1.5 text-xs text-[#D4AF37] hover:text-[#E8D58A] transition-colors"
                 >
                   {showMore ? 'Show less' : `+${availableOptions.lockType.length - 5} more`}
                 </button>
@@ -177,8 +177,8 @@ export default function FilterBar({ products, onFilterChange }: FilterBarProps) 
             onClick={() => updateFilter('sustainableOnly', true)}
             className={`flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-medium transition-colors ${
               filters.sustainableOnly
-                ? 'bg-[#00B894] text-white border-[#00B894]'
-                : 'bg-white text-text-secondary border-[#DEE2E6] hover:border-[#00B894] hover:text-[#00B894]'
+                ? 'bg-[#D4AF37] text-white border-[#D4AF37]'
+                : 'bg-white text-text-secondary border-[#E5E0D8] hover:border-[#D4AF37] hover:text-[#D4AF37]'
             }`}
           >
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -191,17 +191,17 @@ export default function FilterBar({ products, onFilterChange }: FilterBarProps) 
 
       {/* Active Filter Chips */}
       {activeChips.length > 0 && (
-        <div className="mt-4 pt-4 border-t border-[#DEE2E6] flex items-center gap-2 flex-wrap">
+        <div className="mt-4 pt-4 border-t border-[#E5E0D8] flex items-center gap-2 flex-wrap">
           <span className="text-xs text-text-secondary">Active filters:</span>
           {activeChips.map((chip, i) => (
             <span
               key={`${chip.type}-${chip.value}-${i}`}
-              className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#00B894]/10 text-[#00B894] text-xs rounded-full"
+              className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#D4AF37]/10 text-[#D4AF37] text-xs rounded-full"
             >
               {chip.label === 'true' ? 'Sustainable Only' : chip.label}
               <button
                 onClick={() => removeChip(chip.type, chip.value)}
-                className="hover:text-[#009B7A] ml-0.5"
+                className="hover:text-[#E8D58A] ml-0.5"
                 aria-label={`Remove ${chip.label} filter`}
               >
                 &times;
@@ -210,7 +210,7 @@ export default function FilterBar({ products, onFilterChange }: FilterBarProps) 
           ))}
           <button
             onClick={clearAll}
-            className="text-xs text-text-secondary hover:text-[#00B894] ml-2 underline"
+            className="text-xs text-text-secondary hover:text-[#D4AF37] ml-2 underline"
           >
             Clear all
           </button>

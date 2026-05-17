@@ -13,6 +13,7 @@ const en = {
     resources: 'Resources',
     certifications: 'Certifications',
     contact: 'Contact',
+    solutions: 'Solutions by Industry',
   },
   hero: {
     title: 'Packaging Solutions Defining ',

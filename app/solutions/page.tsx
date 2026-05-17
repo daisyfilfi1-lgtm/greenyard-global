@@ -13,8 +13,8 @@ const solutions = [
 
 export default function SolutionsPage() {
   return (
-    <main className="bg-[#F5F7F6] min-h-screen">
-      <section className="bg-[#0F3D26] text-white py-24">
+    <main className="bg-[#F0EDE8] min-h-screen">
+      <section className="bg-[#1A1A1A] text-white py-24">
         <div className="max-w-[1200px] mx-auto px-8">
           <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight leading-[1.1]">Solutions by Industry</h1>
           <p className="mt-4 text-lg text-white/80 max-w-xl">Precision packaging solutions tailored to your market requirements, compliance needs, and volume expectations.</p>
@@ -25,15 +25,15 @@ export default function SolutionsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {solutions.map((s) => (
             <Link key={s.slug} href={`/solutions/${s.slug}`}
-              className="bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-10 hover:translate-y-[-2px] transition-all group">
-              <h2 className="text-2xl font-semibold text-[#1A1A1A] group-hover:text-[#0F3D26] transition-colors">{s.title}</h2>
+              className="bg-white border border-[#E5E0D8] shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-10 hover:translate-y-[-2px] transition-all group">
+              <h2 className="text-2xl font-semibold text-[#1A1A1A] group-hover:text-[#1A1A1A] transition-colors">{s.title}</h2>
               <p className="mt-3 text-[#333333] leading-relaxed">{s.desc}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {s.badges.map((b) => (
-                  <span key={b} className="text-xs text-[#0F3D26] bg-[#F5F7F6] px-3 py-1 rounded-[4px]">{b}</span>
+                  <span key={b} className="text-xs text-[#1A1A1A] bg-[#F0EDE8] px-3 py-1 rounded-[4px]">{b}</span>
                 ))}
               </div>
-              <span className="inline-block mt-6 text-sm font-medium text-[#0F3D26]">Explore solutions →</span>
+              <span className="inline-block mt-6 text-sm font-medium text-[#1A1A1A]">Explore solutions →</span>
             </Link>
           ))}
         </div>

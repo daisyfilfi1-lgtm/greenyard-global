@@ -61,9 +61,9 @@ export default function ComparisonModal({ products, onClose }: ComparisonModalPr
       <div className="fixed inset-0 bg-black/50 z-[-1]" />
 
       {/* Modal */}
-      <div className="bg-[#F5F5F0] rounded-xl max-w-5xl w-full shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-200">
+      <div className="bg-[#F7F4EF] rounded-xl max-w-5xl w-full shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-200">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#DEE2E6]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#E5E0D8]">
           <h2 className="text-lg font-semibold text-text-primary">
             Compare Products ({products.length})
           </h2>
@@ -82,7 +82,7 @@ export default function ComparisonModal({ products, onClose }: ComparisonModalPr
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-[#DEE2E6]">
+              <tr className="border-b border-[#E5E0D8]">
                 <th className="text-left px-6 py-3 text-text-secondary font-medium w-1/5">Specification</th>
                 {products.map(p => (
                   <th key={p.sku} className="px-4 py-3 text-center">
@@ -94,7 +94,7 @@ export default function ComparisonModal({ products, onClose }: ComparisonModalPr
             </thead>
             <tbody>
               {allSpecKeys.map((spec, idx) => (
-                <tr key={spec.key} className={idx % 2 === 0 ? 'bg-[#E8F5F1]/50' : 'bg-white'}>
+                <tr key={spec.key} className={idx % 2 === 0 ? 'bg-[#F0EDE8]/50' : 'bg-white'}>
                   <td className="px-6 py-3 font-medium text-text-primary">{spec.label}</td>
                   {products.map(p => (
                     <td key={p.sku} className="px-4 py-3 text-center text-text-secondary">
@@ -108,7 +108,7 @@ export default function ComparisonModal({ products, onClose }: ComparisonModalPr
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-[#DEE2E6] flex items-center justify-end gap-3">
+        <div className="px-6 py-4 border-t border-[#E5E0D8] flex items-center justify-end gap-3">
           <button
             onClick={onClose}
             className="px-4 py-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
@@ -117,7 +117,7 @@ export default function ComparisonModal({ products, onClose }: ComparisonModalPr
           </button>
           <a
             href={`mailto:info@cngreenyard.com?subject=RFQ: ${products.map(p => p.sku).join(', ')}`}
-            className="px-5 py-2 text-sm font-semibold bg-[#00B894] text-white rounded-md hover:bg-[#009B7A] transition-colors"
+            className="px-5 py-2 text-sm font-semibold bg-[#D4AF37] text-white rounded-md hover:bg-[#E8D58A] transition-colors"
           >
             Request Quote for Selected
           </a>

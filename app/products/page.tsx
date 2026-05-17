@@ -68,28 +68,28 @@ export default function ProductsPage() {
       </section>
 
       {/* Category Cards */}
-      <section className="section-padding bg-[#F5F7F6]">
+      <section className="section-padding bg-[#F0EDE8]">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map(cat => (
               <a
                 key={cat.category}
                 href={cat.route}
-                className="bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-6 hover:translate-y-[-2px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all block rounded-[4px]"
+                className="bg-white border border-[#E5E0D8] shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-6 hover:translate-y-[-2px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all block rounded-[4px]"
               >
                 <h3 className="font-semibold text-[#1A1A1A] text-lg">{cat.category}</h3>
-                <p className="text-xs text-[#757575] mt-1">
+                <p className="text-xs text-[#6B6B6B] mt-1">
                   {cat.products.length} products{cat.seriesCount > 1 ? ` · ${cat.seriesCount} series` : ''}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {cat.products.slice(0, 5).map(p => (
-                    <span key={p.sku} className="text-xs text-[#757575] font-medium">{p.sku}</span>
+                    <span key={p.sku} className="text-xs text-[#6B6B6B] font-medium">{p.sku}</span>
                   ))}
                   {cat.products.length > 5 && (
-                    <span className="text-xs text-[#757575]">+{cat.products.length - 5} more</span>
+                    <span className="text-xs text-[#6B6B6B]">+{cat.products.length - 5} more</span>
                   )}
                 </div>
-                <span className="text-sm font-medium text-[#0F3D26] mt-3 inline-block">
+                <span className="text-sm font-medium text-[#1A1A1A] mt-3 inline-block">
                   Browse {cat.category} &rarr;
                 </span>
               </a>

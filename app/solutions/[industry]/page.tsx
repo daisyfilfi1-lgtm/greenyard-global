@@ -98,11 +98,11 @@ export function generateStaticParams() {
 export default async function IndustryPage({ params }: { params: Promise<{ industry: string }> }) {
   const { industry } = await params;
   const d = data[industry];
-  if (!d) return <div className="min-h-screen flex items-center justify-center text-[#757575]">Industry not found</div>;
+  if (!d) return <div className="min-h-screen flex items-center justify-center text-[#6B6B6B]">Industry not found</div>;
   const products = getProductsByIndustry(industry);
 
   return (
-    <main className="bg-[#F5F7F6]">
+    <main className="bg-[#F0EDE8]">
       {/* Section 1: Hero with Background Image */}
       <section className="relative min-h-[55vh] flex items-end bg-[#1A1A1A] overflow-hidden">
         {/* Background image with overlay */}
@@ -136,14 +136,14 @@ export default async function IndustryPage({ params }: { params: Promise<{ indus
       </section>
 
       {/* Section 2: Pain-Point Matrix */}
-      <section className="bg-[#EAECEB] py-20">
+      <section className="bg-[#E5E0D8] py-20">
         <div className="max-w-[1200px] mx-auto px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {d.painPoints.map((p) => (
               <div key={p.title} className="bg-white p-6">
                 <span className="text-xl">{p.icon}</span>
                 <h3 className="mt-3 text-sm font-semibold text-[#1A1A1A] leading-snug">{p.title}</h3>
-                <p className="mt-1.5 text-xs text-[#757575] leading-relaxed">{p.desc}</p>
+                <p className="mt-1.5 text-xs text-[#6B6B6B] leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -155,26 +155,26 @@ export default async function IndustryPage({ params }: { params: Promise<{ indus
         <div className="max-w-[1200px] mx-auto px-8">
           <h2 className="text-3xl font-light tracking-tight text-[#1A1A1A]">
             Recommended for {d.title}
-            <span className="block w-10 h-[2px] bg-[#0F3D26] mt-4" />
+            <span className="block w-10 h-[2px] bg-[#1A1A1A] mt-4" />
           </h2>
-          <p className="mt-3 text-[#757575]">Curated SKUs tested for {industry === 'skincare' ? 'serums, toners, and moisturizers' : industry === 'pharma' ? 'sterile and regulated formulations' : industry === 'household' ? 'cleaning products and industrial fluids' : 'high-volume filling lines'}.</p>
+          <p className="mt-3 text-[#6B6B6B]">Curated SKUs tested for {industry === 'skincare' ? 'serums, toners, and moisturizers' : industry === 'pharma' ? 'sterile and regulated formulations' : industry === 'household' ? 'cleaning products and industrial fluids' : 'high-volume filling lines'}.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             {products.slice(0, 6).map((p) => (
               <Link key={p.sku} href={`/products/detail/${p.sku}`}
-                className="bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300">
-                <div className="aspect-square bg-[#F5F7F6] flex items-center justify-center p-6">
+                className="bg-white border border-[#E5E0D8] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300">
+                <div className="aspect-square bg-[#F0EDE8] flex items-center justify-center p-6">
                   {(p.imagePlaceholder?.startsWith('http') || p.imagePlaceholder?.startsWith('/')) ? (
                     <img src={p.imagePlaceholder} alt={p.name} className="w-full h-full object-contain" crossOrigin="anonymous" />
                   ) : (
-                    <span className="text-[#0F3D26] font-semibold text-sm">{p.sku}</span>
+                    <span className="text-[#1A1A1A] font-semibold text-sm">{p.sku}</span>
                   )}
                 </div>
                 <div className="p-5">
-                  {p.monoMaterial && <span className="text-[10px] text-[#0F3D26] uppercase tracking-wider font-medium border border-[#0F3D26]/20 px-2 py-0.5 mb-2 inline-block">Sustainable</span>}
+                  {p.monoMaterial && <span className="text-[10px] text-[#1A1A1A] uppercase tracking-wider font-medium border border-[#1A1A1A]/20 px-2 py-0.5 mb-2 inline-block">Sustainable</span>}
                   <h3 className="font-semibold text-[#1A1A1A] text-sm">{p.name}</h3>
-                  <p className="text-xs text-[#757575] mt-1">{p.dischargeRate} · {p.neckFinish.join(', ')}</p>
-                  <p className="text-xs text-[#0F3D26] mt-2 font-medium">View Details →</p>
+                  <p className="text-xs text-[#6B6B6B] mt-1">{p.dischargeRate} · {p.neckFinish.join(', ')}</p>
+                  <p className="text-xs text-[#1A1A1A] mt-2 font-medium">View Details →</p>
                 </div>
               </Link>
             ))}
@@ -187,11 +187,11 @@ export default async function IndustryPage({ params }: { params: Promise<{ indus
         <div className="max-w-[1200px] mx-auto px-8">
           <h2 className="text-3xl font-light tracking-tight text-[#1A1A1A]">
             Compliance You Can Verify
-            <span className="block w-10 h-[2px] bg-[#0F3D26] mt-4" />
+            <span className="block w-10 h-[2px] bg-[#1A1A1A] mt-4" />
           </h2>
           <div className="flex flex-wrap gap-3 mt-8">
             {d.compliance.map((c) => (
-              <span key={c} className="text-sm text-[#0F3D26] bg-[#F5F7F6] border border-[#EAECEB] px-5 py-2.5 font-medium">{c}</span>
+              <span key={c} className="text-sm text-[#1A1A1A] bg-[#F0EDE8] border border-[#E5E0D8] px-5 py-2.5 font-medium">{c}</span>
             ))}
           </div>
         </div>
@@ -202,13 +202,13 @@ export default async function IndustryPage({ params }: { params: Promise<{ indus
         <div className="max-w-[1200px] mx-auto px-8">
           <h2 className="text-3xl font-light tracking-tight text-[#1A1A1A]">
             In the Market
-            <span className="block w-10 h-[2px] bg-[#0F3D26] mt-4" />
+            <span className="block w-10 h-[2px] bg-[#1A1A1A] mt-4" />
           </h2>
-          <div className="mt-10 bg-white border border-[#EAECEB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-12">
+          <div className="mt-10 bg-white border border-[#E5E0D8] shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-12">
             <div className="max-w-2xl">
               <h3 className="text-xl font-semibold text-[#1A1A1A]">{d.caseStudy.headline}</h3>
               <p className="mt-4 text-[#333333] leading-relaxed">{d.caseStudy.body}</p>
-              <p className="mt-4 text-[#0F3D26] font-semibold">{d.caseStudy.metric}</p>
+              <p className="mt-4 text-[#1A1A1A] font-semibold">{d.caseStudy.metric}</p>
             </div>
           </div>
         </div>
@@ -219,14 +219,14 @@ export default async function IndustryPage({ params }: { params: Promise<{ indus
         <div className="max-w-[1200px] mx-auto px-8">
           <h2 className="text-3xl font-light tracking-tight text-[#1A1A1A]">
             From Inquiry to Delivery
-            <span className="block w-10 h-[2px] bg-[#0F3D26] mt-4" />
+            <span className="block w-10 h-[2px] bg-[#1A1A1A] mt-4" />
           </h2>
           <div className="mt-12 flex flex-col lg:flex-row items-start lg:items-center gap-0">
             {['Inquiry', 'Sample\n7–15 days', 'Approval', 'Production\n30 days', 'Delivery'].map((step, i) => (
               <div key={i} className="flex lg:flex-col items-center gap-4 lg:gap-0 flex-1 relative py-4 lg:py-0">
-                <div className="w-10 h-10 rounded-full bg-[#0F3D26] text-white flex items-center justify-center text-sm font-semibold shrink-0">{i + 1}</div>
+                <div className="w-10 h-10 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center text-sm font-semibold shrink-0">{i + 1}</div>
                 <p className="text-sm text-[#1A1A1A] whitespace-pre-line leading-snug">{step}</p>
-                {i < 4 && <div className="hidden lg:block absolute top-5 left-[calc(50%+20px)] w-[calc(100%-40px)] h-[1px] bg-[#EAECEB]" />}
+                {i < 4 && <div className="hidden lg:block absolute top-5 left-[calc(50%+20px)] w-[calc(100%-40px)] h-[1px] bg-[#E5E0D8]" />}
               </div>
             ))}
           </div>
@@ -234,11 +234,11 @@ export default async function IndustryPage({ params }: { params: Promise<{ indus
       </section>
 
       {/* Section 7: Expert CTA */}
-      <section className="bg-[#0F3D26] py-24">
+      <section className="bg-[#1A1A1A] py-24">
         <div className="max-w-[1200px] mx-auto px-8 text-center">
           <h2 className="text-3xl font-light tracking-tight text-white">Not sure which pump fits your formula?</h2>
           <p className="mt-4 text-white/60 max-w-md mx-auto">Our packaging engineers typically respond within 24 hours with a tailored recommendation.</p>
-          <Link href="/contact" className="inline-block mt-8 px-8 py-3 border border-white/30 text-white text-sm font-medium hover:bg-white hover:text-[#0F3D26] transition-colors">Speak to an Engineer →</Link>
+          <Link href="/contact" className="inline-block mt-8 px-8 py-3 border border-white/30 text-white text-sm font-medium hover:bg-white hover:text-[#1A1A1A] transition-colors">Speak to an Engineer →</Link>
         </div>
       </section>
     </main>

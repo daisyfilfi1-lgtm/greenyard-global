@@ -49,9 +49,9 @@ export default function RequestSampleModal({ sku, onClose }: RequestSampleModalP
       <div className="fixed inset-0 bg-black/50 z-[-1]" />
 
       {/* Modal */}
-      <div className="bg-[#F5F5F0] rounded-xl max-w-lg w-full shadow-xl animate-in fade-in zoom-in-95 duration-200">
+      <div className="bg-[#F7F4EF] rounded-xl max-w-lg w-full shadow-xl animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#DEE2E6]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#E5E0D8]">
           <div>
             <h2 className="text-lg font-semibold text-text-primary">Request Sample</h2>
             <p className="text-sm text-text-secondary mt-0.5">{sku}</p>
@@ -72,7 +72,7 @@ export default function RequestSampleModal({ sku, onClose }: RequestSampleModalP
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-1">
-                Full Name <span className="text-[#00B894]">*</span>
+                Full Name <span className="text-[#D4AF37]">*</span>
               </label>
               <input
                 type="text"
@@ -81,13 +81,13 @@ export default function RequestSampleModal({ sku, onClose }: RequestSampleModalP
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-3 py-2 text-sm bg-white border border-[#DEE2E6] rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B894]/40 focus:border-[#00B894]"
+                className="w-full px-3 py-2 text-sm bg-white border border-[#E5E0D8] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/40 focus:border-[#D4AF37]"
                 placeholder="Your name"
               />
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-1">
-                Email <span className="text-[#00B894]">*</span>
+                Email <span className="text-[#D4AF37]">*</span>
               </label>
               <input
                 type="email"
@@ -96,7 +96,7 @@ export default function RequestSampleModal({ sku, onClose }: RequestSampleModalP
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-3 py-2 text-sm bg-white border border-[#DEE2E6] rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B894]/40 focus:border-[#00B894]"
+                className="w-full px-3 py-2 text-sm bg-white border border-[#E5E0D8] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/40 focus:border-[#D4AF37]"
                 placeholder="you@company.com"
               />
             </div>
@@ -104,7 +104,7 @@ export default function RequestSampleModal({ sku, onClose }: RequestSampleModalP
 
           <div>
             <label htmlFor="company" className="block text-sm font-medium text-text-primary mb-1">
-              Company <span className="text-[#00B894]">*</span>
+              Company <span className="text-[#D4AF37]">*</span>
             </label>
             <input
               type="text"
@@ -113,7 +113,7 @@ export default function RequestSampleModal({ sku, onClose }: RequestSampleModalP
               required
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-3 py-2 text-sm bg-white border border-[#DEE2E6] rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B894]/40 focus:border-[#00B894]"
+              className="w-full px-3 py-2 text-sm bg-white border border-[#E5E0D8] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/40 focus:border-[#D4AF37]"
               placeholder="Company name"
             />
           </div>
@@ -127,7 +127,7 @@ export default function RequestSampleModal({ sku, onClose }: RequestSampleModalP
               name="quantity"
               value={formData.quantity}
               onChange={handleChange}
-              className="w-full px-3 py-2 text-sm bg-white border border-[#DEE2E6] rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B894]/40 focus:border-[#00B894]"
+              className="w-full px-3 py-2 text-sm bg-white border border-[#E5E0D8] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/40 focus:border-[#D4AF37]"
             >
               <option value="5">5 units</option>
               <option value="10">10 units</option>
@@ -147,7 +147,7 @@ export default function RequestSampleModal({ sku, onClose }: RequestSampleModalP
               rows={3}
               value={formData.notes}
               onChange={handleChange}
-              className="w-full px-3 py-2 text-sm bg-white border border-[#DEE2E6] rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B894]/40 focus:border-[#00B894] resize-none"
+              className="w-full px-3 py-2 text-sm bg-white border border-[#E5E0D8] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/40 focus:border-[#D4AF37] resize-none"
               placeholder="Any specific requirements?"
             />
           </div>
@@ -155,7 +155,7 @@ export default function RequestSampleModal({ sku, onClose }: RequestSampleModalP
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full px-5 py-2.5 text-sm font-semibold bg-[#00B894] text-white rounded-md hover:bg-[#009B7A] transition-colors"
+              className="w-full px-5 py-2.5 text-sm font-semibold bg-[#D4AF37] text-white rounded-md hover:bg-[#E8D58A] transition-colors"
             >
               Submit Sample Request
             </button>

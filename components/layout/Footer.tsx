@@ -1,24 +1,26 @@
 'use client';
 
 import Link from "next/link";
-import { SITE_NAME, PRIMARY_NAV } from "@/lib/constants";
+import { SITE_NAME } from "@/lib/constants";
+import { useNav } from "@/lib/i18n/useNav";
 import { useI18n } from "@/lib/i18n";
 
-const PRODUCT_LINKS = PRIMARY_NAV.find((n) => n.label === "Products")?.children ?? [];
-const SOLUTION_LINKS = PRIMARY_NAV.find((n) => n.label === "Solutions by Industry")?.children ?? [];
-const ABOUT_LINKS = PRIMARY_NAV.find((n) => n.label === "About")?.children ?? [];
-
 export default function Footer() {
+  const navItems = useNav();
   const currentYear = new Date().getFullYear();
   const { t } = useI18n();
 
+  const PRODUCT_LINKS = navItems.find((n) => n.label === (t.nav.products || 'Products'))?.children ?? [];
+  const SOLUTION_LINKS = navItems.find((n) => n.label === (t.nav.solutions || 'Solutions by Industry'))?.children ?? [];
+  const ABOUT_LINKS = navItems.find((n) => n.label === (t.nav.about || 'About'))?.children ?? [];
+
   return (
-    <footer className="bg-[#1A1A1A] text-[#F5F5F0]">
+    <footer className="bg-[#1A1A1A] text-[#F7F4EF]">
       <div className="section-container section-padding">
         {/* Brand section */}
         <div className="mb-12 pb-8 border-b border-white/10">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-semibold text-[#F5F5F0]">
+            <span className="text-2xl font-semibold text-[#F7F4EF]">
               <span className="text-[#D4AF37]">{SITE_NAME.charAt(0)}</span>
               {SITE_NAME.slice(1)}
             </span>
@@ -32,7 +34,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Products */}
           <div>
-            <h3 className="text-xs font-semibold text-[#6C757D] uppercase tracking-[0.1em] mb-5">
+            <h3 className="text-xs font-semibold text-[#6B6B6B] uppercase tracking-[0.1em] mb-5">
               {t.footer.products}
             </h3>
             <ul className="space-y-3">
@@ -40,7 +42,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#B3B3B3] hover:text-[#F5F5F0] transition-colors duration-200"
+                    className="text-sm text-[#B3B3B3] hover:text-[#F7F4EF] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -51,7 +53,7 @@ export default function Footer() {
 
           {/* Solutions */}
           <div>
-            <h3 className="text-xs font-semibold text-[#6C757D] uppercase tracking-[0.1em] mb-5">
+            <h3 className="text-xs font-semibold text-[#6B6B6B] uppercase tracking-[0.1em] mb-5">
               {t.footer.solutions}
             </h3>
             <ul className="space-y-3">
@@ -59,7 +61,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#B3B3B3] hover:text-[#F5F5F0] transition-colors duration-200"
+                    className="text-sm text-[#B3B3B3] hover:text-[#F7F4EF] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -70,7 +72,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-xs font-semibold text-[#6C757D] uppercase tracking-[0.1em] mb-5">
+            <h3 className="text-xs font-semibold text-[#6B6B6B] uppercase tracking-[0.1em] mb-5">
               {t.footer.company}
             </h3>
             <ul className="space-y-3">
@@ -78,7 +80,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#B3B3B3] hover:text-[#F5F5F0] transition-colors duration-200"
+                    className="text-sm text-[#B3B3B3] hover:text-[#F7F4EF] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -89,7 +91,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h3 className="text-xs font-semibold text-[#6C757D] uppercase tracking-[0.1em] mb-5">
+            <h3 className="text-xs font-semibold text-[#6B6B6B] uppercase tracking-[0.1em] mb-5">
               {t.footer.connect}
             </h3>
             <div className="space-y-3 text-sm text-[#B3B3B3]">
@@ -106,7 +108,7 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="tel:+8657462493001"
+                  href="tel:+865****3001"
                   className="hover:text-[#D4AF37] transition-colors duration-200"
                 >
                   +86-574-6249 3001
@@ -127,7 +129,7 @@ export default function Footer() {
 
           {/* Certifications & Social */}
           <div>
-            <h3 className="text-xs font-semibold text-[#6C757D] uppercase tracking-[0.1em] mb-5">
+            <h3 className="text-xs font-semibold text-[#6B6B6B] uppercase tracking-[0.1em] mb-5">
               Certifications
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -142,7 +144,7 @@ export default function Footer() {
             </div>
             
             <div className="mt-6">
-              <h3 className="text-xs font-semibold text-[#6C757D] uppercase tracking-[0.1em] mb-3">
+              <h3 className="text-xs font-semibold text-[#6B6B6B] uppercase tracking-[0.1em] mb-3">
                 Follow Us
               </h3>
               <div className="flex gap-3">
@@ -169,20 +171,20 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-4 py-6 text-xs text-[#6C757D]">
+        <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-4 py-6 text-xs text-[#6B6B6B]">
           <p>
             {t.footer.copyright.replace('{year}', String(currentYear))}
           </p>
           <div className="flex items-center gap-6">
             <Link
               href="/privacy"
-              className="hover:text-[#F5F5F0] transition-colors duration-200"
+              className="hover:text-[#F7F4EF] transition-colors duration-200"
             >
               {t.footer.privacy}
             </Link>
             <Link
               href="/terms"
-              className="hover:text-[#F5F5F0] transition-colors duration-200"
+              className="hover:text-[#F7F4EF] transition-colors duration-200"
             >
               Terms of Service
             </Link>

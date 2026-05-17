@@ -67,7 +67,7 @@ export default function ProductsPageClient({ initialProducts }: ProductsPageClie
           emptyMessage="No products match your current filters. Try adjusting your selection."
         />
 
-        <div className="mt-12 p-6 bg-[#E8F5F1] rounded-lg border border-[#00B894]/20">
+        <div className="mt-12 p-6 bg-[#F0EDE8] rounded-lg border border-[#D4AF37]/20">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <h3 className="text-lg font-semibold text-text-primary">Need a Custom Solution?</h3>
@@ -77,7 +77,7 @@ export default function ProductsPageClient({ initialProducts }: ProductsPageClie
             </div>
             <a
               href="mailto:info@cngreenyard.com?subject=Custom Solution Inquiry"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00B894] text-white font-semibold text-sm rounded-md hover:bg-[#009B7A] transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#D4AF37] text-white font-semibold text-sm rounded-md hover:bg-[#E8D58A] transition-colors whitespace-nowrap"
             >
               Contact Engineering &rarr;
             </a>

@@ -4,10 +4,12 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Search, ChevronDown } from "lucide-react";
-import { SITE_NAME, PRIMARY_NAV } from "@/lib/constants";
+import { SITE_NAME } from "@/lib/constants";
+import { useNav } from "@/lib/i18n/useNav";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Navbar() {
+  const navItems = useNav();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -56,7 +58,7 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1" aria-label="Primary navigation">
-          {PRIMARY_NAV.map((item) => {
+          {navItems.map((item) => {
             const hasChildren = item.children && item.children.length > 0;
             const active = !hasChildren && isActive(item.href);
             const dropdownOpen = activeDropdown === item.label;
@@ -104,8 +106,8 @@ export default function Navbar() {
 
                 {/* Mega dropdown */}
                 {hasChildren && dropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-[0_8px_28px_rgba(0,0,0,0.1)] border border-[#EAECEB] p-3 mega-menu-active rounded-[12px]">
-                    <div className="absolute -top-1 left-8 w-16 h-2 bg-white border border-t-0 border-x-0 border-[#EAECEB] rounded-b-md" />
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-[0_8px_28px_rgba(0,0,0,0.1)] border border-[#E5E0D8] p-3 mega-menu-active rounded-[12px]">
+                    <div className="absolute -top-1 left-8 w-16 h-2 bg-white border border-t-0 border-x-0 border-[#E5E0D8] rounded-b-md" />
                     {item.children!.map((child) => (
                       <Link
                         key={child.label}
@@ -118,7 +120,7 @@ export default function Navbar() {
                       >
                         <div className="text-sm font-medium">{child.label}</div>
                         {child.description && (
-                          <div className="text-xs text-[#6C757D] mt-1 leading-relaxed">
+                          <div className="text-xs text-[#6B6B6B] mt-1 leading-relaxed">
                             {child.description}
                           </div>
                         )}
@@ -134,7 +136,7 @@ export default function Navbar() {
         {/* Utility area */}
         <div className="hidden lg:flex items-center gap-6">
           <button
-            className="p-2 text-[#6C757D] hover:text-[#0D0D0D] transition-all hover:bg-[#F5F5F0] rounded-lg"
+            className="p-2 text-[#6B6B6B] hover:text-[#0D0D0D] transition-all hover:bg-[#F7F4EF] rounded-lg"
             aria-label="Search products"
           >
             <Search size={18} />
@@ -144,7 +146,7 @@ export default function Navbar() {
             href="/contact"
             className="px-5 py-2.5 bg-[#D4AF37] text-[#1A1A1A] text-sm font-medium hover:bg-[#E8D58A] transition-all rounded-lg hover:-translate-y-0.5 shadow-md hover:shadow-lg"
           >
-            Contact
+            Request Sample
           </Link>
         </div>
 
@@ -164,11 +166,11 @@ export default function Navbar() {
           <div className="absolute inset-0 bg-[#1A1A1A]" />
           <div className="relative z-10 flex flex-col h-full overflow-y-auto">
             <div className="flex items-center justify-between px-4 h-16">
-              <span className="text-lg font-semibold text-[#F5F7F6]">
+              <span className="text-lg font-semibold text-[#F0EDE8]">
                 {SITE_NAME}
               </span>
               <button
-                className="p-2 text-[#F5F7F6]"
+                className="p-2 text-[#F0EDE8]"
                 onClick={() => setMobileOpen(false)}
                 aria-label="Close menu"
               >
@@ -177,13 +179,13 @@ export default function Navbar() {
             </div>
 
             <nav className="flex-1 px-4 py-8 space-y-1" aria-label="Mobile navigation">
-              {PRIMARY_NAV.map((item) => {
+              {navItems.map((item) => {
                 const hasChildren = item.children && item.children.length > 0;
                 return (
                   <div key={item.label} className="mobile-nav-link">
                     {hasChildren ? (
                       <>
-                        <div className="text-xs font-medium text-[#757575] uppercase tracking-wider mb-2 px-3 pt-4 first:pt-0">
+                        <div className="text-xs font-medium text-[#6B6B6B] uppercase tracking-wider mb-2 px-3 pt-4 first:pt-0">
                           {item.label}
                         </div>
                         <div className="space-y-1 pl-2">
@@ -194,13 +196,13 @@ export default function Navbar() {
                               className={`block px-3 py-2.5 text-sm transition-colors ${
                                 isActive(child.href)
                                   ? "bg-[#D4AF37]/10 text-[#D4AF37]"
-                                  : "text-[#F5F7F6] hover:bg-white/5"
+                                  : "text-[#F0EDE8] hover:bg-white/5"
                               }`}
                               onClick={() => setMobileOpen(false)}
                             >
                               <div className="font-medium">{child.label}</div>
                               {child.description && (
-                                <div className="text-xs text-[#757575] mt-0.5">
+                                <div className="text-xs text-[#6B6B6B] mt-0.5">
                                   {child.description}
                                 </div>
                               )}
@@ -214,7 +216,7 @@ export default function Navbar() {
                         className={`block px-3 py-2.5 text-sm transition-colors ${
                           isActive(item.href)
                             ? "bg-[#D4AF37]/10 text-[#D4AF37]"
-                            : "text-[#F5F7F6] hover:bg-white/5"
+                            : "text-[#F0EDE8] hover:bg-white/5"
                         }`}
                         onClick={() => setMobileOpen(false)}
                       >
@@ -229,7 +231,7 @@ export default function Navbar() {
             <div className="px-4 py-6 border-t border-white/10 space-y-4">
               <div className="flex items-center gap-4">
                 <button
-                  className="flex items-center gap-2 text-sm text-[#F5F7F6]/70"
+                  className="flex items-center gap-2 text-sm text-[#F0EDE8]/70"
                   aria-label="Search"
                 >
                   <Search size={16} />
@@ -242,7 +244,7 @@ export default function Navbar() {
                 className="block w-full text-center px-4 py-3 text-sm font-medium bg-[#D4AF37] text-[#1A1A1A] hover:bg-[#E8D58A] transition-colors rounded-[4px]"
                 onClick={() => setMobileOpen(false)}
               >
-                Contact Us
+                Request Sample
               </Link>
             </div>
           </div>
