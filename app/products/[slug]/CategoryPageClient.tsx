@@ -75,7 +75,7 @@ export default function CategoryPageClient({ initialProducts, seriesName }: Cate
               </p>
             </div>
             <a
-              href={`mailto:info@cngreenyard.com?subject=RFQ: Bulk Inquiry - ${seriesName}`}
+              href={`/contact?subject=RFQ: Bulk Inquiry - ${encodeURIComponent(seriesName)}`}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1A1A1A] text-white font-medium text-sm hover:bg-[#333333] transition-colors whitespace-nowrap rounded-[4px]"
             >
               Send Bulk RFQ &rarr;

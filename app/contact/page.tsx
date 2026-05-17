@@ -1,14 +1,27 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { Mail, Phone, MapPin, Send, ArrowRight, Loader2, CheckCircle } from 'lucide-react';
 import { useI18n } from '@/lib/i18n';
 
-export default function ContactPage() {
+function ContactForm() {
   const { t } = useI18n();
+  const searchParams = useSearchParams();
   const [formState, setFormState] = useState<'idle' | 'loading' | 'sent'>('idle');
   const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' });
+
+  // Pre-fill message from URL query param (e.g. from product page RFQ button)
+  useEffect(() => {
+    const subject = searchParams.get('subject');
+    if (subject) {
+      setFormData(prev => ({
+        ...prev,
+        message: `[${subject}]\n\nPlease provide volume pricing and lead times for the following products:\n\n`,
+      }));
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -200,5 +213,13 @@ export default function ContactPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={null}>
+      <ContactForm />
+    </Suspense>
   );
 }

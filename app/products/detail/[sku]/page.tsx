@@ -157,7 +157,7 @@ export default async function ProductDetailPage({ params }: Props) {
               {/* Quick Action Bar */}
               <div className="flex flex-wrap gap-3 mt-8">
                 <a
-                  href={`mailto:info@cngreenyard.com?subject=Sample Request: ${product.sku}`}
+                  href={`/contact?subject=Sample+Request:+${encodeURIComponent(product.sku)}`}
                   className="px-5 py-2.5 text-sm font-medium bg-[#1A1A1A] text-white hover:bg-[#333333] transition-colors rounded-[4px]"
                 >
                   Request Sample
@@ -169,7 +169,7 @@ export default async function ProductDetailPage({ params }: Props) {
                   View Specs
                 </a>
                 <a
-                  href={`mailto:info@cngreenyard.com?subject=Tech Sheet: ${product.sku}`}
+                  href={`/contact?subject=Tech+Sheet:+${encodeURIComponent(product.sku)}`}
                   className="px-5 py-2.5 text-sm text-[#6B6B6B] border border-[#E5E0D8] hover:border-[#1A1A1A] hover:text-[#1A1A1A] transition-colors rounded-[4px]"
                 >
                   Download Tech Sheet

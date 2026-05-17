@@ -116,7 +116,7 @@ export default function ComparisonModal({ products, onClose }: ComparisonModalPr
             Close
           </button>
           <a
-            href={`mailto:info@cngreenyard.com?subject=RFQ: ${products.map(p => p.sku).join(', ')}`}
+            href={`/contact?subject=RFQ:+${encodeURIComponent(products.map(p => p.sku).join(', '))}`}
             className="px-5 py-2 text-sm font-semibold bg-[#D4AF37] text-white rounded-md hover:bg-[#E8D58A] transition-colors"
           >
             Request Quote for Selected

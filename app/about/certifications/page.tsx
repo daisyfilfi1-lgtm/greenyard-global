@@ -105,7 +105,7 @@ export default async function CertificationsPage() {
               </p>
             </div>
             <a
-              href="mailto:info@cngreenyard.com?subject=Compliance Documentation Request"
+              href="/contact?subject=Compliance+Documentation+Request"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-white font-medium text-sm hover:bg-[#E8D58A] transition-colors"
             >
               Request Documentation &rarr;

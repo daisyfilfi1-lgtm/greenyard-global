@@ -76,7 +76,7 @@ export default function ProductsPageClient({ initialProducts }: ProductsPageClie
               </p>
             </div>
             <a
-              href="mailto:info@cngreenyard.com?subject=Custom Solution Inquiry"
+              href="/contact?subject=Custom+Solution+Inquiry"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#D4AF37] text-white font-semibold text-sm rounded-md hover:bg-[#E8D58A] transition-colors whitespace-nowrap"
             >
               Contact Engineering &rarr;

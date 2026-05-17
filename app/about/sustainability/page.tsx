@@ -111,7 +111,7 @@ export default async function SustainabilityPage() {
               </p>
             </div>
             <a
-              href="mailto:info@cngreenyard.com?subject=Sustainable Packaging Inquiry"
+              href="/contact?subject=Sustainable+Packaging+Inquiry"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-white font-medium text-sm hover:bg-[#E8D58A] transition-colors rounded-[4px]"
             >
               Contact Us &rarr;
