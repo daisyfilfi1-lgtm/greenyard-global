@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sparkles, Building2, Globe, ShieldCheck, ArrowRight, Leaf } from 'lucide-react';
 import { BUYER_SEGMENTS, TRUST_STATS } from '@/lib/constants';
-import AnimatedCounter from '@/components/home/AnimatedCounter';
 import { useI18n } from '@/lib/i18n';
 
 // ---------------------------------------------------------------------------
@@ -29,62 +28,6 @@ function useScrollReveal() {
 
     return () => observer.disconnect();
   }, []);
-}
-
-// ---------------------------------------------------------------------------
-// Circular Progress — SVG-based, gold stroke
-// ---------------------------------------------------------------------------
-function CircularProgress({ value, size = 80 }: { value: number; size?: number }) {
-  const strokeWidth = 4;
-  const radius = (size - strokeWidth) / 2;
-  const circumference = 2 * Math.PI * radius;
-  const [animated, setAnimated] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setAnimated(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const offset = animated ? circumference - (value / 100) * circumference : circumference;
-
-  return (
-    <div ref={ref}>
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="transform -rotate-90">
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          stroke="#E5E0D8"
-          strokeWidth={strokeWidth}
-        />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          stroke="#D4AF37"
-          strokeWidth={strokeWidth}
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          strokeLinecap="round"
-          className="transition-all duration-1000 ease-out"
-        />
-      </svg>
-    </div>
-  );
 }
 
 // ---------------------------------------------------------------------------
@@ -227,66 +170,7 @@ function ClientIdentityCards() {
 }
 
 // ---------------------------------------------------------------------------
-// 3. Core Strengths — Gold accents only
-// ---------------------------------------------------------------------------
-function CoreStrengths() {
-  const { t } = useI18n();
-  return (
-    <section className="bg-[#F7F4EF]">
-      <div className="section-container section-padding pt-0">
-        <div className="bg-white border border-[#E5E0D8] shadow-[0_4px_20px_rgba(26,26,26,0.05)] p-10 md:p-16 reveal rounded-[16px]">
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-            {/* On-Time Delivery */}
-            <div className="flex flex-col items-center text-center group">
-              <div className="relative">
-                <CircularProgress value={98.5} size={112} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[20px] md:text-[24px] font-semibold text-[#D4AF37]">98.5%</span>
-                </div>
-              </div>
-              <div className="mt-5">
-                <p className="stat-label">{t.ui.onTimeDelivery}</p>
-              </div>
-            </div>
-
-            {/* Production Capacity */}
-            <div className="flex flex-col items-center text-center group">
-              <div className="relative">
-                <div className="w-28 h-28 rounded-full border-4 border-[#D4AF37]/40 flex items-center justify-center group-hover:border-[#D4AF37] transition-colors duration-300">
-                  <span className="text-[20px] md:text-[24px] font-semibold text-[#D4AF37]">5M+</span>
-                </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center">
-                  <span className="text-[10px] text-white font-bold">TOP</span>
-                </div>
-              </div>
-              <div className="mt-5">
-                <p className="stat-label">{t.ui.monthlyCapacity}</p>
-              </div>
-            </div>
-
-            {/* Recyclable Options */}
-            <div className="flex flex-col items-center text-center group">
-              <div className="relative">
-                <div className="w-28 h-28 rounded-full border-4 border-[#D4AF37] bg-[#F0EDE8] flex items-center justify-center group-hover:bg-[#D4AF37] transition-colors duration-300">
-                  <span className="text-[20px] md:text-[24px] font-semibold text-[#D4AF37] group-hover:text-white transition-colors duration-300">100%</span>
-                </div>
-                <svg className="absolute -bottom-1 -right-1 w-10 h-10 text-[#D4AF37]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-                </svg>
-              </div>
-              <div className="mt-5">
-                <p className="stat-label">{t.ui.recyclableOptions}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// 4. Case Studies — Gold badge, gold results
+// 3. Case Studies — Gold badge, gold results
 // ---------------------------------------------------------------------------
 const CASE_STUDIES = [
   {
@@ -391,7 +275,7 @@ function CaseStudies() {
 }
 
 // ---------------------------------------------------------------------------
-// 5. Sustainability — Emerald badge, dark split layout
+// 4. Sustainability — Emerald badge, dark split layout
 // ---------------------------------------------------------------------------
 function Sustainability() {
   const { t } = useI18n();
@@ -449,7 +333,7 @@ function Sustainability() {
 }
 
 // ---------------------------------------------------------------------------
-// 6. Enterprise Stats Trust Bar — Larger numbers, certification row
+// 5. Enterprise Stats Trust Bar — Larger numbers, certification row
 // ---------------------------------------------------------------------------
 function TrustBar() {
   const { t } = useI18n();
@@ -497,7 +381,7 @@ function TrustBar() {
 }
 
 // ---------------------------------------------------------------------------
-// 7. Expert CTA — Clean dark bg, product macro shot, gold CTA
+// 6. Expert CTA — Clean dark bg, product macro shot, gold CTA
 // ---------------------------------------------------------------------------
 function ExpertCta() {
   const { t } = useI18n();
@@ -563,7 +447,6 @@ export default function Home() {
     <>
       <HeroSection />
       <ClientIdentityCards />
-      <CoreStrengths />
       <CaseStudies />
       <Sustainability />
       <TrustBar />

@@ -3,7 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { I18nProvider } from "@/lib/i18n";
+import { I18nServerProvider } from "@/lib/i18n/I18nServerProvider";
 import JsonLd from "@/components/JsonLd";
 
 const dmSans = DM_Sans({
@@ -60,7 +60,7 @@ export default function RootLayout({
       className={`${dmSans.className} h-full`}
     >
       <body className="min-h-full flex flex-col bg-[#F7F4EF] text-[#0D0D0D] antialiased">
-        <I18nProvider>
+        <I18nServerProvider>
           <a
             href="#main-content"
             className="skip-link"
@@ -72,7 +72,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-        </I18nProvider>
+        </I18nServerProvider>
         <JsonLd />
       </body>
     </html>
