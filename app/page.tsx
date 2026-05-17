@@ -130,7 +130,7 @@ function HeroSection() {
               href="/solutions/skincare"
               className="inline-flex items-center justify-center px-10 py-4 bg-transparent text-white font-medium border border-white/30 hover:border-white/60 hover:bg-white/5 transition-all duration-300 text-sm tracking-wide rounded-[6px]"
             >
-              Explore Solutions
+              {t.ui.exploreSolutions}
             </Link>
           </div>
 
@@ -175,6 +175,7 @@ function SegmentCard({
   icon: string;
   href: string;
 }) {
+  const { t } = useI18n();
   return (
     <Link
       href={href}
@@ -188,7 +189,7 @@ function SegmentCard({
       <h3 className="text-lg font-semibold text-[#0D0D0D] mb-3 leading-tight">{title}</h3>
       <p className="text-[#6B6B6B] text-sm leading-relaxed flex-1">{description}</p>
       <span className="mt-5 inline-flex items-center gap-1.5 text-[#D4AF37] text-sm font-medium group-hover:gap-2.5 transition-all duration-300">
-        Learn More
+        {t.ui.learnMore}
         <ArrowRight size={14} />
       </span>
     </Link>
@@ -229,6 +230,7 @@ function ClientIdentityCards() {
 // 3. Core Strengths — Gold accents only
 // ---------------------------------------------------------------------------
 function CoreStrengths() {
+  const { t } = useI18n();
   return (
     <section className="bg-[#F7F4EF]">
       <div className="section-container section-padding pt-0">
@@ -243,7 +245,7 @@ function CoreStrengths() {
                 </div>
               </div>
               <div className="mt-5">
-                <p className="stat-label">On-Time Delivery Rate</p>
+                <p className="stat-label">{t.ui.onTimeDelivery}</p>
               </div>
             </div>
 
@@ -258,7 +260,7 @@ function CoreStrengths() {
                 </div>
               </div>
               <div className="mt-5">
-                <p className="stat-label">Monthly Production Capacity</p>
+                <p className="stat-label">{t.ui.monthlyCapacity}</p>
               </div>
             </div>
 
@@ -273,7 +275,7 @@ function CoreStrengths() {
                 </svg>
               </div>
               <div className="mt-5">
-                <p className="stat-label">Fully Recyclable Mono-Material Options</p>
+                <p className="stat-label">{t.ui.recyclableOptions}</p>
               </div>
             </div>
           </div>
@@ -333,6 +335,7 @@ function CaseStudyCard({
   metric: string;
   metricSub: string;
 }) {
+  const { t } = useI18n();
   return (
     <article className="bg-white border border-[#E5E0D8] shadow-[0_2px_8px_rgba(26,26,26,0.04)] overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_12px_32px_rgba(26,26,26,0.10)] flex flex-col rounded-[12px] group">
       <div className="relative aspect-[16/10] bg-[#E5E0D8] overflow-hidden">
@@ -344,15 +347,15 @@ function CaseStudyCard({
           sizes="(max-width: 768px) 100vw, 33vw"
         />
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-[#D4AF37] text-[#1A1A1A] text-xs font-medium rounded-full">Case Study</span>
+          <span className="px-3 py-1 bg-[#D4AF37] text-[#1A1A1A] text-xs font-medium rounded-full">{t.ui.caseStudy}</span>
         </div>
       </div>
       <div className="p-6 md:p-7 flex flex-col flex-1">
         <h3 className="text-lg font-semibold text-[#0D0D0D] mb-4 leading-tight">{title}</h3>
         <div className="space-y-2.5 text-sm text-[#6B6B6B] leading-relaxed flex-1 mb-5">
-          <p><span className="text-[#0D0D0D] font-medium">Challenge:</span> {challenge}</p>
-          <p><span className="text-[#0D0D0D] font-medium">Solution:</span> {solution}</p>
-          <p><span className="text-[#0D0D0D] font-medium">Result:</span> <span className="text-[#D4AF37] font-semibold">{result}</span></p>
+          <p><span className="text-[#0D0D0D] font-medium">{t.ui.challenge}:</span> {challenge}</p>
+          <p><span className="text-[#0D0D0D] font-medium">{t.ui.solution}:</span> {solution}</p>
+          <p><span className="text-[#0D0D0D] font-medium">{t.ui.result}:</span> <span className="text-[#D4AF37] font-semibold">{result}</span></p>
         </div>
         <div className="pt-5 border-t border-[#E5E0D8]">
           <p className="text-[32px] font-bold text-[#D4AF37] leading-tight">{metric}</p>
@@ -410,7 +413,7 @@ function Sustainability() {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#006B5E]/15 border border-[#006B5E]/30 rounded-full mb-6">
               <Leaf className="w-4 h-4 text-[#006B5E]" />
-              <span className="text-xs text-[#006B5E] uppercase tracking-widest font-medium">Sustainability Focused</span>
+              <span className="text-xs text-[#006B5E] uppercase tracking-widest font-medium">{t.ui.sustainabilityFocused}</span>
             </div>
 
             <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-light leading-tight mb-6">
@@ -449,12 +452,13 @@ function Sustainability() {
 // 6. Enterprise Stats Trust Bar — Larger numbers, certification row
 // ---------------------------------------------------------------------------
 function TrustBar() {
+  const { t } = useI18n();
   return (
     <section className="bg-[#F7F4EF]">
       <div className="section-container section-padding">
         <div className="border-t border-[#E5E0D8] pt-16 reveal">
           <div className="text-center mb-10">
-            <h3 className="text-sm uppercase tracking-[0.15em] text-[#6B6B6B] font-medium">Trusted By</h3>
+            <h3 className="text-sm uppercase tracking-[0.15em] text-[#6B6B6B] font-medium">{t.ui.trustedBy}</h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
             {TRUST_STATS.map((stat, i) => (
@@ -526,7 +530,7 @@ function ExpertCta() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-transparent text-white font-medium text-sm border border-white/30 hover:border-white/60 hover:bg-white/5 transition-all duration-300 rounded-[8px]"
               >
-                Contact Sales Team
+                {t.ui.contactSales}
               </Link>
             </div>
           </div>
