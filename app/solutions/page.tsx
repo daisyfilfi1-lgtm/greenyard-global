@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { INDUSTRY_SLUGS } from '@/lib/constants';
 import type { Metadata } from 'next';
+import { getDictionary } from '@/lib/i18n/server';
 
 export const metadata: Metadata = { title: 'Solutions | GreenYard' };
 
@@ -11,13 +12,14 @@ const solutions = [
   { slug: 'contract', title: 'Contract Packaging', desc: 'Standard 24/410, 28/410 neck finishes. Inventory depth. JIT delivery capability.', products: ['GY-302B1', 'GY-303', 'GY-320'], badges: ['24/410', '28/410', 'JIT Delivery'] },
 ];
 
-export default function SolutionsPage() {
+export default async function SolutionsPage() {
+  const dict = await getDictionary();
   return (
     <main className="bg-[#F0EDE8] min-h-screen">
-      <section className="bg-[#1A1A1A] text-white py-24">
-        <div className="max-w-[1200px] mx-auto px-8">
-          <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight leading-[1.1]">Solutions by Industry</h1>
-          <p className="mt-4 text-lg text-white/80 max-w-xl">Precision packaging solutions tailored to your market requirements, compliance needs, and volume expectations.</p>
+      <section className="relative section-dark min-h-[60vh] flex items-center overflow-hidden">
+        <div className="section-container w-full py-24">
+          <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight leading-[1.1]">{dict.solutionsList.title}</h1>
+          <p className="mt-4 text-lg text-white/80 max-w-xl">{dict.solutionsList.description}</p>
         </div>
       </section>
 

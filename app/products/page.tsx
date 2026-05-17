@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { products } from '@/lib/data/products';
 import { SERIES_INFO } from '@/lib/constants';
+import { getDictionary } from '@/lib/i18n/server';
 import ProductsPageClient from './ProductsPageClient';
 
 export const metadata: Metadata = {
@@ -40,13 +41,14 @@ function getCategoryProducts() {
   }));
 }
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const dict = await getDictionary();
   const categories = getCategoryProducts();
 
   return (
     <main>
       {/* Page Hero with Background Image */}
-      <section className="relative min-h-[45vh] flex items-end bg-[#1A1A1A] overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-end bg-[#1A1A1A] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/Top-Down Grid of 24 Lotion Pumps.png"
@@ -60,9 +62,9 @@ export default function ProductsPage() {
         </div>
 
         <div className="relative z-10 section-container w-full py-16 lg:py-24">
-          <h1 className="text-3xl md:text-5xl font-semibold text-white mb-4">All Products</h1>
+          <h1 className="text-3xl md:text-5xl font-semibold text-white mb-4">{dict.productsList.title}</h1>
           <p className="text-[#d1d1d1] text-base md:text-lg max-w-2xl leading-relaxed">
-            GreenYard offers 200+ SKUs across 13 product series. Browse by category below or filter by specification.
+            {dict.productsList.description}
           </p>
         </div>
       </section>

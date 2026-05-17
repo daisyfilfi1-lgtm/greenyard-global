@@ -68,6 +68,58 @@ const en = {
     storyTitle: 'Our Story',
   },
   languageSwitch: '中文',
+  certifications: {
+    title: 'Certifications & Compliance',
+    description:
+      'GreenYard maintains full compliance across international regulatory frameworks. From ISO9001 quality management to REACH chemical safety — our certifications give our partners confidence in every shipment.',
+    items: 'Certification',
+  },
+  factory: {
+    title: 'Factory & Capabilities',
+    description:
+      'Our facility in Yuyao integrates mold design, injection molding, automatic assembly, and quality inspection under one roof — enabling end-to-end control over every component we produce.',
+  },
+  sustainabilityPage: {
+    title: 'Sustainability — Packaging That Performs, Planet That Persists',
+    description:
+      'At GreenYard, sustainability is not an option — it is built into every pump, sprayer and packaging solution we engineer. We commit to reducing plastic waste, simplifying material structures, and adopting eco-friendly raw materials to help global beauty and pharma brands meet ESG goals and market regulatory requirements.',
+    commitments: [
+      'Mono-Material All-Plastic Design',
+      'PCR Recycled Material Option',
+      'Global Eco Compliance',
+      'Low-Waste Production',
+    ],
+    whyTitle: 'Why It Matters For Your Brand',
+    whyDesc:
+      'Consumers and retail platforms across North America, Europe and Latin America are prioritizing sustainable packaging. GreenYard helps you launch market-ready, compliant, and premium eco-packaging without compromising texture, sealing performance or user experience.',
+    ctaTitle: 'Need Sustainable Packaging?',
+    ctaDesc:
+      'Contact our team to discuss PCR options, mono-material design, and compliance requirements for your next project.',
+  },
+  resources: {
+    title: 'Resources — Your One-Stop Packaging Knowledge & Document Center',
+    description:
+      'GreenYard provides professional resources to help brand owners, manufacturers and distributors select, verify and customize packaging solutions efficiently. All documents are available for inquiry and official version support.',
+    items: [
+      'Certification Documents',
+      'Product Specification Datasheets',
+      'Customization Guide',
+      'FAQ & Technical Support',
+    ],
+    ctaTitle: 'Need Documentation?',
+    ctaDesc:
+      'Contact our team to receive official PDF files, technical drawings and compliance documents. We provide one-on-one packaging formula analysis and free solution recommendation for your product line.',
+  },
+  productsList: {
+    title: 'All Products',
+    description:
+      'GreenYard offers 200+ SKUs across 13 product series. Browse by category below or filter by specification.',
+  },
+  solutionsList: {
+    title: 'Solutions by Industry',
+    description:
+      'Precision packaging solutions tailored to your market requirements, compliance needs, and volume expectations.',
+  },
   contact: {
     heroTitle: "Let's Build Together",
     heroSubtitle: 'Tell us about your packaging needs — our engineering team will respond with a tailored recommendation.',

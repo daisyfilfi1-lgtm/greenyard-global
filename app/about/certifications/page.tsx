@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { ShieldCheck, FileText, Award } from 'lucide-react';
+import { getDictionary } from '@/lib/i18n/server';
 
 export const metadata: Metadata = {
   title: 'Certifications - GreenYard',
@@ -45,27 +47,30 @@ const certifications = [
   },
 ];
 
-export default function CertificationsPage() {
+export default async function CertificationsPage() {
+  const dict = await getDictionary();
   return (
     <main>
-      <section className="section-dark">
-        <div className="section-container section-padding">
-          <nav className="flex items-center gap-2 text-sm text-[#6B6B6B] mb-6">
-            <a href="/" className="hover:text-[#D4AF37] transition-colors">Home</a>
-            <span>/</span>
-            <a href="/about" className="hover:text-[#D4AF37] transition-colors">About</a>
-            <span>/</span>
-            <span className="text-[#F7F4EF]">Certifications</span>
-          </nav>
+      <section className="relative section-dark min-h-[60vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/Flat Lay Certificates and Technical Documents.png"
+            alt="Certificates and technical documents"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        <div className="relative z-10 section-container w-full py-24">
           <div className="max-w-3xl">
             <h1 className="text-[clamp(1.75rem,4vw,2.5rem)] font-medium text-[#F7F4EF] leading-tight">
-              Certifications &amp; Compliance
+              {dict.certifications.title}
             </h1>
             <div className="w-12 h-px bg-[#D4AF37] my-6" />
             <p className="text-[#6B6B6B] leading-relaxed max-w-xl">
-              GreenYard maintains full compliance across international regulatory frameworks.
-              From ISO9001 quality management to REACH chemical safety — our certifications
-              give our partners confidence in every shipment.
+              {dict.certifications.description}
             </p>
           </div>
         </div>

@@ -99,7 +99,7 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <main>
       {/* Category Hero with Background Image */}
-      <section className="relative min-h-[50vh] flex items-end bg-[#1A1A1A] overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-end bg-[#1A1A1A] overflow-hidden">
         {/* Background image with overlay */}
         <div className="absolute inset-0">
           <Image

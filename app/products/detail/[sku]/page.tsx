@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { getProductBySku, getRelatedProducts } from '@/lib/data/products';
 import { SERIES_INFO } from '@/lib/constants';
 import ProductDetailClient from './ProductDetailClient';
@@ -54,6 +55,31 @@ export default async function ProductDetailPage({ params }: Props) {
 
   return (
     <main>
+      {/* Hero */}
+      <section className="relative section-dark min-h-[60vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src={product.imagePlaceholder?.startsWith('/') || product.imagePlaceholder?.startsWith('http') ? product.imagePlaceholder : '/images/Top-Down Grid of 24 Lotion Pumps.png'}
+            alt={product.name}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        <div className="relative z-10 section-container w-full py-24">
+          <p className="text-xs text-[#D4AF37] uppercase tracking-[0.15em] mb-4">{seriesInfo?.name || product.series}</p>
+          <h1 className="text-[clamp(1.75rem,4vw,2.5rem)] font-medium text-[#F7F4EF] leading-tight">
+            {product.name}
+          </h1>
+          <div className="w-12 h-px bg-[#D4AF37] my-6" />
+          <p className="text-[#a0a0a0] leading-relaxed max-w-xl">
+            {product.tagline}
+          </p>
+        </div>
+      </section>
+
       {/* Breadcrumb */}
       <section className="bg-[#F0EDE8] pt-6 pb-0">
         <div className="section-container">

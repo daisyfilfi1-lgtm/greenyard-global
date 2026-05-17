@@ -104,7 +104,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ indus
   return (
     <main className="bg-[#F0EDE8]">
       {/* Section 1: Hero with Background Image */}
-      <section className="relative min-h-[55vh] flex items-end bg-[#1A1A1A] overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-end bg-[#1A1A1A] overflow-hidden">
         {/* Background image with overlay */}
         <div className="absolute inset-0">
           <Image

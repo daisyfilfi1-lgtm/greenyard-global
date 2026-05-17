@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { Recycle, Leaf, ShieldCheck, Factory } from 'lucide-react';
+import { getDictionary } from '@/lib/i18n/server';
 
 export const metadata: Metadata = {
   title: 'Sustainability - GreenYard',
@@ -34,10 +35,11 @@ const commitments = [
   },
 ];
 
-export default function SustainabilityPage() {
+export default async function SustainabilityPage() {
+  const dict = await getDictionary();
   return (
     <main>
-      <section className="relative section-dark min-h-[55vh] flex items-center overflow-hidden">
+      <section className="relative section-dark min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/Premium Eco-Friendly Pump Dispenser.png"
@@ -50,23 +52,13 @@ export default function SustainabilityPage() {
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="relative z-10 section-container w-full py-24">
-          <nav className="flex items-center gap-2 text-sm text-[#6B6B6B] mb-6">
-            <a href="/" className="hover:text-[#D4AF37] transition-colors">Home</a>
-            <span>/</span>
-            <a href="/about" className="hover:text-[#D4AF37] transition-colors">About</a>
-            <span>/</span>
-            <span className="text-[#F7F4EF]">Sustainability</span>
-          </nav>
           <div className="max-w-3xl">
             <h1 className="text-[clamp(1.75rem,4vw,2.5rem)] font-medium text-[#F7F4EF] leading-tight">
-              Sustainability — Packaging That Performs, Planet That Persists
+              {dict.sustainabilityPage.title}
             </h1>
             <div className="w-12 h-px bg-[#D4AF37] my-6" />
             <p className="text-[#a0a0a0] leading-relaxed max-w-xl">
-              At GreenYard, sustainability is not an option — it is built into every pump, sprayer
-              and packaging solution we engineer. We commit to reducing plastic waste, simplifying
-              material structures, and adopting eco-friendly raw materials to help global beauty and
-              pharma brands meet ESG goals and market regulatory requirements.
+              {dict.sustainabilityPage.description}
             </p>
           </div>
         </div>
