@@ -13,9 +13,19 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormState('loading');
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    setFormState('sent');
-    setFormData({ name: '', email: '', company: '', message: '' });
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Failed to send');
+      setFormState('sent');
+      setFormData({ name: '', email: '', company: '', message: '' });
+    } catch {
+      alert('Failed to send message. Please email us at info@cngreenyard.com');
+      setFormState('idle');
+    }
   };
 
   if (formState === 'sent') {

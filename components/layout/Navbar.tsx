@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Search, ChevronDown } from "lucide-react";
 import { SITE_NAME } from "@/lib/constants";
 import { useNav } from "@/lib/i18n/useNav";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+
 
 export default function Navbar() {
   const navItems = useNav();
@@ -135,13 +135,13 @@ export default function Navbar() {
 
         {/* Utility area */}
         <div className="hidden lg:flex items-center gap-6">
-          <button
+          <Link
+            href="/products"
             className="p-2 text-[#6B6B6B] hover:text-[#0D0D0D] transition-all hover:bg-[#F7F4EF] rounded-lg"
-            aria-label="Search products"
+            aria-label="Browse products"
           >
             <Search size={18} />
-          </button>
-          <LanguageSwitcher />
+          </Link>
           <Link
             href="/contact"
             className="px-5 py-2.5 bg-[#D4AF37] text-[#1A1A1A] text-sm font-medium hover:bg-[#E8D58A] transition-all rounded-lg hover:-translate-y-0.5 shadow-md hover:shadow-lg"
@@ -230,14 +230,15 @@ export default function Navbar() {
 
             <div className="px-4 py-6 border-t border-white/10 space-y-4">
               <div className="flex items-center gap-4">
-                <button
+                <Link
+                  href="/products"
                   className="flex items-center gap-2 text-sm text-[#F0EDE8]/70"
-                  aria-label="Search"
+                  aria-label="Browse products"
+                  onClick={() => setMobileOpen(false)}
                 >
                   <Search size={16} />
-                  Search
-                </button>
-                <LanguageSwitcher />
+                  Browse Products
+                </Link>
               </div>
               <Link
                 href="/contact"

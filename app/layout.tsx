@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { I18nServerProvider } from "@/lib/i18n/I18nServerProvider";
+
 import JsonLd from "@/components/JsonLd";
 
 const dmSans = DM_Sans({
@@ -14,7 +15,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://greenyardglobal.netlify.app"),
-  title: "GreenYard | Premium Packaging Solutions — One Earth. Precision Engineering.",
+  title: "GreenYard | Premium Packaging Solutions",
   description:
     "Ningbo GreenYard Sprayer Co., Ltd. — precision sprayers, pumps, droppers, and cosmetic packaging with flexible MOQ, fast sampling, and fully recyclable pathways. Serving 200+ brand partners across 40+ countries.",
   alternates: {
@@ -72,6 +73,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+
         </I18nServerProvider>
         <JsonLd />
       </body>
