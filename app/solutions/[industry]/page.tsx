@@ -8,6 +8,8 @@ const HERO_IMAGES: Record<string, string> = {
   pharma: '/images/Clinical Laboratory Pharmaceutical Bottles.png',
   household: '/images/Modern Kitchen Premium Cleaning Products.png',
   contract: '/images/Industrial Packaging Facility .png',
+  'personal-care': '/images/Production Shelf Sanitizer Bottles.png',
+  beauty: '/images/Editorial Cosmetic Pumps on Concrete.png',
 };
 
 const data: Record<string, {
@@ -88,6 +90,42 @@ const data: Record<string, {
       metric: '8 SKUs unified · 4-week buffer · Zero production stops',
     },
     moq: [{ prod: 'Lotion Pump 24/410', moq: '10,000 pcs', lead: '25 days' }, { prod: 'Lotion Pump 28/410', moq: '10,000 pcs', lead: '25 days' }, { prod: 'Trigger Sprayer', moq: '10,000 pcs', lead: '25 days' }],
+  },
+  'personal-care': {
+    title: 'Personal Care & Wellness', hero: 'Hygiene Packaging That Builds Trust',
+    sub: 'Sustainable PCR hand sanitizer bottles, refill pouches, and dispensing pumps for modern wellness brands.',
+    painPoints: [
+      { icon: '🧴', title: 'PCR up to 50%', desc: 'Post-consumer recycled content for sustainability claims.' },
+      { icon: '💧', title: 'Leak-proof dispensing', desc: 'Precision pumps for gel, foam, and liquid formulas.' },
+      { icon: '📐', title: 'Refill system design', desc: 'Pouch + bottle refill packaging solutions.' },
+      { icon: '✅', title: 'FDA + Prop 65 compliant', desc: 'US market-ready with full documentation.' },
+      { icon: '🎨', title: 'Frosted & matte finishes', desc: 'Premium feel for shelf presence.' },
+    ],
+    compliance: ['FDA', 'Prop 65', 'PCR Available', 'BPA-Free'],
+    caseStudy: {
+      headline: 'Hand Sanitizer Scale-Up: 500K Units/Month',
+      body: 'During demand surge, a US personal care brand needed rapid scale-up for hand sanitizer bottles. GreenYard delivered GY-608A1 fine mist sprayers with PCR bottles, scaling from 0 to 500K units/month in 4 weeks with zero compliance issues.',
+      metric: '500K units/month · Scaled in 4 weeks · Zero defects',
+    },
+    moq: [{ prod: 'Fine Mist Sprayer', moq: '3,000 pcs', lead: '25 days' }, { prod: 'Foam Pump', moq: '3,000 pcs', lead: '28 days' }, { prod: 'Trigger Sprayer', moq: '5,000 pcs', lead: '25 days' }],
+  },
+  beauty: {
+    title: 'Indie & DTC Beauty Brands', hero: 'Small Batch. Big Impact.',
+    sub: 'Low-MOQ, custom-branded packaging for independent beauty founders launching their first product line.',
+    painPoints: [
+      { icon: '📦', title: 'MOQ from 500 units', desc: 'Launch without overcommitting capital.' },
+      { icon: '⚡', title: '7-day sampling', desc: '3D-printed samples before tooling commitment.' },
+      { icon: '🎨', title: 'Custom color & finish', desc: 'Match your brand identity at small scale.' },
+      { icon: '📸', title: 'Instagram-ready packaging', desc: 'Designed for unboxing content.' },
+      { icon: '🔄', title: 'Kraft-ready options', desc: 'Sustainable outer packaging for DTC shipping.' },
+    ],
+    compliance: ['REACH', 'BPA-Free', 'Low MOQ', 'Fast Sampling'],
+    caseStudy: {
+      headline: 'From Concept to Shelf in 90 Days',
+      body: 'An indie beauty founder needed 3 SKU packaging for a vitamin C serum launch. GreenYard provided custom Mono-Pump dispensers with kraft outer boxes, delivering sampling to shelf-ready in 90 days with just 3,000-unit MOQ.',
+      metric: '90 days to launch · 3,000-unit MOQ · 15% repeat rate increase',
+    },
+    moq: [{ prod: 'Airless Bottle', moq: '500 pcs', lead: '35 days' }, { prod: 'Treatment Pump', moq: '1,000 pcs', lead: '28 days' }, { prod: 'Dropper', moq: '1,000 pcs', lead: '25 days' }],
   },
 };
 

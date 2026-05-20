@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sparkles, Building2, Globe, ShieldCheck, ArrowRight, Leaf } from 'lucide-react';
+import { Sparkles, ArrowRight, Leaf } from 'lucide-react';
 import { BUYER_SEGMENTS, TRUST_STATS } from '@/lib/constants';
 import { useI18n } from '@/lib/i18n';
 
@@ -98,43 +98,51 @@ function HeroSection() {
 }
 
 // ---------------------------------------------------------------------------
-// 2. Who We Serve — 4 cards with gold outline icons, warm tint bg
+// 2. Who We Serve — 2×2 dark image cards
 // ---------------------------------------------------------------------------
-const SEGMENT_ICONS: Record<string, React.ReactNode> = {
-  Sparkles: <Sparkles size={28} aria-hidden="true" strokeWidth={1.5} />,
-  Building2: <Building2 size={28} aria-hidden="true" strokeWidth={1.5} />,
-  Globe: <Globe size={28} aria-hidden="true" strokeWidth={1.5} />,
-  ShieldCheck: <ShieldCheck size={28} aria-hidden="true" strokeWidth={1.5} />,
-};
-
 function SegmentCard({
   title,
   description,
-  icon,
+  image,
   href,
 }: {
   title: string;
   description: string;
-  icon: string;
+  image: string;
   href: string;
 }) {
   const { t } = useI18n();
   return (
     <Link
       href={href}
-      className="group bg-white border border-[#E5E0D8] shadow-[0_2px_8px_rgba(26,26,26,0.04)] p-8 flex flex-col relative transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(26,26,26,0.10)] rounded-[12px] hover:border-[#D4AF37]/50"
+      className="group bg-[rgba(255,255,255,0.03)] border border-white/[0.06] rounded-[12px] overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:border-white/[0.12] hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
     >
-      <div className="relative mb-6">
-        <div className="w-14 h-14 rounded-xl flex items-center justify-center border-2 border-[#D4AF37] text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-all duration-300">
-          {SEGMENT_ICONS[icon] ?? <Sparkles size={28} aria-hidden="true" strokeWidth={1.5} />}
-        </div>
+      {/* Image */}
+      <div className="relative aspect-[4/3] md:aspect-[3/2] bg-[#1A1A1A] overflow-hidden">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        {/* subtle overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/60 via-transparent to-transparent" />
       </div>
-      <h3 className="text-lg font-semibold text-[#0D0D0D] mb-3 leading-tight">{title}</h3>
-      <p className="text-[#6B6B6B] text-sm leading-relaxed flex-1">{description}</p>
-      <span className="mt-5 inline-flex items-center gap-1.5 text-[#D4AF37] text-sm font-medium group-hover:gap-2.5 transition-all duration-300">
-        {t.ui.learnMore}
-        <ArrowRight size={14} />
-      </span>
+
+      {/* Content */}
+      <div className="p-6 md:p-7">
+        <h3 className="text-lg font-semibold text-white mb-2 leading-tight">
+          {title}
+        </h3>
+        <p className="text-[#B0B0B0] text-sm leading-relaxed line-clamp-2 mb-4">
+          {description}
+        </p>
+        <span className="inline-flex items-center gap-1.5 text-[#D4AF37] text-sm font-medium group-hover:gap-2.5 transition-all duration-300">
+          {t.ui.learnMore}
+          <ArrowRight size={14} />
+        </span>
+      </div>
     </Link>
   );
 }
@@ -142,24 +150,24 @@ function SegmentCard({
 function ClientIdentityCards() {
   const { t } = useI18n();
   return (
-    <section className="bg-[#F0EDE8]">
+    <section className="bg-[#1A1A1A]">
       <div className="section-container section-padding">
-        <div className="reveal text-center">
-          <h2 className="section-title mb-4">
+        <div className="reveal text-center mb-12 md:mb-16">
+          <h2 className="section-title mb-4 text-white">
             {t.whoWeServe.title}
           </h2>
-          <p className="text-[#6B6B6B] max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#B0B0B0] max-w-xl mx-auto leading-relaxed text-sm">
             {t.whoWeServe.description}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12 reveal">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto reveal">
           {BUYER_SEGMENTS.map((seg) => (
             <SegmentCard
               key={seg.id}
               title={seg.title}
               description={seg.description}
-              icon={seg.icon}
+              image={seg.image}
               href={seg.href}
             />
           ))}
