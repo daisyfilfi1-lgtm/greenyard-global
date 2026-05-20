@@ -153,7 +153,7 @@ function ClientIdentityCards() {
     <section className="bg-[#1A1A1A]">
       <div className="section-container section-padding">
         <div className="reveal text-center mb-12 md:mb-16">
-          <h2 className="section-title mb-4 text-white">
+          <h2 className="section-title-white mb-4">
             {t.whoWeServe.title}
           </h2>
           <p className="text-[#B0B0B0] max-w-xl mx-auto leading-relaxed text-sm">
