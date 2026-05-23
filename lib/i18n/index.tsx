@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import en, { type Dictionary } from './en';
+import zh from './zh';
 
 type Lang = 'en' | 'zh';
 
@@ -44,7 +45,7 @@ export function I18nProvider({ children, initialLang = 'en' }: { children: React
     setCookie(COOKIE_NAME, newLang);
   }, []);
 
-  const t = en;
+  const t = (lang === 'zh' ? zh : en) as Dictionary;
 
   const value: I18nContextValue = {
     lang,
