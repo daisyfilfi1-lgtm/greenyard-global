@@ -427,15 +427,15 @@ function ExpertCta() {
             </div>
           </div>
 
-          {/* Right: product macro shot */}
-          <div className="relative hidden md:block">
-            <div className="aspect-square rounded-[16px] overflow-hidden shadow-2xl">
+          {/* Right: product shot */}
+          <div className="relative">
+            <div className="aspect-[4/3] max-h-[400px] rounded-[16px] overflow-hidden shadow-2xl">
               <Image
                 src="/images/expert-support.png"
                 alt="Precision pump engineering"
                 fill
                 className="object-cover"
-                sizes="50vw"
+                sizes="(max-width: 768px) 100vw, 45vw"
               />
             </div>
           </div>
