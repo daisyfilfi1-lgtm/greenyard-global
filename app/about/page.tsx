@@ -83,8 +83,8 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden">
               <Image
-                src="/images/Modern High-End Cosmetic Packaging Factory Interior.png"
-                alt="Modern factory facility"
+                src="/images/about-story.jpg"
+                alt="GreenYard team and factory"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
