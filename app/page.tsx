@@ -431,7 +431,7 @@ function ExpertCta() {
           <div className="relative hidden md:block">
             <div className="aspect-square rounded-[16px] overflow-hidden shadow-2xl">
               <Image
-                src="/images/Macro Pump Head with Chemical .png"
+                src="/images/expert-support.png"
                 alt="Precision pump engineering"
                 fill
                 className="object-cover"
